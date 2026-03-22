@@ -11,7 +11,7 @@ import os
 import logging
 from pathlib import Path
 
-from PyQt6.QtCore import Qt, QSize
+from PyQt6.QtCore import Qt, QSize, pyqtSignal
 from PyQt6.QtGui import QAction, QFont, QIcon
 from PyQt6.QtWidgets import (
     QMainWindow,
@@ -68,6 +68,13 @@ class MainWindow(QMainWindow):
     └─────────────────────────────────────────────────┘
     """
 
+    # ── Thread-safe sinyaller (arka plan → ana thread) ──
+    _sinyal_log = pyqtSignal(str, str)           # (mesaj, seviye)
+    _sinyal_ilerleme = pyqtSignal(float, str)    # (yuzde, mesaj)
+    _sinyal_bitti = pyqtSignal(bool)             # (basarili)
+    _sinyal_onizleme_log = pyqtSignal(str, str)  # önizleme thread'i için
+    _sinyal_onizleme_oynat = pyqtSignal(str, str, str, int)  # (dosya, isim, metin, sure_ms)
+
     def __init__(self, config: ConfigManager):
         super().__init__()
         self._config = config
@@ -87,7 +94,42 @@ class MainWindow(QMainWindow):
         self._ayarlar_panel.config_yukle(self._config)
         self._ducking_panel.config_yukle(self._config)
 
+        # ── Sinyal-slot bağlantıları (thread → GUI) ──
+        self._sinyal_log.connect(self._slot_log)
+        self._sinyal_ilerleme.connect(self._slot_ilerleme)
+        self._sinyal_bitti.connect(self._slot_bitti)
+        self._sinyal_onizleme_log.connect(self._slot_log)
+        self._sinyal_onizleme_oynat.connect(self._slot_onizleme_oynat)
+
         logger.info("Ana pencere oluşturuldu.")
+
+    # --------------------------------------------------------
+    # Thread-safe slotlar (ana thread'de çalışır)
+    # --------------------------------------------------------
+
+    def _slot_log(self, mesaj: str, seviye: str):
+        """Sinyal ile gelen log mesajını GUI'de gösterir."""
+        self.log(mesaj, seviye)
+
+    def _slot_ilerleme(self, yuzde: float, mesaj: str):
+        """Sinyal ile gelen ilerleme bilgisini GUI'de gösterir."""
+        self._ilerleme_guncelle(yuzde, mesaj)
+
+    def _slot_bitti(self, basarili: bool):
+        """Pipeline bittiğinde butonları sıfırlar."""
+        self._btn_baslat.setEnabled(True)
+        self._btn_duraklat.setEnabled(False)
+        self._btn_iptal.setEnabled(False)
+        self._btn_duraklat.setText("⏸  Duraklat")
+        if basarili:
+            self._ilerleme_guncelle(100, "Tamamlandı!")
+        else:
+            self._ilerleme_guncelle(0, "Başarısız.")
+
+    def _slot_onizleme_oynat(self, dosya: str, isim: str, metin: str, sure_ms: int):
+        """Önizleme thread'inden gelen ses dosyasını oynatır."""
+        self._onizleme_player.dosya_yukle(dosya, isim, metin, sure_ms)
+        self._onizleme_player._oynat()
 
     # --------------------------------------------------------
     # Pencere Ayarları
@@ -561,9 +603,48 @@ class MainWindow(QMainWindow):
         )
         self._seslendirme_thread.start()
 
+    def _seslendirme_duraklat(self):
+        """Seslendirmeyi duraklatır/devam ettirir."""
+        if self._tts_manager and self._tts_manager.ilerleme:
+            if self._btn_duraklat.text().startswith("⏸"):
+                self._tts_manager.duraksat()
+                self._btn_duraklat.setText("▶  Devam")
+                self.log("Duraklatıldı.")
+            else:
+                self._tts_manager.devam_et()
+                self._btn_duraklat.setText("⏸  Duraklat")
+                self.log("Devam ediliyor...")
+        else:
+            if self._btn_duraklat.text().startswith("⏸"):
+                self._btn_duraklat.setText("▶  Devam")
+                self.log("Duraklatıldı.")
+            else:
+                self._btn_duraklat.setText("⏸  Duraklat")
+                self.log("Devam ediliyor...")
+
+    def _seslendirme_iptal(self):
+        """Seslendirmeyi iptal eder."""
+        cevap = QMessageBox.question(
+            self,
+            "İptal",
+            "Seslendirme iptal edilsin mi?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        )
+        if cevap == QMessageBox.StandardButton.Yes:
+            if self._tts_manager:
+                self._tts_manager.iptal_et()
+            self.log("İptal isteği gönderildi...", "warning")
+
+    # --------------------------------------------------------
+    # Seslendirme Pipeline (arka plan thread'inde çalışır)
+    # --------------------------------------------------------
+
     def _seslendirme_pipeline(self):
         """
         Tam seslendirme pipeline'ı (arka plan thread'inde çalışır).
+
+        ÖNEMLİ: Bu metod GUI widget'larına DOĞRUDAN erişmez.
+        Tüm GUI güncellemeleri sinyal emit ederek yapılır.
 
         Adımlar:
         1. TTSManager oluştur ve motorları başlat
@@ -574,7 +655,6 @@ class MainWindow(QMainWindow):
         6. Video export (video + mikslenen ses)
         """
         import asyncio
-        import tempfile
 
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
@@ -593,42 +673,41 @@ class MainWindow(QMainWindow):
 
         try:
             # ── ADIM 1: TTSManager oluştur ve motorları başlat ──
-            self.log("Adım 1/6: Motorlar başlatılıyor...")
-            self._ilerleme_guncelle(2, "Motorlar başlatılıyor...")
+            self._sinyal_log.emit("Adım 1/6: Motorlar başlatılıyor...", "info")
+            self._sinyal_ilerleme.emit(2, "Motorlar başlatılıyor...")
 
             from core.tts_manager import TTSManager
             self._tts_manager = TTSManager(config)
-
-            # Karakter bilgilerini config'den yükle
-            try:
-                self._karakter_panel.config_e_kaydet(config)
-            except Exception:
-                pass
 
             # Motorları otomatik kaydet (sync) ve başlat (async)
             kaydedilenler = self._tts_manager.otomatik_motor_kaydet()
             if kaydedilenler:
                 loop.run_until_complete(self._tts_manager.motorlari_baslat())
+
             if not kaydedilenler:
-                self.log("Hiçbir TTS motoru başlatılamadı!", "error")
-                self._seslendirme_bitti(False)
+                self._sinyal_log.emit("Hiçbir TTS motoru başlatılamadı!", "error")
+                self._sinyal_bitti.emit(False)
                 loop.close()
                 return
 
-            self.log(f"  Motorlar hazır: {', '.join(kaydedilenler)}", "success")
+            self._sinyal_log.emit(
+                f"  Motorlar hazır: {', '.join(kaydedilenler)}", "success"
+            )
 
             # ── ADIM 2: Toplu TTS üretimi ──
-            self.log(f"Adım 2/6: {dosya.satir_sayisi} satır seslendiriliyor...")
-            self._ilerleme_guncelle(5, "Ses üretimi...")
+            self._sinyal_log.emit(
+                f"Adım 2/6: {dosya.satir_sayisi} satır seslendiriliyor...", "info"
+            )
+            self._sinyal_ilerleme.emit(5, "Ses üretimi...")
 
             def ilerleme_callback(ilerleme):
-                """Her satır sonrası GUI'yi güncelle."""
+                """Her satır sonrası GUI'yi sinyal ile güncelle."""
                 yuzde = 5 + (ilerleme.yuzde * 0.50)  # %5-%55 arası
                 satir = ilerleme.mevcut_satir
                 metin_kisa = ""
                 if satir and satir.temiz_metin:
                     metin_kisa = satir.temiz_metin[:40]
-                self._ilerleme_guncelle(
+                self._sinyal_ilerleme.emit(
                     yuzde,
                     f"Satır {ilerleme.tamamlanan}/{ilerleme.toplam}: {metin_kisa}..."
                 )
@@ -641,27 +720,29 @@ class MainWindow(QMainWindow):
 
             basarili = sum(1 for _, s in sonuclar if s.basarili)
             hatali = sum(1 for _, s in sonuclar if not s.basarili)
-            self.log(
+            self._sinyal_log.emit(
                 f"  Ses üretimi tamamlandı: {basarili} başarılı, {hatali} hatalı",
                 "success" if hatali == 0 else "warning",
             )
 
             if basarili == 0:
-                self.log("Hiçbir ses üretilemedi! İşlem durduruluyor.", "error")
-                self._seslendirme_bitti(False)
+                self._sinyal_log.emit(
+                    "Hiçbir ses üretilemedi! İşlem durduruluyor.", "error"
+                )
+                self._sinyal_bitti.emit(False)
                 loop.close()
                 return
 
             # İptal kontrolü
             if self._tts_manager.ilerleme and self._tts_manager.ilerleme.iptal:
-                self.log("Seslendirme iptal edildi.", "warning")
-                self._seslendirme_bitti(False)
+                self._sinyal_log.emit("Seslendirme iptal edildi.", "warning")
+                self._sinyal_bitti.emit(False)
                 loop.close()
                 return
 
             # ── ADIM 3: Zamanlama analizi ──
-            self.log("Adım 3/6: Zamanlama analizi...")
-            self._ilerleme_guncelle(58, "Zamanlama analizi...")
+            self._sinyal_log.emit("Adım 3/6: Zamanlama analizi...", "info")
+            self._sinyal_ilerleme.emit(58, "Zamanlama analizi...")
 
             from core.timing_analyzer import TimingAnalyzer
             analizor = TimingAnalyzer.ayarlardan_olustur(config)
@@ -675,7 +756,7 @@ class MainWindow(QMainWindow):
                     zamanlama_sonuclari[satir.sira] = zs
 
             rapor = analizor.rapor_olustur(list(zamanlama_sonuclari.values()))
-            self.log(
+            self._sinyal_log.emit(
                 f"  Zamanlama: {rapor.sigiyor} sığıyor, "
                 f"{rapor.hafif_hizlandir + rapor.orta_hizlandir} hızlandırılacak, "
                 f"{rapor.tasma} taşma",
@@ -683,149 +764,110 @@ class MainWindow(QMainWindow):
             )
 
             # ── ADIM 4: Ses birleştirme ──
-            self.log("Adım 4/6: Ses segmentleri birleştiriliyor...")
-            self._ilerleme_guncelle(65, "Ses birleştirme...")
+            self._sinyal_log.emit(
+                "Adım 4/6: Ses segmentleri birleştiriliyor...", "info"
+            )
+            self._sinyal_ilerleme.emit(65, "Ses birleştirme...")
 
             from core.audio_assembler import AudioAssembler
+            birlesik_ses_yolu = os.path.join(cikis_ana, "tts_combined.wav")
+
+            birlestirir = AudioAssembler.ayarlardan_olustur(config)
+
             from core.video_exporter import VideoExporter
+            video_suresi_ms = VideoExporter.video_suresi_al(video_yolu)
 
-            # Video süresini al
-            video_sure_ms = VideoExporter.video_suresi_al(video_yolu)
-
-            assembler = AudioAssembler.ayarlardan_olustur(config)
-            birlesik_yol = os.path.join(cikis_ana, "tts_birlesik.wav")
-            birlesim = assembler.birlesir(
-                dosya, segmentler, zamanlama_sonuclari,
-                cikis_yolu=birlesik_yol,
-                video_sure_ms=video_sure_ms,
+            birlestirir.birlesik_ses_olustur(
+                satirlar=dosya.satirlar,
+                segment_dosyalari=segmentler,
+                zamanlama_sonuclari=zamanlama_sonuclari,
+                cikis_yolu=birlesik_ses_yolu,
+                toplam_sure_ms=video_suresi_ms,
             )
 
-            if not birlesim.basarili:
-                self.log(f"Ses birleştirme hatası: {birlesim.hata_mesaji}", "error")
-                self._seslendirme_bitti(False)
+            if not os.path.isfile(birlesik_ses_yolu):
+                self._sinyal_log.emit(
+                    "Birleşik ses dosyası oluşturulamadı!", "error"
+                )
+                self._sinyal_bitti.emit(False)
                 loop.close()
                 return
 
-            self.log(f"  {birlesim.ozet()}", "success")
+            self._sinyal_log.emit("  Birleşik ses hazır.", "success")
 
             # ── ADIM 5: Audio ducking ──
-            self.log("Adım 5/6: Audio ducking (orijinal ses miksleme)...")
-            self._ilerleme_guncelle(78, "Audio ducking...")
+            self._sinyal_log.emit("Adım 5/6: Audio ducking...", "info")
+            self._sinyal_ilerleme.emit(78, "Audio ducking...")
 
             from core.audio_ducker import AudioDucker
-
             ducker = AudioDucker.ayarlardan_olustur(config)
+            mikslenmis_ses_yolu = os.path.join(cikis_ana, "final_mixed.wav")
 
-            # Orijinal sesi videodan çıkar
-            orijinal_ses_yol = os.path.join(cikis_ana, "orijinal_ses.wav")
-            ses_cikarildi = AudioDucker.videodan_ses_cikar(
-                video_yolu, orijinal_ses_yol
-            )
-
-            if ses_cikarildi:
-                # Ducking yöntemi
-                ducking_aktif = config.al("ducking.aktif", True)
-                if ducking_aktif:
-                    yontem = config.al("ducking.yontem", "basit")
-                    mikslenmis_yol = os.path.join(cikis_ana, "mikslenmis.wav")
-                    duck_sonuc = ducker.duck(
-                        orijinal_ses=orijinal_ses_yol,
-                        tts_ses=birlesik_yol,
-                        cikis_yolu=mikslenmis_yol,
-                        dosya=dosya,
-                        yontem=yontem,
-                    )
-                    if duck_sonuc.basarili:
-                        self.log(f"  Ducking tamamlandı ({yontem})", "success")
-                        final_ses = mikslenmis_yol
-                    else:
-                        self.log(
-                            f"  Ducking hatası: {duck_sonuc.hata_mesaji}. "
-                            "Sadece TTS sesi kullanılacak.", "warning"
-                        )
-                        final_ses = birlesik_yol
-                else:
-                    self.log("  Ducking kapalı — sadece TTS sesi kullanılacak.", "info")
-                    final_ses = birlesik_yol
-            else:
-                self.log(
-                    "  Orijinal ses çıkarılamadı. Sadece TTS sesi kullanılacak.",
-                    "warning",
+            ducking_modu = config.al("ducking.mod", "basit")
+            if ducking_modu == "sidechain":
+                ducker.sidechain_duck(
+                    orijinal_ses=video_yolu,
+                    tts_ses=birlesik_ses_yolu,
+                    cikis_yolu=mikslenmis_ses_yolu,
+                    satirlar=dosya.satirlar,
                 )
-                final_ses = birlesik_yol
+            else:
+                ducker.basit_duck(
+                    orijinal_ses=video_yolu,
+                    tts_ses=birlesik_ses_yolu,
+                    cikis_yolu=mikslenmis_ses_yolu,
+                )
+
+            if not os.path.isfile(mikslenmis_ses_yolu):
+                self._sinyal_log.emit(
+                    "Miksleme başarısız!", "error"
+                )
+                self._sinyal_bitti.emit(False)
+                loop.close()
+                return
+
+            self._sinyal_log.emit("  Miksleme tamamlandı.", "success")
 
             # ── ADIM 6: Video export ──
-            self.log("Adım 6/6: Video oluşturuluyor...")
-            self._ilerleme_guncelle(90, "Video export...")
+            self._sinyal_log.emit("Adım 6/6: Video oluşturuluyor...", "info")
+            self._sinyal_ilerleme.emit(90, "Video export...")
 
-            exporter = VideoExporter(
-                video_codec="copy",
-                ses_codec=config.al("cikis.ses_codec", "aac"),
-                ses_bitrate=config.al("cikis.ses_bitrate", "320k"),
-                cikis_format=config.al("cikis.format", "mp4"),
-                dosya_son_eki=config.al("cikis.dosya_son_eki", "_dubbed"),
+            exporter = VideoExporter.ayarlardan_olustur(config)
+            cikis_video = exporter._cikis_yolu_belirle(video_yolu)
+            cikis_video = VideoExporter._benzersiz_yol(cikis_video)
+
+            basarili_mi = exporter.videoya_birlesir(
+                video_yolu=video_yolu,
+                ses_yolu=mikslenmis_ses_yolu,
+                cikis_yolu=cikis_video,
             )
-            export_sonuc = exporter.export(video_yolu, final_ses)
 
-            if export_sonuc.basarili:
-                self.log(
-                    f"✅ Seslendirme tamamlandı: {export_sonuc.dosya_yolu} "
-                    f"({export_sonuc.dosya_boyutu_mb:.1f} MB)",
+            if basarili_mi and os.path.isfile(cikis_video):
+                boyut_mb = os.path.getsize(cikis_video) / (1024 * 1024)
+                self._sinyal_log.emit(
+                    f"Video hazır: {os.path.basename(cikis_video)} "
+                    f"({boyut_mb:.1f} MB)",
                     "success",
                 )
-                self._ilerleme_guncelle(100, "Tamamlandı!")
+                self._sinyal_bitti.emit(True)
             else:
-                self.log(f"Video export hatası: {export_sonuc.hata_mesaji}", "error")
-
-            self._seslendirme_bitti(export_sonuc.basarili)
+                self._sinyal_log.emit("Video export başarısız!", "error")
+                self._sinyal_bitti.emit(False)
 
         except Exception as e:
-            self.log(f"Pipeline hatası: {e}", "error")
             logger.error("Seslendirme pipeline hatası: %s", e, exc_info=True)
-            self._seslendirme_bitti(False)
+            self._sinyal_log.emit(
+                f"Seslendirme pipeline hatası: {e}", "error"
+            )
+            self._sinyal_bitti.emit(False)
 
         finally:
             try:
-                loop.close()
+                if self._tts_manager:
+                    loop.run_until_complete(self._tts_manager.motorlari_kapat())
             except Exception:
                 pass
-
-    def _seslendirme_bitti(self, basarili: bool):
-        """Pipeline bittiğinde GUI'yi sıfırlar (herhangi bir thread'den çağrılabilir)."""
-        self._btn_baslat.setEnabled(True)
-        self._btn_duraklat.setEnabled(False)
-        self._btn_iptal.setEnabled(False)
-        self._btn_duraklat.setText("⏸  Duraklat")
-        if not basarili:
-            self._ilerleme_guncelle(0, "Başarısız.")
-
-    def _seslendirme_duraklat(self):
-        """Seslendirmeyi duraklatır/devam ettirir."""
-        if self._btn_duraklat.text().startswith("⏸"):
-            self._btn_duraklat.setText("▶  Devam")
-            if self._tts_manager:
-                self._tts_manager.duraksat()
-            self.log("Duraklatıldı.")
-        else:
-            self._btn_duraklat.setText("⏸  Duraklat")
-            if self._tts_manager:
-                self._tts_manager.devam_et()
-            self.log("Devam ediliyor...")
-
-    def _seslendirme_iptal(self):
-        """Seslendirmeyi iptal eder."""
-        cevap = QMessageBox.question(
-            self,
-            "İptal",
-            "Seslendirme iptal edilsin mi?",
-            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
-        )
-        if cevap == QMessageBox.StandardButton.Yes:
-            if self._tts_manager:
-                self._tts_manager.iptal_et()
-            self.log("Seslendirme iptal ediliyor...")
-            self._seslendirme_bitti(False)
-            self._ilerleme_guncelle(0, "İptal edildi.")
+            loop.close()
 
     # --------------------------------------------------------
     # Ses Önizleme
@@ -903,7 +945,7 @@ class MainWindow(QMainWindow):
         """
         Async TTS üretimi başlatır ve sonucu PreviewPlayer'da oynatır.
 
-        QThread kullanmadan basit asyncio çağrısı — kısa metinler için yeterli.
+        Sinyaller kullanarak thread-safe GUI güncellemesi yapar.
         """
         import asyncio
         import tempfile
@@ -919,7 +961,7 @@ class MainWindow(QMainWindow):
         perde = veri.get("perde", "+0Hz")
 
         def _uret_thread():
-            """Arka planda TTS üretimi yapar."""
+            """Arka planda TTS üretimi yapar — GUI'ye sinyal ile erişir."""
             try:
                 loop = asyncio.new_event_loop()
                 asyncio.set_event_loop(loop)
@@ -939,9 +981,11 @@ class MainWindow(QMainWindow):
                     motor = self._hizli_motor_olustur(motor_adi)
 
                 if motor is None:
-                    self.log(f"Motor bulunamadı: {motor_adi}", "error")
+                    self._sinyal_onizleme_log.emit(
+                        f"Motor bulunamadı: {motor_adi}", "error"
+                    )
                     if motor_adi == "xtts_v2":
-                        self.log(
+                        self._sinyal_onizleme_log.emit(
                             "XTTS kurulumu:\n"
                             "  pip install coqui-tts>=0.27.0\n"
                             "  pip install transformers>=4.46.0,<4.57.0\n"
@@ -957,21 +1001,28 @@ class MainWindow(QMainWindow):
                         loop.run_until_complete(motor.baslat())
                     except Exception as baslat_hata:
                         hata_str = str(baslat_hata)
-                        self.log(f"Motor başlatma hatası ({motor_adi}): {hata_str}", "error")
+                        self._sinyal_onizleme_log.emit(
+                            f"Motor başlatma hatası ({motor_adi}): {hata_str}",
+                            "error",
+                        )
                         if "coqui" in hata_str.lower() or "TTS" in hata_str:
-                            self.log(
+                            self._sinyal_onizleme_log.emit(
                                 "coqui-tts/transformers uyumsuzluğu olabilir.\n"
                                 "Çözüm: pip install coqui-tts>=0.27.0 "
                                 "transformers>=4.46.0,<4.57.0",
                                 "warning",
                             )
                         elif "api_key" in hata_str.lower() or "401" in hata_str:
-                            self.log("API anahtarını kontrol edin.", "warning")
+                            self._sinyal_onizleme_log.emit(
+                                "API anahtarını kontrol edin.", "warning"
+                            )
                         loop.close()
                         return
 
                 if not motor.hazir:
-                    self.log(f"Motor başlatılamadı: {motor_adi}", "error")
+                    self._sinyal_onizleme_log.emit(
+                        f"Motor başlatılamadı: {motor_adi}", "error"
+                    )
                     loop.close()
                     return
 
@@ -990,7 +1041,10 @@ class MainWindow(QMainWindow):
                     # XTTS'te ses_id = referans dosya yolu
                     gercek_ses_id = klon_yolu
                 elif motor_adi == "xtts_v2" and (not klon_yolu or not os.path.isfile(klon_yolu or "")):
-                    self.log("XTTS önizleme için referans ses gerekli (🎤 Klonla veya 🎬 Filmden).", "warning")
+                    self._sinyal_onizleme_log.emit(
+                        "XTTS önizleme için referans ses gerekli (🎤 Klonla veya 🎬 Filmden).",
+                        "warning",
+                    )
                     loop.close()
                     return
 
@@ -1000,22 +1054,24 @@ class MainWindow(QMainWindow):
                 loop.close()
 
                 if sonuc.basarili and os.path.isfile(cikis):
-                    # PreviewPlayer'a yükle (ana thread'den)
-                    from PyQt6.QtCore import QMetaObject, Qt, Q_ARG
-                    self._onizleme_player.dosya_yukle(
+                    # PreviewPlayer'a sinyal ile yükle (ana thread'de)
+                    self._sinyal_onizleme_oynat.emit(
                         cikis, isim, metin[:60], sonuc.sure_ms
                     )
-                    self._onizleme_player._oynat()
-                    self.log(
+                    self._sinyal_onizleme_log.emit(
                         f"Önizleme hazır: {isim} ({sonuc.sure_ms}ms)",
                         "success",
                     )
                 else:
                     hata = sonuc.hata_mesaji if sonuc else "Bilinmeyen hata"
-                    self.log(f"Önizleme hatası: {hata}", "error")
+                    self._sinyal_onizleme_log.emit(
+                        f"Önizleme hatası: {hata}", "error"
+                    )
 
             except Exception as e:
-                self.log(f"Önizleme hatası: {e}", "error")
+                self._sinyal_onizleme_log.emit(
+                    f"Önizleme hatası: {e}", "error"
+                )
                 logger.error("Önizleme hatası: %s", e, exc_info=True)
 
         # Arka plan thread'inde çalıştır
