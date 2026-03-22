@@ -1,8 +1,8 @@
 {
   "genel": {
     "dil": "tr",
-    "son_srt_klasoru": "C:\\capcutdrafts\\denemeler\\waiting for godot\\uzun",
-    "son_video_klasoru": "C:\\capcutdrafts\\denemeler\\waiting for godot",
+    "son_srt_klasoru": "C:\\capcutdrafts\\denemeler\\3-the ingenious design",
+    "son_video_klasoru": "C:\\capcutdrafts\\denemeler\\3-the ingenious design",
     "son_cikis_klasoru": "",
     "pencere_genislik": 1536,
     "pencere_yukseklik": 793,
@@ -55,7 +55,7 @@
     "SPEAKER_01": {
       "isim": "Vladimir (Didi)",
       "motor": "xtts_v2",
-      "ses": "xtts_clone",
+      "ses": "C:/capcutdrafts/denemeler/waiting for godot/uzun/dubsync_clones/SPEAKER_01_referans.wav",
       "cinsiyet": "erkek",
       "hiz": "+0%",
       "perde": "+0Hz"
@@ -69,9 +69,9 @@
       "perde": "+0Hz"
     },
     "SPEAKER_00": {
-      "isim": "",
-      "motor": "edge_tts",
-      "ses": "tr-TR-AhmetNeural",
+      "isim": "Engineer",
+      "motor": "xtts_v2",
+      "ses": "xtts_clone",
       "cinsiyet": "erkek",
       "hiz": "+0%",
       "perde": "+0Hz"

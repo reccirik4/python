@@ -14,6 +14,17 @@ Kullanım:
     python main.py --debug
 """
 
+# !! KRİTİK: PyTorch DLL çakışmasını önle !!
+# Windows'ta PyQt6 import edildikten SONRA torch import edilirse
+# c10.dll yüklenemez (pytorch/pytorch #166628).
+# Bu yüzden torch, PyQt6'dan ÖNCE yüklenmeli.
+try:
+    import torch  # noqa: F401 — sadece DLL'lerin erken yüklenmesi için
+except ImportError:
+    pass  # torch yüklü değilse sorun yok, opsiyonel bağımlılık
+except OSError:
+    pass  # DLL hatası olursa da devam et, ileride tekrar denenecek
+
 import sys
 import os
 import argparse
@@ -51,52 +62,56 @@ def logging_yapilandir(debug: bool = False) -> None:
     """
     Logging yapılandırmasını ayarlar.
 
-    Konsol + dosya çıkışı. Debug modunda daha detaylı log.
+    Renkli konsol + dosya çıkışı. Debug modunda daha detaylı log.
+    VS Code integrated terminal'de renkli çıktı sağlar.
     """
-    seviye = logging.DEBUG if debug else logging.INFO
-
-    # Log formatı
-    fmt = logging.Formatter(
-        fmt="%(asctime)s [%(levelname)-7s] %(name)-25s | %(message)s",
-        datefmt="%H:%M:%S",
-    )
-
-    # Kök logger
-    kok = logging.getLogger()
-    kok.setLevel(seviye)
-
-    # Mevcut handler'ları temizle (tekrar çağrılırsa)
-    kok.handlers.clear()
-
-    # Konsol handler
-    konsol = logging.StreamHandler(sys.stdout)
-    konsol.setLevel(seviye)
-    konsol.setFormatter(fmt)
-    kok.addHandler(konsol)
-
-    # Dosya handler (opsiyonel)
-    log_dizin = uygulama_dizini() / "logs"
+    # debug_logger modülünden renkli yapılandırmayı kullan
     try:
-        log_dizin.mkdir(exist_ok=True)
-        dosya_handler = logging.FileHandler(
-            log_dizin / "dubsync_pro.log",
-            encoding="utf-8",
-            mode="a",
+        from core.debug_logger import logging_pipilandir
+        logging_pipilandir(
+            debug=debug,
+            log_dizin=str(uygulama_dizini() / "logs"),
+            ikon_kullan=True,
         )
-        dosya_handler.setLevel(logging.DEBUG)
-        dosya_handler.setFormatter(logging.Formatter(
-            fmt="%(asctime)s [%(levelname)-7s] %(name)-25s | %(message)s",
-            datefmt="%Y-%m-%d %H:%M:%S",
-        ))
-        kok.addHandler(dosya_handler)
-    except OSError:
-        pass  # Log dosyası yazılamazsa sessizce devam et
+    except ImportError:
+        # Fallback: debug_logger yoksa eski sistem (renksiz)
+        seviye = logging.DEBUG if debug else logging.INFO
 
-    # Üçüncü parti kütüphanelerin log gürültüsünü azalt
-    logging.getLogger("urllib3").setLevel(logging.WARNING)
-    logging.getLogger("asyncio").setLevel(logging.WARNING)
-    logging.getLogger("httpx").setLevel(logging.WARNING)
-    logging.getLogger("httpcore").setLevel(logging.WARNING)
+        fmt = logging.Formatter(
+            fmt="%(asctime)s [%(levelname)-7s] %(name)-25s | %(message)s",
+            datefmt="%H:%M:%S",
+        )
+
+        kok = logging.getLogger()
+        kok.setLevel(seviye)
+        kok.handlers.clear()
+
+        konsol = logging.StreamHandler(sys.stdout)
+        konsol.setLevel(seviye)
+        konsol.setFormatter(fmt)
+        kok.addHandler(konsol)
+
+        log_dizin = uygulama_dizini() / "logs"
+        try:
+            log_dizin.mkdir(exist_ok=True)
+            dosya_handler = logging.FileHandler(
+                log_dizin / "dubsync_pro.log",
+                encoding="utf-8",
+                mode="a",
+            )
+            dosya_handler.setLevel(logging.DEBUG)
+            dosya_handler.setFormatter(logging.Formatter(
+                fmt="%(asctime)s [%(levelname)-7s] %(name)-25s | %(message)s",
+                datefmt="%Y-%m-%d %H:%M:%S",
+            ))
+            kok.addHandler(dosya_handler)
+        except OSError:
+            pass
+
+        logging.getLogger("urllib3").setLevel(logging.WARNING)
+        logging.getLogger("asyncio").setLevel(logging.WARNING)
+        logging.getLogger("httpx").setLevel(logging.WARNING)
+        logging.getLogger("httpcore").setLevel(logging.WARNING)
 
 
 def argumanlari_ayristir() -> argparse.Namespace:
@@ -268,7 +283,7 @@ def _bagimliliklari_kontrol_et(pencere) -> None:
         pencere.log(f"  ⚠️ TTS (coqui) — DLL hatası: {e}", "warning")
         pencere.log(
             "     Çözüm: pip uninstall torch torchaudio -y && "
-            "pip install torch torchaudio --index-url "
+            "pip install torch==2.8.0 torchaudio==2.8.0 --index-url "
             "https://download.pytorch.org/whl/cpu",
             "warning",
         )

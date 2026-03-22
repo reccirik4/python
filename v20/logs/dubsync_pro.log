@@ -1,0 +1,1902 @@
+2026-03-22 23:29:15 [INFO   ] DubSync.Main              | ============================================================
+2026-03-22 23:29:15 [INFO   ] DubSync.Main              | DubSync Pro v1.0 başlatılıyor...
+2026-03-22 23:29:15 [INFO   ] DubSync.Main              | Python: 3.12.0
+2026-03-22 23:29:15 [INFO   ] DubSync.Main              | Çalışma dizini: C:\kodlamalar\python\srt-tts-2026-super
+2026-03-22 23:29:15 [INFO   ] DubSync.Main              | Mod: Python script
+2026-03-22 23:29:15 [INFO   ] DubSync.Main              | ============================================================
+2026-03-22 23:29:15 [INFO   ] DubSync.ConfigManager     | Ayar dosyası yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:29:15 [INFO   ] DubSync.Main              | Ayarlar yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:29:16 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'den yüklendi.
+2026-03-22 23:29:16 [INFO   ] DubSync.MainWindow        | Ana pencere oluşturuldu.
+2026-03-22 23:29:16 [INFO   ] DubSync.Main              | Ana pencere gösterildi. Uygulama hazır.
+2026-03-22 23:31:08 [INFO   ] DubSync.SrtParser         | Kodlama algılandı: utf-8 (güven: 85.6%)
+2026-03-22 23:31:08 [INFO   ] DubSync.SrtParser         | SRT yüklendi: 508 satır, 4 konuşmacı, süre: 00:20:00,634
+2026-03-22 23:31:08 [INFO   ] DubSync.SubtitleTable     | Tablo yüklendi: 508 satır
+2026-03-22 23:31:08 [INFO   ] DubSync.CharacterPanel    | Karakter paneli yüklendi: 4 karakter
+2026-03-22 23:31:08 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_01 → 
+2026-03-22 23:31:08 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_03 → 
+2026-03-22 23:31:08 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → 
+2026-03-22 23:31:08 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_02 → 
+2026-03-22 23:31:08 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:37:40 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-22 23:37:40 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:37:44 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-22 23:37:44 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:39:07 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-22 23:39:07 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_01 → 
+2026-03-22 23:39:07 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_03 → Vladimir (Didi)
+2026-03-22 23:39:07 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → 
+2026-03-22 23:39:07 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_02 → 
+2026-03-22 23:39:07 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:39:07 [INFO   ] DubSync.Main              | DubSync Pro kapatıldı. Çıkış kodu: 0
+2026-03-22 23:39:12 [INFO   ] DubSync.Main              | ============================================================
+2026-03-22 23:39:12 [INFO   ] DubSync.Main              | DubSync Pro v1.0 başlatılıyor...
+2026-03-22 23:39:12 [INFO   ] DubSync.Main              | Python: 3.12.0
+2026-03-22 23:39:12 [INFO   ] DubSync.Main              | Çalışma dizini: C:\kodlamalar\python\srt-tts-2026-super
+2026-03-22 23:39:12 [INFO   ] DubSync.Main              | Mod: Python script
+2026-03-22 23:39:12 [INFO   ] DubSync.Main              | ============================================================
+2026-03-22 23:39:12 [INFO   ] DubSync.ConfigManager     | Ayar dosyası yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:39:12 [INFO   ] DubSync.Main              | Ayarlar yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:39:13 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-22 23:39:13 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:39:13 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'den yüklendi.
+2026-03-22 23:39:13 [INFO   ] DubSync.MainWindow        | Ana pencere oluşturuldu.
+2026-03-22 23:39:13 [INFO   ] DubSync.Main              | Ana pencere gösterildi. Uygulama hazır.
+2026-03-22 23:39:23 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-22 23:39:23 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:39:53 [INFO   ] DubSync.SrtParser         | Kodlama algılandı: utf-8 (güven: 85.7%)
+2026-03-22 23:39:53 [INFO   ] DubSync.SrtParser         | SRT yüklendi: 2542 satır, 2 konuşmacı, süre: 01:51:35,460
+2026-03-22 23:39:53 [INFO   ] DubSync.SubtitleTable     | Tablo yüklendi: 2542 satır
+2026-03-22 23:39:53 [INFO   ] DubSync.CharacterPanel    | Karakter paneli yüklendi: 2 karakter
+2026-03-22 23:39:53 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_01 → 
+2026-03-22 23:39:53 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → 
+2026-03-22 23:39:53 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:42:18 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-22 23:42:18 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_01 → Vladimir (Didi)
+2026-03-22 23:42:18 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → 
+2026-03-22 23:42:18 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:42:18 [INFO   ] DubSync.Main              | DubSync Pro kapatıldı. Çıkış kodu: 0
+2026-03-22 23:44:49 [INFO   ] DubSync.Main              | ============================================================
+2026-03-22 23:44:49 [INFO   ] DubSync.Main              | DubSync Pro v1.0 başlatılıyor...
+2026-03-22 23:44:49 [INFO   ] DubSync.Main              | Python: 3.12.0
+2026-03-22 23:44:49 [INFO   ] DubSync.Main              | Çalışma dizini: C:\kodlamalar\python\srt-tts-2026-super
+2026-03-22 23:44:49 [INFO   ] DubSync.Main              | Mod: Python script
+2026-03-22 23:44:49 [INFO   ] DubSync.Main              | ============================================================
+2026-03-22 23:44:49 [INFO   ] DubSync.ConfigManager     | Ayar dosyası yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:44:49 [INFO   ] DubSync.Main              | Ayarlar yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:44:49 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-22 23:44:49 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:44:49 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'den yüklendi.
+2026-03-22 23:44:49 [INFO   ] DubSync.MainWindow        | Ana pencere oluşturuldu.
+2026-03-22 23:44:49 [INFO   ] DubSync.Main              | Ana pencere gösterildi. Uygulama hazır.
+2026-03-22 23:45:09 [INFO   ] DubSync.SrtParser         | Kodlama algılandı: utf-8 (güven: 85.7%)
+2026-03-22 23:45:09 [INFO   ] DubSync.SrtParser         | SRT yüklendi: 2542 satır, 2 konuşmacı, süre: 01:51:35,460
+2026-03-22 23:45:09 [INFO   ] DubSync.SubtitleTable     | Tablo yüklendi: 2542 satır
+2026-03-22 23:45:09 [INFO   ] DubSync.CharacterPanel    | Karakter paneli yüklendi: 2 karakter
+2026-03-22 23:45:09 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_01 → Vladimir (Didi)
+2026-03-22 23:45:09 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → 
+2026-03-22 23:45:09 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:45:16 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-22 23:45:16 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:45:17 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-22 23:45:17 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-22 23:45:17 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-22 23:45:17 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:00:16 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:00:16 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_01 → Vladimir (Didi)
+2026-03-23 00:00:16 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → 
+2026-03-23 00:00:16 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:00:16 [INFO   ] DubSync.Main              | DubSync Pro kapatıldı. Çıkış kodu: 0
+2026-03-23 00:04:09 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 00:04:09 [INFO   ] DubSync.Main              | DubSync Pro v1.0 başlatılıyor...
+2026-03-23 00:04:09 [INFO   ] DubSync.Main              | Python: 3.12.0
+2026-03-23 00:04:09 [INFO   ] DubSync.Main              | Çalışma dizini: C:\kodlamalar\python\srt-tts-2026-super
+2026-03-23 00:04:09 [INFO   ] DubSync.Main              | Mod: Python script
+2026-03-23 00:04:09 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 00:04:09 [INFO   ] DubSync.ConfigManager     | Ayar dosyası yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:04:09 [INFO   ] DubSync.Main              | Ayarlar yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:04:09 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:04:09 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:04:09 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'den yüklendi.
+2026-03-23 00:04:09 [INFO   ] DubSync.MainWindow        | Ana pencere oluşturuldu.
+2026-03-23 00:04:09 [INFO   ] DubSync.Main              | Ana pencere gösterildi. Uygulama hazır.
+2026-03-23 00:04:24 [INFO   ] DubSync.SrtParser         | Kodlama algılandı: utf-8 (güven: 85.7%)
+2026-03-23 00:04:24 [INFO   ] DubSync.SrtParser         | SRT yüklendi: 2542 satır, 2 konuşmacı, süre: 01:51:35,460
+2026-03-23 00:04:24 [INFO   ] DubSync.SubtitleTable     | Tablo yüklendi: 2542 satır
+2026-03-23 00:04:24 [INFO   ] DubSync.CharacterPanel    | Karakter paneli yüklendi: 2 karakter
+2026-03-23 00:04:24 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_01 → Vladimir (Didi)
+2026-03-23 00:04:24 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → 
+2026-03-23 00:04:24 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:04:34 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:04:34 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:08:00 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:08:00 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_01 → Vladimir (Didi)
+2026-03-23 00:08:00 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → 
+2026-03-23 00:08:00 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:08:00 [INFO   ] DubSync.Main              | DubSync Pro kapatıldı. Çıkış kodu: 0
+2026-03-23 00:11:51 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 00:11:51 [INFO   ] DubSync.Main              | DubSync Pro v1.0 başlatılıyor...
+2026-03-23 00:11:51 [INFO   ] DubSync.Main              | Python: 3.12.0
+2026-03-23 00:11:51 [INFO   ] DubSync.Main              | Çalışma dizini: C:\kodlamalar\python\srt-tts-2026-super
+2026-03-23 00:11:51 [INFO   ] DubSync.Main              | Mod: Python script
+2026-03-23 00:11:51 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 00:11:52 [INFO   ] DubSync.ConfigManager     | Ayar dosyası yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:11:52 [INFO   ] DubSync.Main              | Ayarlar yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:11:52 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:11:52 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:11:52 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'den yüklendi.
+2026-03-23 00:11:52 [INFO   ] DubSync.MainWindow        | Ana pencere oluşturuldu.
+2026-03-23 00:11:52 [INFO   ] DubSync.Main              | Ana pencere gösterildi. Uygulama hazır.
+2026-03-23 00:12:10 [DEBUG  ] torio._extension.utils    | Loading FFmpeg6
+2026-03-23 00:12:10 [DEBUG  ] torio._extension.utils    | Failed to load FFmpeg6 extension.
+Traceback (most recent call last):
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 116, in _find_ffmpeg_extension
+    ext = _find_versionsed_ffmpeg_extension(ffmpeg_ver)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 108, in _find_versionsed_ffmpeg_extension
+    _load_lib(lib)
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 94, in _load_lib
+    torch.ops.load_library(path)
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torch\_ops.py", line 1478, in load_library
+    ctypes.CDLL(path)
+  File "C:\Users\Reci\AppData\Local\Programs\Python\Python312\Lib\ctypes\__init__.py", line 379, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: Could not find module 'C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\lib\libtorio_ffmpeg6.pyd' (or one of its dependencies). Try using the full path with constructor syntax.
+2026-03-23 00:12:10 [DEBUG  ] torio._extension.utils    | Loading FFmpeg5
+2026-03-23 00:12:10 [DEBUG  ] torio._extension.utils    | Failed to load FFmpeg5 extension.
+Traceback (most recent call last):
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 116, in _find_ffmpeg_extension
+    ext = _find_versionsed_ffmpeg_extension(ffmpeg_ver)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 108, in _find_versionsed_ffmpeg_extension
+    _load_lib(lib)
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 94, in _load_lib
+    torch.ops.load_library(path)
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torch\_ops.py", line 1478, in load_library
+    ctypes.CDLL(path)
+  File "C:\Users\Reci\AppData\Local\Programs\Python\Python312\Lib\ctypes\__init__.py", line 379, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: Could not find module 'C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\lib\libtorio_ffmpeg5.pyd' (or one of its dependencies). Try using the full path with constructor syntax.
+2026-03-23 00:12:10 [DEBUG  ] torio._extension.utils    | Loading FFmpeg4
+2026-03-23 00:12:10 [DEBUG  ] torio._extension.utils    | Failed to load FFmpeg4 extension.
+Traceback (most recent call last):
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 116, in _find_ffmpeg_extension
+    ext = _find_versionsed_ffmpeg_extension(ffmpeg_ver)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 108, in _find_versionsed_ffmpeg_extension
+    _load_lib(lib)
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 94, in _load_lib
+    torch.ops.load_library(path)
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torch\_ops.py", line 1478, in load_library
+    ctypes.CDLL(path)
+  File "C:\Users\Reci\AppData\Local\Programs\Python\Python312\Lib\ctypes\__init__.py", line 379, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: Could not find module 'C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\lib\libtorio_ffmpeg4.pyd' (or one of its dependencies). Try using the full path with constructor syntax.
+2026-03-23 00:12:10 [DEBUG  ] torio._extension.utils    | Loading FFmpeg
+2026-03-23 00:12:10 [DEBUG  ] torio._extension.utils    | Failed to load FFmpeg extension.
+Traceback (most recent call last):
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 116, in _find_ffmpeg_extension
+    ext = _find_versionsed_ffmpeg_extension(ffmpeg_ver)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 106, in _find_versionsed_ffmpeg_extension
+    raise RuntimeError(f"FFmpeg{version} extension is not available.")
+RuntimeError: FFmpeg extension is not available.
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | bytecode dump:
+>          0	NOP(arg=None, lineno=1137)
+           2	RESUME(arg=0, lineno=1137)
+           4	LOAD_FAST(arg=0, lineno=1140)
+           6	LOAD_CONST(arg=1, lineno=1140)
+           8	BINARY_SUBSCR(arg=None, lineno=1140)
+          12	STORE_FAST(arg=3, lineno=1140)
+          14	LOAD_FAST(arg=1, lineno=1141)
+          16	UNARY_NEGATIVE(arg=None, lineno=1141)
+          18	LOAD_FAST(arg=3, lineno=1141)
+          20	SWAP(arg=2, lineno=1141)
+          22	COPY(arg=2, lineno=1141)
+          24	COMPARE_OP(arg=26, lineno=1141)
+          28	POP_JUMP_IF_FALSE(arg=5, lineno=1141)
+          30	LOAD_FAST(arg=1, lineno=1141)
+          32	COMPARE_OP(arg=26, lineno=1141)
+          36	POP_JUMP_IF_FALSE(arg=5, lineno=1141)
+          38	JUMP_FORWARD(arg=2, lineno=1141)
+>         40	POP_TOP(arg=None, lineno=1141)
+          42	JUMP_FORWARD(arg=2, lineno=1141)
+>         44	LOAD_CONST(arg=1, lineno=1142)
+          46	STORE_FAST(arg=3, lineno=1142)
+>         48	LOAD_FAST(arg=0, lineno=1144)
+          50	LOAD_CONST(arg=2, lineno=1144)
+          52	BINARY_SUBSCR(arg=None, lineno=1144)
+          56	STORE_FAST(arg=4, lineno=1144)
+          58	LOAD_FAST(arg=1, lineno=1145)
+          60	UNARY_NEGATIVE(arg=None, lineno=1145)
+          62	LOAD_FAST(arg=4, lineno=1145)
+          64	SWAP(arg=2, lineno=1145)
+          66	COPY(arg=2, lineno=1145)
+          68	COMPARE_OP(arg=26, lineno=1145)
+          72	POP_JUMP_IF_FALSE(arg=5, lineno=1145)
+          74	LOAD_FAST(arg=1, lineno=1145)
+          76	COMPARE_OP(arg=26, lineno=1145)
+          80	POP_JUMP_IF_FALSE(arg=5, lineno=1145)
+          82	JUMP_FORWARD(arg=2, lineno=1145)
+>         84	POP_TOP(arg=None, lineno=1145)
+          86	JUMP_FORWARD(arg=2, lineno=1145)
+>         88	LOAD_CONST(arg=1, lineno=1146)
+          90	STORE_FAST(arg=4, lineno=1146)
+>         92	LOAD_FAST(arg=2, lineno=1148)
+          94	POP_JUMP_IF_FALSE(arg=43, lineno=1148)
+          96	LOAD_GLOBAL(arg=1, lineno=1149)
+         106	LOAD_ATTR(arg=2, lineno=1149)
+         126	LOAD_FAST(arg=3, lineno=1149)
+         128	CALL(arg=1, lineno=1149)
+         136	LOAD_GLOBAL(arg=1, lineno=1149)
+         146	LOAD_ATTR(arg=2, lineno=1149)
+         166	LOAD_FAST(arg=4, lineno=1149)
+         168	CALL(arg=1, lineno=1149)
+         176	COMPARE_OP(arg=55, lineno=1149)
+         180	RETURN_VALUE(arg=None, lineno=1149)
+>        182	LOAD_GLOBAL(arg=1, lineno=1151)
+         192	LOAD_ATTR(arg=4, lineno=1151)
+         212	LOAD_FAST(arg=3, lineno=1151)
+         214	CALL(arg=1, lineno=1151)
+         222	LOAD_GLOBAL(arg=1, lineno=1151)
+         232	LOAD_ATTR(arg=4, lineno=1151)
+         252	LOAD_FAST(arg=4, lineno=1151)
+         254	CALL(arg=1, lineno=1151)
+         262	COMPARE_OP(arg=55, lineno=1151)
+         266	RETURN_VALUE(arg=None, lineno=1151)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=0 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=0 nstack_initial=0)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=0, inst=NOP(arg=None, lineno=1137)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=2, inst=RESUME(arg=0, lineno=1137)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=4, inst=LOAD_FAST(arg=0, lineno=1140)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=6, inst=LOAD_CONST(arg=1, lineno=1140)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=8, inst=BINARY_SUBSCR(arg=None, lineno=1140)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0', '$const6.1.1']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=12, inst=STORE_FAST(arg=3, lineno=1140)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=14, inst=LOAD_FAST(arg=1, lineno=1141)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=16, inst=UNARY_NEGATIVE(arg=None, lineno=1141)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$threshold14.3']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=18, inst=LOAD_FAST(arg=3, lineno=1141)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$16unary_negative.4']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=20, inst=SWAP(arg=2, lineno=1141)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$16unary_negative.4', '$x018.5']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=22, inst=COPY(arg=2, lineno=1141)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$x018.5', '$16unary_negative.4']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=24, inst=COMPARE_OP(arg=26, lineno=1141)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$x018.5', '$16unary_negative.4', '$x018.5']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=28, inst=POP_JUMP_IF_FALSE(arg=5, lineno=1141)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$x018.5', '$24compare_op.6']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=30, stack=('$x018.5',), blockstack=(), npush=0), Edge(pc=40, stack=('$x018.5',), blockstack=(), npush=0)]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=30 nstack_initial=1), State(pc_initial=40 nstack_initial=1)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: ['$phi30.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=30 nstack_initial=1)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=30, inst=LOAD_FAST(arg=1, lineno=1141)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$phi30.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=32, inst=COMPARE_OP(arg=26, lineno=1141)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$phi30.0', '$threshold30.1']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=36, inst=POP_JUMP_IF_FALSE(arg=5, lineno=1141)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$32compare_op.2']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=38, stack=(), blockstack=(), npush=0), Edge(pc=48, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=40 nstack_initial=1), State(pc_initial=38 nstack_initial=0), State(pc_initial=48 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: ['$phi40.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=40 nstack_initial=1)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=40, inst=POP_TOP(arg=None, lineno=1141)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$phi40.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=42, inst=JUMP_FORWARD(arg=2, lineno=1141)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=48, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=38 nstack_initial=0), State(pc_initial=48 nstack_initial=0), State(pc_initial=48 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=38 nstack_initial=0)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=38, inst=JUMP_FORWARD(arg=2, lineno=1141)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=44, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=48 nstack_initial=0), State(pc_initial=48 nstack_initial=0), State(pc_initial=44 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=48 nstack_initial=0)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=48, inst=LOAD_FAST(arg=0, lineno=1144)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=50, inst=LOAD_CONST(arg=2, lineno=1144)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$x48.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=52, inst=BINARY_SUBSCR(arg=None, lineno=1144)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$x48.0', '$const50.1.2']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=56, inst=STORE_FAST(arg=4, lineno=1144)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$52binary_subscr.2']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=58, inst=LOAD_FAST(arg=1, lineno=1145)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=60, inst=UNARY_NEGATIVE(arg=None, lineno=1145)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$threshold58.3']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=62, inst=LOAD_FAST(arg=4, lineno=1145)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$60unary_negative.4']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=64, inst=SWAP(arg=2, lineno=1145)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$60unary_negative.4', '$x162.5']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=66, inst=COPY(arg=2, lineno=1145)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$x162.5', '$60unary_negative.4']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=68, inst=COMPARE_OP(arg=26, lineno=1145)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$x162.5', '$60unary_negative.4', '$x162.5']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=72, inst=POP_JUMP_IF_FALSE(arg=5, lineno=1145)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$x162.5', '$68compare_op.6']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=74, stack=('$x162.5',), blockstack=(), npush=0), Edge(pc=84, stack=('$x162.5',), blockstack=(), npush=0)]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=48 nstack_initial=0), State(pc_initial=44 nstack_initial=0), State(pc_initial=74 nstack_initial=1), State(pc_initial=84 nstack_initial=1)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=44 nstack_initial=0), State(pc_initial=74 nstack_initial=1), State(pc_initial=84 nstack_initial=1)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=44 nstack_initial=0)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=44, inst=LOAD_CONST(arg=1, lineno=1142)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=46, inst=STORE_FAST(arg=3, lineno=1142)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$const44.0.1']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=48, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=74 nstack_initial=1), State(pc_initial=84 nstack_initial=1), State(pc_initial=48 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: ['$phi74.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=74 nstack_initial=1)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=74, inst=LOAD_FAST(arg=1, lineno=1145)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$phi74.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=76, inst=COMPARE_OP(arg=26, lineno=1145)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$phi74.0', '$threshold74.1']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=80, inst=POP_JUMP_IF_FALSE(arg=5, lineno=1145)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$76compare_op.2']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=82, stack=(), blockstack=(), npush=0), Edge(pc=92, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=84 nstack_initial=1), State(pc_initial=48 nstack_initial=0), State(pc_initial=82 nstack_initial=0), State(pc_initial=92 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: ['$phi84.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=84 nstack_initial=1)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=84, inst=POP_TOP(arg=None, lineno=1145)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$phi84.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=86, inst=JUMP_FORWARD(arg=2, lineno=1145)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=92, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=48 nstack_initial=0), State(pc_initial=82 nstack_initial=0), State(pc_initial=92 nstack_initial=0), State(pc_initial=92 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=82 nstack_initial=0), State(pc_initial=92 nstack_initial=0), State(pc_initial=92 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=82 nstack_initial=0)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=82, inst=JUMP_FORWARD(arg=2, lineno=1145)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=88, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=92 nstack_initial=0), State(pc_initial=92 nstack_initial=0), State(pc_initial=88 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=92 nstack_initial=0)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=92, inst=LOAD_FAST(arg=2, lineno=1148)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=94, inst=POP_JUMP_IF_FALSE(arg=43, lineno=1148)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$zero_pos92.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=96, stack=(), blockstack=(), npush=0), Edge(pc=182, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=92 nstack_initial=0), State(pc_initial=88 nstack_initial=0), State(pc_initial=96 nstack_initial=0), State(pc_initial=182 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=88 nstack_initial=0), State(pc_initial=96 nstack_initial=0), State(pc_initial=182 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=88 nstack_initial=0)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=88, inst=LOAD_CONST(arg=1, lineno=1146)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=90, inst=STORE_FAST(arg=4, lineno=1146)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$const88.0.1']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=92, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=96 nstack_initial=0), State(pc_initial=182 nstack_initial=0), State(pc_initial=92 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=96 nstack_initial=0)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=96, inst=LOAD_GLOBAL(arg=1, lineno=1149)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=106, inst=LOAD_ATTR(arg=2, lineno=1149)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$null$96.1', '$96load_global.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=126, inst=LOAD_FAST(arg=3, lineno=1149)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$null$96.1', '$106load_attr.2']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=128, inst=CALL(arg=1, lineno=1149)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$null$96.1', '$106load_attr.2', '$x0126.3']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=136, inst=LOAD_GLOBAL(arg=1, lineno=1149)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$128call.4']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=146, inst=LOAD_ATTR(arg=2, lineno=1149)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$128call.4', '$null$136.6', '$136load_global.5']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=166, inst=LOAD_FAST(arg=4, lineno=1149)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$128call.4', '$null$136.6', '$146load_attr.7']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=168, inst=CALL(arg=1, lineno=1149)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$128call.4', '$null$136.6', '$146load_attr.7', '$x1166.8']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=176, inst=COMPARE_OP(arg=55, lineno=1149)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$128call.4', '$168call.9']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=180, inst=RETURN_VALUE(arg=None, lineno=1149)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$176compare_op.10']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=182 nstack_initial=0), State(pc_initial=92 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=182 nstack_initial=0)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=182, inst=LOAD_GLOBAL(arg=1, lineno=1151)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=192, inst=LOAD_ATTR(arg=4, lineno=1151)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$null$182.1', '$182load_global.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=212, inst=LOAD_FAST(arg=3, lineno=1151)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$null$182.1', '$192load_attr.2']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=214, inst=CALL(arg=1, lineno=1151)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$null$182.1', '$192load_attr.2', '$x0212.3']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=222, inst=LOAD_GLOBAL(arg=1, lineno=1151)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$214call.4']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=232, inst=LOAD_ATTR(arg=4, lineno=1151)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$214call.4', '$null$222.6', '$222load_global.5']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=252, inst=LOAD_FAST(arg=4, lineno=1151)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$214call.4', '$null$222.6', '$232load_attr.7']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=254, inst=CALL(arg=1, lineno=1151)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$214call.4', '$null$222.6', '$232load_attr.7', '$x1252.8']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=262, inst=COMPARE_OP(arg=55, lineno=1151)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$214call.4', '$254call.9']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=266, inst=RETURN_VALUE(arg=None, lineno=1151)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$262compare_op.10']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=92 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | -------------------------Prune PHIs-------------------------
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | Used_phis: defaultdict(<class 'set'>,
+            {State(pc_initial=0 nstack_initial=0): set(),
+             State(pc_initial=30 nstack_initial=1): {'$phi30.0'},
+             State(pc_initial=38 nstack_initial=0): set(),
+             State(pc_initial=40 nstack_initial=1): set(),
+             State(pc_initial=44 nstack_initial=0): set(),
+             State(pc_initial=48 nstack_initial=0): set(),
+             State(pc_initial=74 nstack_initial=1): {'$phi74.0'},
+             State(pc_initial=82 nstack_initial=0): set(),
+             State(pc_initial=84 nstack_initial=1): set(),
+             State(pc_initial=88 nstack_initial=0): set(),
+             State(pc_initial=92 nstack_initial=0): set(),
+             State(pc_initial=96 nstack_initial=0): set(),
+             State(pc_initial=182 nstack_initial=0): set()})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | defmap: {'$phi30.0': State(pc_initial=0 nstack_initial=0),
+ '$phi40.0': State(pc_initial=0 nstack_initial=0),
+ '$phi74.0': State(pc_initial=48 nstack_initial=0),
+ '$phi84.0': State(pc_initial=48 nstack_initial=0)}
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | phismap: defaultdict(<class 'set'>,
+            {'$phi30.0': {('$x018.5', State(pc_initial=0 nstack_initial=0))},
+             '$phi40.0': {('$x018.5', State(pc_initial=0 nstack_initial=0))},
+             '$phi74.0': {('$x162.5', State(pc_initial=48 nstack_initial=0))},
+             '$phi84.0': {('$x162.5', State(pc_initial=48 nstack_initial=0))}})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | changing phismap: defaultdict(<class 'set'>,
+            {'$phi30.0': {('$x018.5', State(pc_initial=0 nstack_initial=0))},
+             '$phi40.0': {('$x018.5', State(pc_initial=0 nstack_initial=0))},
+             '$phi74.0': {('$x162.5', State(pc_initial=48 nstack_initial=0))},
+             '$phi84.0': {('$x162.5', State(pc_initial=48 nstack_initial=0))}})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | keep phismap: {'$phi30.0': {('$x018.5', State(pc_initial=0 nstack_initial=0))},
+ '$phi74.0': {('$x162.5', State(pc_initial=48 nstack_initial=0))}}
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | new_out: defaultdict(<class 'dict'>,
+            {State(pc_initial=0 nstack_initial=0): {'$phi30.0': '$x018.5'},
+             State(pc_initial=48 nstack_initial=0): {'$phi74.0': '$x162.5'}})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | ----------------------DONE Prune PHIs-----------------------
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=0 nstack_initial=0):
+AdaptBlockInfo(insts=((0, {}), (2, {}), (4, {'res': '$x4.0'}), (6, {'res': '$const6.1.1'}), (8, {'index': '$const6.1.1', 'target': '$x4.0', 'res': '$8binary_subscr.2'}), (12, {'value': '$8binary_subscr.2'}), (14, {'res': '$threshold14.3'}), (16, {'value': '$threshold14.3', 'res': '$16unary_negative.4'}), (18, {'res': '$x018.5'}), (24, {'lhs': '$16unary_negative.4', 'rhs': '$x018.5', 'res': '$24compare_op.6'}), (28, {'pred': '$24compare_op.6'})), outgoing_phis={'$phi30.0': '$x018.5'}, blockstack=(), active_try_block=None, outgoing_edgepushed={30: ('$x018.5',), 40: ('$x018.5',)})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=30 nstack_initial=1):
+AdaptBlockInfo(insts=((30, {'res': '$threshold30.1'}), (32, {'lhs': '$phi30.0', 'rhs': '$threshold30.1', 'res': '$32compare_op.2'}), (36, {'pred': '$32compare_op.2'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={38: (), 48: ()})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=38 nstack_initial=0):
+AdaptBlockInfo(insts=((38, {}),), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={44: ()})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=40 nstack_initial=1):
+AdaptBlockInfo(insts=((42, {}),), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={48: ()})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=44 nstack_initial=0):
+AdaptBlockInfo(insts=((44, {'res': '$const44.0.1'}), (46, {'value': '$const44.0.1'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={48: ()})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=48 nstack_initial=0):
+AdaptBlockInfo(insts=((48, {'res': '$x48.0'}), (50, {'res': '$const50.1.2'}), (52, {'index': '$const50.1.2', 'target': '$x48.0', 'res': '$52binary_subscr.2'}), (56, {'value': '$52binary_subscr.2'}), (58, {'res': '$threshold58.3'}), (60, {'value': '$threshold58.3', 'res': '$60unary_negative.4'}), (62, {'res': '$x162.5'}), (68, {'lhs': '$60unary_negative.4', 'rhs': '$x162.5', 'res': '$68compare_op.6'}), (72, {'pred': '$68compare_op.6'})), outgoing_phis={'$phi74.0': '$x162.5'}, blockstack=(), active_try_block=None, outgoing_edgepushed={74: ('$x162.5',), 84: ('$x162.5',)})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=74 nstack_initial=1):
+AdaptBlockInfo(insts=((74, {'res': '$threshold74.1'}), (76, {'lhs': '$phi74.0', 'rhs': '$threshold74.1', 'res': '$76compare_op.2'}), (80, {'pred': '$76compare_op.2'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={82: (), 92: ()})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=82 nstack_initial=0):
+AdaptBlockInfo(insts=((82, {}),), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={88: ()})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=84 nstack_initial=1):
+AdaptBlockInfo(insts=((86, {}),), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={92: ()})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=88 nstack_initial=0):
+AdaptBlockInfo(insts=((88, {'res': '$const88.0.1'}), (90, {'value': '$const88.0.1'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={92: ()})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=92 nstack_initial=0):
+AdaptBlockInfo(insts=((92, {'res': '$zero_pos92.0'}), (94, {'pred': '$zero_pos92.0'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={96: (), 182: ()})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=96 nstack_initial=0):
+AdaptBlockInfo(insts=((96, {'idx': 0, 'res': '$96load_global.0'}), (106, {'item': '$96load_global.0', 'res': '$106load_attr.2'}), (126, {'res': '$x0126.3'}), (128, {'func': '$106load_attr.2', 'args': ['$x0126.3'], 'kw_names': None, 'res': '$128call.4'}), (136, {'idx': 0, 'res': '$136load_global.5'}), (146, {'item': '$136load_global.5', 'res': '$146load_attr.7'}), (166, {'res': '$x1166.8'}), (168, {'func': '$146load_attr.7', 'args': ['$x1166.8'], 'kw_names': None, 'res': '$168call.9'}), (176, {'lhs': '$128call.4', 'rhs': '$168call.9', 'res': '$176compare_op.10'}), (180, {'retval': '$176compare_op.10', 'castval': '$180return_value.11'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=182 nstack_initial=0):
+AdaptBlockInfo(insts=((182, {'idx': 0, 'res': '$182load_global.0'}), (192, {'item': '$182load_global.0', 'res': '$192load_attr.2'}), (212, {'res': '$x0212.3'}), (214, {'func': '$192load_attr.2', 'args': ['$x0212.3'], 'kw_names': None, 'res': '$214call.4'}), (222, {'idx': 0, 'res': '$222load_global.5'}), (232, {'item': '$222load_global.5', 'res': '$232load_attr.7'}), (252, {'res': '$x1252.8'}), (254, {'func': '$232load_attr.7', 'args': ['$x1252.8'], 'kw_names': None, 'res': '$254call.9'}), (262, {'lhs': '$214call.4', 'rhs': '$254call.9', 'res': '$262compare_op.10'}), (266, {'retval': '$262compare_op.10', 'castval': '$266return_value.11'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.interpreter    | label 0:
+    x = arg(0, name=x)                       ['x']
+    threshold = arg(1, name=threshold)       ['threshold']
+    zero_pos = arg(2, name=zero_pos)         ['zero_pos']
+    $const6.1.1 = const(int, 0)              ['$const6.1.1']
+    x0 = getitem(value=x, index=$const6.1.1, fn=<built-in function getitem>) ['$const6.1.1', 'x', 'x0']
+    $16unary_negative.4 = unary(fn=<built-in function neg>, value=threshold) ['$16unary_negative.4', 'threshold']
+    $24compare_op.6 = $16unary_negative.4 <= x0 ['$16unary_negative.4', '$24compare_op.6', 'x0']
+    $bool28 = global(bool: <class 'bool'>)   ['$bool28']
+    $28pred = call $bool28($24compare_op.6, func=$bool28, args=(Var($24compare_op.6, audio.py:1141),), kws=(), vararg=None, varkwarg=None, target=None) ['$24compare_op.6', '$28pred', '$bool28']
+    $phi30.0 = x0                            ['$phi30.0', 'x0']
+    branch $28pred, 30, 40                   ['$28pred']
+label 30:
+    $32compare_op.2 = $phi30.0 <= threshold  ['$32compare_op.2', '$phi30.0', 'threshold']
+    $bool36 = global(bool: <class 'bool'>)   ['$bool36']
+    $36pred = call $bool36($32compare_op.2, func=$bool36, args=(Var($32compare_op.2, audio.py:1141),), kws=(), vararg=None, varkwarg=None, target=None) ['$32compare_op.2', '$36pred', '$bool36']
+    branch $36pred, 38, 48                   ['$36pred']
+label 38:
+    jump 44                                  []
+label 40:
+    jump 48                                  []
+label 44:
+    x0 = const(int, 0)                       ['x0']
+    jump 48                                  []
+label 48:
+    $const50.1.2 = const(int, -1)            ['$const50.1.2']
+    x1 = getitem(value=x, index=$const50.1.2, fn=<built-in function getitem>) ['$const50.1.2', 'x', 'x1']
+    $60unary_negative.4 = unary(fn=<built-in function neg>, value=threshold) ['$60unary_negative.4', 'threshold']
+    $68compare_op.6 = $60unary_negative.4 <= x1 ['$60unary_negative.4', '$68compare_op.6', 'x1']
+    $bool72 = global(bool: <class 'bool'>)   ['$bool72']
+    $72pred = call $bool72($68compare_op.6, func=$bool72, args=(Var($68compare_op.6, audio.py:1145),), kws=(), vararg=None, varkwarg=None, target=None) ['$68compare_op.6', '$72pred', '$bool72']
+    $phi74.0 = x1                            ['$phi74.0', 'x1']
+    branch $72pred, 74, 84                   ['$72pred']
+label 74:
+    $76compare_op.2 = $phi74.0 <= threshold  ['$76compare_op.2', '$phi74.0', 'threshold']
+    $bool80 = global(bool: <class 'bool'>)   ['$bool80']
+    $80pred = call $bool80($76compare_op.2, func=$bool80, args=(Var($76compare_op.2, audio.py:1145),), kws=(), vararg=None, varkwarg=None, target=None) ['$76compare_op.2', '$80pred', '$bool80']
+    branch $80pred, 82, 92                   ['$80pred']
+label 82:
+    jump 88                                  []
+label 84:
+    jump 92                                  []
+label 88:
+    x1 = const(int, 0)                       ['x1']
+    jump 92                                  []
+label 92:
+    $bool94 = global(bool: <class 'bool'>)   ['$bool94']
+    $94pred = call $bool94(zero_pos, func=$bool94, args=(Var(zero_pos, audio.py:1137),), kws=(), vararg=None, varkwarg=None, target=None) ['$94pred', '$bool94', 'zero_pos']
+    branch $94pred, 96, 182                  ['$94pred']
+label 96:
+    $96load_global.0 = global(np: <module 'numpy' from 'C:\\kodlamalar\\python\\srt-tts-2026-super\\venv\\Lib\\site-packages\\numpy\\__init__.py'>) ['$96load_global.0']
+    $106load_attr.2 = getattr(value=$96load_global.0, attr=signbit) ['$106load_attr.2', '$96load_global.0']
+    $128call.4 = call $106load_attr.2(x0, func=$106load_attr.2, args=[Var(x0, audio.py:1140)], kws=(), vararg=None, varkwarg=None, target=None) ['$106load_attr.2', '$128call.4', 'x0']
+    $136load_global.5 = global(np: <module 'numpy' from 'C:\\kodlamalar\\python\\srt-tts-2026-super\\venv\\Lib\\site-packages\\numpy\\__init__.py'>) ['$136load_global.5']
+    $146load_attr.7 = getattr(value=$136load_global.5, attr=signbit) ['$136load_global.5', '$146load_attr.7']
+    $168call.9 = call $146load_attr.7(x1, func=$146load_attr.7, args=[Var(x1, audio.py:1144)], kws=(), vararg=None, varkwarg=None, target=None) ['$146load_attr.7', '$168call.9', 'x1']
+    $176compare_op.10 = $128call.4 != $168call.9 ['$128call.4', '$168call.9', '$176compare_op.10']
+    $180return_value.11 = cast(value=$176compare_op.10) ['$176compare_op.10', '$180return_value.11']
+    return $180return_value.11               ['$180return_value.11']
+label 182:
+    $182load_global.0 = global(np: <module 'numpy' from 'C:\\kodlamalar\\python\\srt-tts-2026-super\\venv\\Lib\\site-packages\\numpy\\__init__.py'>) ['$182load_global.0']
+    $192load_attr.2 = getattr(value=$182load_global.0, attr=sign) ['$182load_global.0', '$192load_attr.2']
+    $214call.4 = call $192load_attr.2(x0, func=$192load_attr.2, args=[Var(x0, audio.py:1140)], kws=(), vararg=None, varkwarg=None, target=None) ['$192load_attr.2', '$214call.4', 'x0']
+    $222load_global.5 = global(np: <module 'numpy' from 'C:\\kodlamalar\\python\\srt-tts-2026-super\\venv\\Lib\\site-packages\\numpy\\__init__.py'>) ['$222load_global.5']
+    $232load_attr.7 = getattr(value=$222load_global.5, attr=sign) ['$222load_global.5', '$232load_attr.7']
+    $254call.9 = call $232load_attr.7(x1, func=$232load_attr.7, args=[Var(x1, audio.py:1144)], kws=(), vararg=None, varkwarg=None, target=None) ['$232load_attr.7', '$254call.9', 'x1']
+    $262compare_op.10 = $214call.4 != $254call.9 ['$214call.4', '$254call.9', '$262compare_op.10']
+    $266return_value.11 = cast(value=$262compare_op.10) ['$262compare_op.10', '$266return_value.11']
+    return $266return_value.11               ['$266return_value.11']
+
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | bytecode dump:
+>          0	NOP(arg=None, lineno=1023)
+           2	RESUME(arg=0, lineno=1023)
+           4	LOAD_FAST(arg=0, lineno=1026)
+           6	LOAD_CONST(arg=1, lineno=1026)
+           8	BINARY_SUBSCR(arg=None, lineno=1026)
+          12	LOAD_FAST(arg=0, lineno=1026)
+          14	LOAD_CONST(arg=2, lineno=1026)
+          16	BINARY_SUBSCR(arg=None, lineno=1026)
+          20	COMPARE_OP(arg=68, lineno=1026)
+          24	LOAD_FAST(arg=0, lineno=1026)
+          26	LOAD_CONST(arg=1, lineno=1026)
+          28	BINARY_SUBSCR(arg=None, lineno=1026)
+          32	LOAD_FAST(arg=0, lineno=1026)
+          34	LOAD_CONST(arg=3, lineno=1026)
+          36	BINARY_SUBSCR(arg=None, lineno=1026)
+          40	COMPARE_OP(arg=92, lineno=1026)
+          44	BINARY_OP(arg=1, lineno=1026)
+          48	RETURN_VALUE(arg=None, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=0 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=0 nstack_initial=0)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=0, inst=NOP(arg=None, lineno=1023)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=2, inst=RESUME(arg=0, lineno=1023)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=4, inst=LOAD_FAST(arg=0, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=6, inst=LOAD_CONST(arg=1, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=8, inst=BINARY_SUBSCR(arg=None, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0', '$const6.1.1']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=12, inst=LOAD_FAST(arg=0, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=14, inst=LOAD_CONST(arg=2, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$x12.3']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=16, inst=BINARY_SUBSCR(arg=None, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$x12.3', '$const14.4.2']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=20, inst=COMPARE_OP(arg=68, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$16binary_subscr.5']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=24, inst=LOAD_FAST(arg=0, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=26, inst=LOAD_CONST(arg=1, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$x24.7']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=28, inst=BINARY_SUBSCR(arg=None, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$x24.7', '$const26.8.1']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=32, inst=LOAD_FAST(arg=0, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=34, inst=LOAD_CONST(arg=3, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9', '$x32.10']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=36, inst=BINARY_SUBSCR(arg=None, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9', '$x32.10', '$const34.11.3']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=40, inst=COMPARE_OP(arg=92, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9', '$36binary_subscr.12']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=44, inst=BINARY_OP(arg=1, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$40compare_op.13']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=48, inst=RETURN_VALUE(arg=None, lineno=1026)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$binop_and_44.14']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | -------------------------Prune PHIs-------------------------
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | Used_phis: defaultdict(<class 'set'>, {State(pc_initial=0 nstack_initial=0): set()})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | defmap: {}
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | phismap: defaultdict(<class 'set'>, {})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | changing phismap: defaultdict(<class 'set'>, {})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | keep phismap: {}
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | new_out: defaultdict(<class 'dict'>, {})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | ----------------------DONE Prune PHIs-----------------------
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=0 nstack_initial=0):
+AdaptBlockInfo(insts=((0, {}), (2, {}), (4, {'res': '$x4.0'}), (6, {'res': '$const6.1.1'}), (8, {'index': '$const6.1.1', 'target': '$x4.0', 'res': '$8binary_subscr.2'}), (12, {'res': '$x12.3'}), (14, {'res': '$const14.4.2'}), (16, {'index': '$const14.4.2', 'target': '$x12.3', 'res': '$16binary_subscr.5'}), (20, {'lhs': '$8binary_subscr.2', 'rhs': '$16binary_subscr.5', 'res': '$20compare_op.6'}), (24, {'res': '$x24.7'}), (26, {'res': '$const26.8.1'}), (28, {'index': '$const26.8.1', 'target': '$x24.7', 'res': '$28binary_subscr.9'}), (32, {'res': '$x32.10'}), (34, {'res': '$const34.11.3'}), (36, {'index': '$const34.11.3', 'target': '$x32.10', 'res': '$36binary_subscr.12'}), (40, {'lhs': '$28binary_subscr.9', 'rhs': '$36binary_subscr.12', 'res': '$40compare_op.13'}), (44, {'op': '&', 'lhs': '$20compare_op.6', 'rhs': '$40compare_op.13', 'res': '$binop_and_44.14'}), (48, {'retval': '$binop_and_44.14', 'castval': '$48return_value.15'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.interpreter    | label 0:
+    x = arg(0, name=x)                       ['x']
+    $const6.1.1 = const(int, 0)              ['$const6.1.1']
+    $8binary_subscr.2 = getitem(value=x, index=$const6.1.1, fn=<built-in function getitem>) ['$8binary_subscr.2', '$const6.1.1', 'x']
+    $const14.4.2 = const(int, -1)            ['$const14.4.2']
+    $16binary_subscr.5 = getitem(value=x, index=$const14.4.2, fn=<built-in function getitem>) ['$16binary_subscr.5', '$const14.4.2', 'x']
+    $20compare_op.6 = $8binary_subscr.2 > $16binary_subscr.5 ['$16binary_subscr.5', '$20compare_op.6', '$8binary_subscr.2']
+    $const26.8.1 = const(int, 0)             ['$const26.8.1']
+    $28binary_subscr.9 = getitem(value=x, index=$const26.8.1, fn=<built-in function getitem>) ['$28binary_subscr.9', '$const26.8.1', 'x']
+    $const34.11.3 = const(int, 1)            ['$const34.11.3']
+    $36binary_subscr.12 = getitem(value=x, index=$const34.11.3, fn=<built-in function getitem>) ['$36binary_subscr.12', '$const34.11.3', 'x']
+    $40compare_op.13 = $28binary_subscr.9 >= $36binary_subscr.12 ['$28binary_subscr.9', '$36binary_subscr.12', '$40compare_op.13']
+    $binop_and_44.14 = $20compare_op.6 & $40compare_op.13 ['$20compare_op.6', '$40compare_op.13', '$binop_and_44.14']
+    $48return_value.15 = cast(value=$binop_and_44.14) ['$48return_value.15', '$binop_and_44.14']
+    return $48return_value.15                ['$48return_value.15']
+
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | bytecode dump:
+>          0	NOP(arg=None, lineno=1029)
+           2	RESUME(arg=0, lineno=1029)
+           4	LOAD_FAST(arg=0, lineno=1032)
+           6	LOAD_CONST(arg=1, lineno=1032)
+           8	BINARY_SUBSCR(arg=None, lineno=1032)
+          12	LOAD_FAST(arg=0, lineno=1032)
+          14	LOAD_CONST(arg=2, lineno=1032)
+          16	BINARY_SUBSCR(arg=None, lineno=1032)
+          20	COMPARE_OP(arg=2, lineno=1032)
+          24	LOAD_FAST(arg=0, lineno=1032)
+          26	LOAD_CONST(arg=1, lineno=1032)
+          28	BINARY_SUBSCR(arg=None, lineno=1032)
+          32	LOAD_FAST(arg=0, lineno=1032)
+          34	LOAD_CONST(arg=3, lineno=1032)
+          36	BINARY_SUBSCR(arg=None, lineno=1032)
+          40	COMPARE_OP(arg=26, lineno=1032)
+          44	BINARY_OP(arg=1, lineno=1032)
+          48	RETURN_VALUE(arg=None, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=0 nstack_initial=0)])
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=0 nstack_initial=0)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=0, inst=NOP(arg=None, lineno=1029)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=2, inst=RESUME(arg=0, lineno=1029)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=4, inst=LOAD_FAST(arg=0, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=6, inst=LOAD_CONST(arg=1, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=8, inst=BINARY_SUBSCR(arg=None, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0', '$const6.1.1']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=12, inst=LOAD_FAST(arg=0, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=14, inst=LOAD_CONST(arg=2, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$x12.3']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=16, inst=BINARY_SUBSCR(arg=None, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$x12.3', '$const14.4.2']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=20, inst=COMPARE_OP(arg=2, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$16binary_subscr.5']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=24, inst=LOAD_FAST(arg=0, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=26, inst=LOAD_CONST(arg=1, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$x24.7']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=28, inst=BINARY_SUBSCR(arg=None, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$x24.7', '$const26.8.1']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=32, inst=LOAD_FAST(arg=0, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=34, inst=LOAD_CONST(arg=3, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9', '$x32.10']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=36, inst=BINARY_SUBSCR(arg=None, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9', '$x32.10', '$const34.11.3']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=40, inst=COMPARE_OP(arg=26, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9', '$36binary_subscr.12']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=44, inst=BINARY_OP(arg=1, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$40compare_op.13']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | dispatch pc=48, inst=RETURN_VALUE(arg=None, lineno=1032)
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | stack ['$binop_and_44.14']
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | end state. edges=[]
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | -------------------------Prune PHIs-------------------------
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | Used_phis: defaultdict(<class 'set'>, {State(pc_initial=0 nstack_initial=0): set()})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | defmap: {}
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | phismap: defaultdict(<class 'set'>, {})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | changing phismap: defaultdict(<class 'set'>, {})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | keep phismap: {}
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | new_out: defaultdict(<class 'dict'>, {})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | ----------------------DONE Prune PHIs-----------------------
+2026-03-23 00:12:14 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=0 nstack_initial=0):
+AdaptBlockInfo(insts=((0, {}), (2, {}), (4, {'res': '$x4.0'}), (6, {'res': '$const6.1.1'}), (8, {'index': '$const6.1.1', 'target': '$x4.0', 'res': '$8binary_subscr.2'}), (12, {'res': '$x12.3'}), (14, {'res': '$const14.4.2'}), (16, {'index': '$const14.4.2', 'target': '$x12.3', 'res': '$16binary_subscr.5'}), (20, {'lhs': '$8binary_subscr.2', 'rhs': '$16binary_subscr.5', 'res': '$20compare_op.6'}), (24, {'res': '$x24.7'}), (26, {'res': '$const26.8.1'}), (28, {'index': '$const26.8.1', 'target': '$x24.7', 'res': '$28binary_subscr.9'}), (32, {'res': '$x32.10'}), (34, {'res': '$const34.11.3'}), (36, {'index': '$const34.11.3', 'target': '$x32.10', 'res': '$36binary_subscr.12'}), (40, {'lhs': '$28binary_subscr.9', 'rhs': '$36binary_subscr.12', 'res': '$40compare_op.13'}), (44, {'op': '&', 'lhs': '$20compare_op.6', 'rhs': '$40compare_op.13', 'res': '$binop_and_44.14'}), (48, {'retval': '$binop_and_44.14', 'castval': '$48return_value.15'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={})
+2026-03-23 00:12:14 [DEBUG  ] numba.core.interpreter    | label 0:
+    x = arg(0, name=x)                       ['x']
+    $const6.1.1 = const(int, 0)              ['$const6.1.1']
+    $8binary_subscr.2 = getitem(value=x, index=$const6.1.1, fn=<built-in function getitem>) ['$8binary_subscr.2', '$const6.1.1', 'x']
+    $const14.4.2 = const(int, -1)            ['$const14.4.2']
+    $16binary_subscr.5 = getitem(value=x, index=$const14.4.2, fn=<built-in function getitem>) ['$16binary_subscr.5', '$const14.4.2', 'x']
+    $20compare_op.6 = $8binary_subscr.2 < $16binary_subscr.5 ['$16binary_subscr.5', '$20compare_op.6', '$8binary_subscr.2']
+    $const26.8.1 = const(int, 0)             ['$const26.8.1']
+    $28binary_subscr.9 = getitem(value=x, index=$const26.8.1, fn=<built-in function getitem>) ['$28binary_subscr.9', '$const26.8.1', 'x']
+    $const34.11.3 = const(int, 1)            ['$const34.11.3']
+    $36binary_subscr.12 = getitem(value=x, index=$const34.11.3, fn=<built-in function getitem>) ['$36binary_subscr.12', '$const34.11.3', 'x']
+    $40compare_op.13 = $28binary_subscr.9 <= $36binary_subscr.12 ['$28binary_subscr.9', '$36binary_subscr.12', '$40compare_op.13']
+    $binop_and_44.14 = $20compare_op.6 & $40compare_op.13 ['$20compare_op.6', '$40compare_op.13', '$binop_and_44.14']
+    $48return_value.15 = cast(value=$binop_and_44.14) ['$48return_value.15', '$binop_and_44.14']
+    return $48return_value.15                ['$48return_value.15']
+
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | bytecode dump:
+>          0	NOP(arg=None, lineno=416)
+           2	RESUME(arg=0, lineno=416)
+           4	LOAD_FAST(arg=0, lineno=419)
+           6	LOAD_CONST(arg=1, lineno=419)
+           8	BINARY_SUBSCR(arg=None, lineno=419)
+          12	LOAD_FAST(arg=0, lineno=419)
+          14	LOAD_CONST(arg=2, lineno=419)
+          16	BINARY_SUBSCR(arg=None, lineno=419)
+          20	BINARY_OP(arg=0, lineno=419)
+          24	LOAD_CONST(arg=3, lineno=419)
+          26	LOAD_FAST(arg=0, lineno=419)
+          28	LOAD_CONST(arg=4, lineno=419)
+          30	BINARY_SUBSCR(arg=None, lineno=419)
+          34	BINARY_OP(arg=5, lineno=419)
+          38	BINARY_OP(arg=10, lineno=419)
+          42	STORE_FAST(arg=1, lineno=419)
+          44	LOAD_FAST(arg=0, lineno=420)
+          46	LOAD_CONST(arg=1, lineno=420)
+          48	BINARY_SUBSCR(arg=None, lineno=420)
+          52	LOAD_FAST(arg=0, lineno=420)
+          54	LOAD_CONST(arg=2, lineno=420)
+          56	BINARY_SUBSCR(arg=None, lineno=420)
+          60	BINARY_OP(arg=10, lineno=420)
+          64	LOAD_CONST(arg=3, lineno=420)
+          66	BINARY_OP(arg=11, lineno=420)
+          70	STORE_FAST(arg=2, lineno=420)
+          72	LOAD_GLOBAL(arg=1, lineno=422)
+          82	LOAD_ATTR(arg=2, lineno=422)
+         102	LOAD_FAST(arg=2, lineno=422)
+         104	CALL(arg=1, lineno=422)
+         112	LOAD_GLOBAL(arg=1, lineno=422)
+         122	LOAD_ATTR(arg=2, lineno=422)
+         142	LOAD_FAST(arg=1, lineno=422)
+         144	CALL(arg=1, lineno=422)
+         152	COMPARE_OP(arg=92, lineno=422)
+         156	POP_JUMP_IF_FALSE(arg=1, lineno=422)
+         158	RETURN_CONST(arg=4, lineno=425)
+>        160	LOAD_FAST(arg=2, lineno=427)
+         162	UNARY_NEGATIVE(arg=None, lineno=427)
+         164	LOAD_FAST(arg=1, lineno=427)
+         166	BINARY_OP(arg=11, lineno=427)
+         170	RETURN_VALUE(arg=None, lineno=427)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=0 nstack_initial=0)])
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=0 nstack_initial=0)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=0, inst=NOP(arg=None, lineno=416)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=2, inst=RESUME(arg=0, lineno=416)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=4, inst=LOAD_FAST(arg=0, lineno=419)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=6, inst=LOAD_CONST(arg=1, lineno=419)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=8, inst=BINARY_SUBSCR(arg=None, lineno=419)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0', '$const6.1.1']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=12, inst=LOAD_FAST(arg=0, lineno=419)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=14, inst=LOAD_CONST(arg=2, lineno=419)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$x12.3']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=16, inst=BINARY_SUBSCR(arg=None, lineno=419)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$x12.3', '$const14.4.2']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=20, inst=BINARY_OP(arg=0, lineno=419)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$16binary_subscr.5']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=24, inst=LOAD_CONST(arg=3, lineno=419)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$binop_add20.6']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=26, inst=LOAD_FAST(arg=0, lineno=419)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$binop_add20.6', '$const24.7.3']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=28, inst=LOAD_CONST(arg=4, lineno=419)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$binop_add20.6', '$const24.7.3', '$x26.8']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=30, inst=BINARY_SUBSCR(arg=None, lineno=419)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$binop_add20.6', '$const24.7.3', '$x26.8', '$const28.9.4']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=34, inst=BINARY_OP(arg=5, lineno=419)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$binop_add20.6', '$const24.7.3', '$30binary_subscr.10']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=38, inst=BINARY_OP(arg=10, lineno=419)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$binop_add20.6', '$binop_mul34.11']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=42, inst=STORE_FAST(arg=1, lineno=419)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$binop_sub38.12']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=44, inst=LOAD_FAST(arg=0, lineno=420)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=46, inst=LOAD_CONST(arg=1, lineno=420)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$x44.13']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=48, inst=BINARY_SUBSCR(arg=None, lineno=420)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$x44.13', '$const46.14.1']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=52, inst=LOAD_FAST(arg=0, lineno=420)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$48binary_subscr.15']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=54, inst=LOAD_CONST(arg=2, lineno=420)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$48binary_subscr.15', '$x52.16']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=56, inst=BINARY_SUBSCR(arg=None, lineno=420)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$48binary_subscr.15', '$x52.16', '$const54.17.2']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=60, inst=BINARY_OP(arg=10, lineno=420)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$48binary_subscr.15', '$56binary_subscr.18']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=64, inst=LOAD_CONST(arg=3, lineno=420)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$binop_sub60.19']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=66, inst=BINARY_OP(arg=11, lineno=420)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$binop_sub60.19', '$const64.20.3']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=70, inst=STORE_FAST(arg=2, lineno=420)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$binop_truediv66.21']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=72, inst=LOAD_GLOBAL(arg=1, lineno=422)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=82, inst=LOAD_ATTR(arg=2, lineno=422)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$null$72.23', '$72load_global.22']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=102, inst=LOAD_FAST(arg=2, lineno=422)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$null$72.23', '$82load_attr.24']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=104, inst=CALL(arg=1, lineno=422)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$null$72.23', '$82load_attr.24', '$b102.25']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=112, inst=LOAD_GLOBAL(arg=1, lineno=422)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$104call.26']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=122, inst=LOAD_ATTR(arg=2, lineno=422)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$104call.26', '$null$112.28', '$112load_global.27']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=142, inst=LOAD_FAST(arg=1, lineno=422)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$104call.26', '$null$112.28', '$122load_attr.29']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=144, inst=CALL(arg=1, lineno=422)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$104call.26', '$null$112.28', '$122load_attr.29', '$a142.30']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=152, inst=COMPARE_OP(arg=92, lineno=422)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$104call.26', '$144call.31']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=156, inst=POP_JUMP_IF_FALSE(arg=1, lineno=422)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$152compare_op.32']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=158, stack=(), blockstack=(), npush=0), Edge(pc=160, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=158 nstack_initial=0), State(pc_initial=160 nstack_initial=0)])
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=158 nstack_initial=0)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=158, inst=RETURN_CONST(arg=4, lineno=425)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | end state. edges=[]
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=160 nstack_initial=0)])
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=160 nstack_initial=0)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=160, inst=LOAD_FAST(arg=2, lineno=427)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=162, inst=UNARY_NEGATIVE(arg=None, lineno=427)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$b160.0']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=164, inst=LOAD_FAST(arg=1, lineno=427)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$162unary_negative.1']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=166, inst=BINARY_OP(arg=11, lineno=427)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$162unary_negative.1', '$a164.2']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | dispatch pc=170, inst=RETURN_VALUE(arg=None, lineno=427)
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | stack ['$binop_truediv166.3']
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | end state. edges=[]
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | -------------------------Prune PHIs-------------------------
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | Used_phis: defaultdict(<class 'set'>,
+            {State(pc_initial=0 nstack_initial=0): set(),
+             State(pc_initial=158 nstack_initial=0): set(),
+             State(pc_initial=160 nstack_initial=0): set()})
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | defmap: {}
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | phismap: defaultdict(<class 'set'>, {})
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | changing phismap: defaultdict(<class 'set'>, {})
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | keep phismap: {}
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | new_out: defaultdict(<class 'dict'>, {})
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | ----------------------DONE Prune PHIs-----------------------
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=0 nstack_initial=0):
+AdaptBlockInfo(insts=((0, {}), (2, {}), (4, {'res': '$x4.0'}), (6, {'res': '$const6.1.1'}), (8, {'index': '$const6.1.1', 'target': '$x4.0', 'res': '$8binary_subscr.2'}), (12, {'res': '$x12.3'}), (14, {'res': '$const14.4.2'}), (16, {'index': '$const14.4.2', 'target': '$x12.3', 'res': '$16binary_subscr.5'}), (20, {'op': '+', 'lhs': '$8binary_subscr.2', 'rhs': '$16binary_subscr.5', 'res': '$binop_add20.6'}), (24, {'res': '$const24.7.3'}), (26, {'res': '$x26.8'}), (28, {'res': '$const28.9.4'}), (30, {'index': '$const28.9.4', 'target': '$x26.8', 'res': '$30binary_subscr.10'}), (34, {'op': '*', 'lhs': '$const24.7.3', 'rhs': '$30binary_subscr.10', 'res': '$binop_mul34.11'}), (38, {'op': '-', 'lhs': '$binop_add20.6', 'rhs': '$binop_mul34.11', 'res': '$binop_sub38.12'}), (42, {'value': '$binop_sub38.12'}), (44, {'res': '$x44.13'}), (46, {'res': '$const46.14.1'}), (48, {'index': '$const46.14.1', 'target': '$x44.13', 'res': '$48binary_subscr.15'}), (52, {'res': '$x52.16'}), (54, {'res': '$const54.17.2'}), (56, {'index': '$const54.17.2', 'target': '$x52.16', 'res': '$56binary_subscr.18'}), (60, {'op': '-', 'lhs': '$48binary_subscr.15', 'rhs': '$56binary_subscr.18', 'res': '$binop_sub60.19'}), (64, {'res': '$const64.20.3'}), (66, {'op': '/', 'lhs': '$binop_sub60.19', 'rhs': '$const64.20.3', 'res': '$binop_truediv66.21'}), (70, {'value': '$binop_truediv66.21'}), (72, {'idx': 0, 'res': '$72load_global.22'}), (82, {'item': '$72load_global.22', 'res': '$82load_attr.24'}), (102, {'res': '$b102.25'}), (104, {'func': '$82load_attr.24', 'args': ['$b102.25'], 'kw_names': None, 'res': '$104call.26'}), (112, {'idx': 0, 'res': '$112load_global.27'}), (122, {'item': '$112load_global.27', 'res': '$122load_attr.29'}), (142, {'res': '$a142.30'}), (144, {'func': '$122load_attr.29', 'args': ['$a142.30'], 'kw_names': None, 'res': '$144call.31'}), (152, {'lhs': '$104call.26', 'rhs': '$144call.31', 'res': '$152compare_op.32'}), (156, {'pred': '$152compare_op.32'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={158: (), 160: ()})
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=158 nstack_initial=0):
+AdaptBlockInfo(insts=((158, {'retval': '$const158.0', 'castval': '$158return_const.1'}),), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={})
+2026-03-23 00:12:15 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=160 nstack_initial=0):
+AdaptBlockInfo(insts=((160, {'res': '$b160.0'}), (162, {'value': '$b160.0', 'res': '$162unary_negative.1'}), (164, {'res': '$a164.2'}), (166, {'op': '/', 'lhs': '$162unary_negative.1', 'rhs': '$a164.2', 'res': '$binop_truediv166.3'}), (170, {'retval': '$binop_truediv166.3', 'castval': '$170return_value.4'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={})
+2026-03-23 00:12:15 [DEBUG  ] numba.core.interpreter    | label 0:
+    x = arg(0, name=x)                       ['x']
+    $const6.1.1 = const(int, 1)              ['$const6.1.1']
+    $8binary_subscr.2 = getitem(value=x, index=$const6.1.1, fn=<built-in function getitem>) ['$8binary_subscr.2', '$const6.1.1', 'x']
+    $const14.4.2 = const(int, -1)            ['$const14.4.2']
+    $16binary_subscr.5 = getitem(value=x, index=$const14.4.2, fn=<built-in function getitem>) ['$16binary_subscr.5', '$const14.4.2', 'x']
+    $binop_add20.6 = $8binary_subscr.2 + $16binary_subscr.5 ['$16binary_subscr.5', '$8binary_subscr.2', '$binop_add20.6']
+    $const24.7.3 = const(int, 2)             ['$const24.7.3']
+    $const28.9.4 = const(int, 0)             ['$const28.9.4']
+    $30binary_subscr.10 = getitem(value=x, index=$const28.9.4, fn=<built-in function getitem>) ['$30binary_subscr.10', '$const28.9.4', 'x']
+    $binop_mul34.11 = $const24.7.3 * $30binary_subscr.10 ['$30binary_subscr.10', '$binop_mul34.11', '$const24.7.3']
+    a = $binop_add20.6 - $binop_mul34.11     ['$binop_add20.6', '$binop_mul34.11', 'a']
+    $const46.14.1 = const(int, 1)            ['$const46.14.1']
+    $48binary_subscr.15 = getitem(value=x, index=$const46.14.1, fn=<built-in function getitem>) ['$48binary_subscr.15', '$const46.14.1', 'x']
+    $const54.17.2 = const(int, -1)           ['$const54.17.2']
+    $56binary_subscr.18 = getitem(value=x, index=$const54.17.2, fn=<built-in function getitem>) ['$56binary_subscr.18', '$const54.17.2', 'x']
+    $binop_sub60.19 = $48binary_subscr.15 - $56binary_subscr.18 ['$48binary_subscr.15', '$56binary_subscr.18', '$binop_sub60.19']
+    $const64.20.3 = const(int, 2)            ['$const64.20.3']
+    b = $binop_sub60.19 / $const64.20.3      ['$binop_sub60.19', '$const64.20.3', 'b']
+    $72load_global.22 = global(np: <module 'numpy' from 'C:\\kodlamalar\\python\\srt-tts-2026-super\\venv\\Lib\\site-packages\\numpy\\__init__.py'>) ['$72load_global.22']
+    $82load_attr.24 = getattr(value=$72load_global.22, attr=abs) ['$72load_global.22', '$82load_attr.24']
+    $104call.26 = call $82load_attr.24(b, func=$82load_attr.24, args=[Var(b, pitch.py:420)], kws=(), vararg=None, varkwarg=None, target=None) ['$104call.26', '$82load_attr.24', 'b']
+    $112load_global.27 = global(np: <module 'numpy' from 'C:\\kodlamalar\\python\\srt-tts-2026-super\\venv\\Lib\\site-packages\\numpy\\__init__.py'>) ['$112load_global.27']
+    $122load_attr.29 = getattr(value=$112load_global.27, attr=abs) ['$112load_global.27', '$122load_attr.29']
+    $144call.31 = call $122load_attr.29(a, func=$122load_attr.29, args=[Var(a, pitch.py:419)], kws=(), vararg=None, varkwarg=None, target=None) ['$122load_attr.29', '$144call.31', 'a']
+    $152compare_op.32 = $104call.26 >= $144call.31 ['$104call.26', '$144call.31', '$152compare_op.32']
+    $bool156 = global(bool: <class 'bool'>)  ['$bool156']
+    $156pred = call $bool156($152compare_op.32, func=$bool156, args=(Var($152compare_op.32, pitch.py:422),), kws=(), vararg=None, varkwarg=None, target=None) ['$152compare_op.32', '$156pred', '$bool156']
+    branch $156pred, 158, 160                ['$156pred']
+label 158:
+    $const158.0 = const(int, 0)              ['$const158.0']
+    $158return_const.1 = cast(value=$const158.0) ['$158return_const.1', '$const158.0']
+    return $158return_const.1                ['$158return_const.1']
+label 160:
+    $162unary_negative.1 = unary(fn=<built-in function neg>, value=b) ['$162unary_negative.1', 'b']
+    $binop_truediv166.3 = $162unary_negative.1 / a ['$162unary_negative.1', '$binop_truediv166.3', 'a']
+    $170return_value.4 = cast(value=$binop_truediv166.3) ['$170return_value.4', '$binop_truediv166.3']
+    return $170return_value.4                ['$170return_value.4']
+
+2026-03-23 00:13:54 [INFO   ] DubSync.SrtParser         | Kodlama algılandı: utf-8 (güven: 85.7%)
+2026-03-23 00:13:54 [INFO   ] DubSync.SrtParser         | SRT yüklendi: 2542 satır, 2 konuşmacı, süre: 01:51:35,460
+2026-03-23 00:13:54 [INFO   ] DubSync.SubtitleTable     | Tablo yüklendi: 2542 satır
+2026-03-23 00:13:54 [INFO   ] DubSync.CharacterPanel    | Karakter paneli yüklendi: 2 karakter
+2026-03-23 00:13:54 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_01 → Vladimir (Didi)
+2026-03-23 00:13:54 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → 
+2026-03-23 00:13:54 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:14:03 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:14:03 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:14:40 [INFO   ] DubSync.EdgeEngine        | Edge TTS başlatıldı: 322 ses yüklendi.
+2026-03-23 00:14:42 [DEBUG  ] pydub.converter           | subprocess.call(['ffmpeg', '-y', '-f', 'mp3', '-i', 'C:\\Users\\Reci\\AppData\\Local\\Temp\\dubsync_preview\\preview_0f510c80.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2026-03-23 00:14:42 [DEBUG  ] DubSync.EdgeEngine        | MP3→WAV dönüşümü (pydub): C:\Users\Reci\AppData\Local\Temp\dubsync_preview\preview_0f510c80.wav
+2026-03-23 00:17:36 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:17:36 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_01 → Vladimir (Didi)
+2026-03-23 00:17:36 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → 
+2026-03-23 00:17:36 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:17:36 [INFO   ] DubSync.Main              | DubSync Pro kapatıldı. Çıkış kodu: 0
+2026-03-23 00:18:46 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 00:18:46 [INFO   ] DubSync.Main              | DubSync Pro v1.0 başlatılıyor...
+2026-03-23 00:18:46 [INFO   ] DubSync.Main              | Python: 3.12.0
+2026-03-23 00:18:46 [INFO   ] DubSync.Main              | Çalışma dizini: C:\kodlamalar\python\srt-tts-2026-super
+2026-03-23 00:18:46 [INFO   ] DubSync.Main              | Mod: Python script
+2026-03-23 00:18:46 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 00:18:46 [INFO   ] DubSync.ConfigManager     | Ayar dosyası yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:18:46 [INFO   ] DubSync.Main              | Ayarlar yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:18:46 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:18:46 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:18:46 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'den yüklendi.
+2026-03-23 00:18:46 [INFO   ] DubSync.MainWindow        | Ana pencere oluşturuldu.
+2026-03-23 00:18:46 [INFO   ] DubSync.Main              | Ana pencere gösterildi. Uygulama hazır.
+2026-03-23 00:18:49 [DEBUG  ] torio._extension.utils    | Loading FFmpeg6
+2026-03-23 00:18:49 [DEBUG  ] torio._extension.utils    | Failed to load FFmpeg6 extension.
+Traceback (most recent call last):
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 116, in _find_ffmpeg_extension
+    ext = _find_versionsed_ffmpeg_extension(ffmpeg_ver)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 108, in _find_versionsed_ffmpeg_extension
+    _load_lib(lib)
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 94, in _load_lib
+    torch.ops.load_library(path)
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torch\_ops.py", line 1478, in load_library
+    ctypes.CDLL(path)
+  File "C:\Users\Reci\AppData\Local\Programs\Python\Python312\Lib\ctypes\__init__.py", line 379, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: Could not find module 'C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\lib\libtorio_ffmpeg6.pyd' (or one of its dependencies). Try using the full path with constructor syntax.
+2026-03-23 00:18:49 [DEBUG  ] torio._extension.utils    | Loading FFmpeg5
+2026-03-23 00:18:49 [DEBUG  ] torio._extension.utils    | Failed to load FFmpeg5 extension.
+Traceback (most recent call last):
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 116, in _find_ffmpeg_extension
+    ext = _find_versionsed_ffmpeg_extension(ffmpeg_ver)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 108, in _find_versionsed_ffmpeg_extension
+    _load_lib(lib)
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 94, in _load_lib
+    torch.ops.load_library(path)
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torch\_ops.py", line 1478, in load_library
+    ctypes.CDLL(path)
+  File "C:\Users\Reci\AppData\Local\Programs\Python\Python312\Lib\ctypes\__init__.py", line 379, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: Could not find module 'C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\lib\libtorio_ffmpeg5.pyd' (or one of its dependencies). Try using the full path with constructor syntax.
+2026-03-23 00:18:49 [DEBUG  ] torio._extension.utils    | Loading FFmpeg4
+2026-03-23 00:18:49 [DEBUG  ] torio._extension.utils    | Failed to load FFmpeg4 extension.
+Traceback (most recent call last):
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 116, in _find_ffmpeg_extension
+    ext = _find_versionsed_ffmpeg_extension(ffmpeg_ver)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 108, in _find_versionsed_ffmpeg_extension
+    _load_lib(lib)
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 94, in _load_lib
+    torch.ops.load_library(path)
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torch\_ops.py", line 1478, in load_library
+    ctypes.CDLL(path)
+  File "C:\Users\Reci\AppData\Local\Programs\Python\Python312\Lib\ctypes\__init__.py", line 379, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: Could not find module 'C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\lib\libtorio_ffmpeg4.pyd' (or one of its dependencies). Try using the full path with constructor syntax.
+2026-03-23 00:18:49 [DEBUG  ] torio._extension.utils    | Loading FFmpeg
+2026-03-23 00:18:49 [DEBUG  ] torio._extension.utils    | Failed to load FFmpeg extension.
+Traceback (most recent call last):
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 116, in _find_ffmpeg_extension
+    ext = _find_versionsed_ffmpeg_extension(ffmpeg_ver)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\kodlamalar\python\srt-tts-2026-super\venv\Lib\site-packages\torio\_extension\utils.py", line 106, in _find_versionsed_ffmpeg_extension
+    raise RuntimeError(f"FFmpeg{version} extension is not available.")
+RuntimeError: FFmpeg extension is not available.
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | bytecode dump:
+>          0	NOP(arg=None, lineno=1137)
+           2	RESUME(arg=0, lineno=1137)
+           4	LOAD_FAST(arg=0, lineno=1140)
+           6	LOAD_CONST(arg=1, lineno=1140)
+           8	BINARY_SUBSCR(arg=None, lineno=1140)
+          12	STORE_FAST(arg=3, lineno=1140)
+          14	LOAD_FAST(arg=1, lineno=1141)
+          16	UNARY_NEGATIVE(arg=None, lineno=1141)
+          18	LOAD_FAST(arg=3, lineno=1141)
+          20	SWAP(arg=2, lineno=1141)
+          22	COPY(arg=2, lineno=1141)
+          24	COMPARE_OP(arg=26, lineno=1141)
+          28	POP_JUMP_IF_FALSE(arg=5, lineno=1141)
+          30	LOAD_FAST(arg=1, lineno=1141)
+          32	COMPARE_OP(arg=26, lineno=1141)
+          36	POP_JUMP_IF_FALSE(arg=5, lineno=1141)
+          38	JUMP_FORWARD(arg=2, lineno=1141)
+>         40	POP_TOP(arg=None, lineno=1141)
+          42	JUMP_FORWARD(arg=2, lineno=1141)
+>         44	LOAD_CONST(arg=1, lineno=1142)
+          46	STORE_FAST(arg=3, lineno=1142)
+>         48	LOAD_FAST(arg=0, lineno=1144)
+          50	LOAD_CONST(arg=2, lineno=1144)
+          52	BINARY_SUBSCR(arg=None, lineno=1144)
+          56	STORE_FAST(arg=4, lineno=1144)
+          58	LOAD_FAST(arg=1, lineno=1145)
+          60	UNARY_NEGATIVE(arg=None, lineno=1145)
+          62	LOAD_FAST(arg=4, lineno=1145)
+          64	SWAP(arg=2, lineno=1145)
+          66	COPY(arg=2, lineno=1145)
+          68	COMPARE_OP(arg=26, lineno=1145)
+          72	POP_JUMP_IF_FALSE(arg=5, lineno=1145)
+          74	LOAD_FAST(arg=1, lineno=1145)
+          76	COMPARE_OP(arg=26, lineno=1145)
+          80	POP_JUMP_IF_FALSE(arg=5, lineno=1145)
+          82	JUMP_FORWARD(arg=2, lineno=1145)
+>         84	POP_TOP(arg=None, lineno=1145)
+          86	JUMP_FORWARD(arg=2, lineno=1145)
+>         88	LOAD_CONST(arg=1, lineno=1146)
+          90	STORE_FAST(arg=4, lineno=1146)
+>         92	LOAD_FAST(arg=2, lineno=1148)
+          94	POP_JUMP_IF_FALSE(arg=43, lineno=1148)
+          96	LOAD_GLOBAL(arg=1, lineno=1149)
+         106	LOAD_ATTR(arg=2, lineno=1149)
+         126	LOAD_FAST(arg=3, lineno=1149)
+         128	CALL(arg=1, lineno=1149)
+         136	LOAD_GLOBAL(arg=1, lineno=1149)
+         146	LOAD_ATTR(arg=2, lineno=1149)
+         166	LOAD_FAST(arg=4, lineno=1149)
+         168	CALL(arg=1, lineno=1149)
+         176	COMPARE_OP(arg=55, lineno=1149)
+         180	RETURN_VALUE(arg=None, lineno=1149)
+>        182	LOAD_GLOBAL(arg=1, lineno=1151)
+         192	LOAD_ATTR(arg=4, lineno=1151)
+         212	LOAD_FAST(arg=3, lineno=1151)
+         214	CALL(arg=1, lineno=1151)
+         222	LOAD_GLOBAL(arg=1, lineno=1151)
+         232	LOAD_ATTR(arg=4, lineno=1151)
+         252	LOAD_FAST(arg=4, lineno=1151)
+         254	CALL(arg=1, lineno=1151)
+         262	COMPARE_OP(arg=55, lineno=1151)
+         266	RETURN_VALUE(arg=None, lineno=1151)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=0 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=0 nstack_initial=0)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=0, inst=NOP(arg=None, lineno=1137)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=2, inst=RESUME(arg=0, lineno=1137)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=4, inst=LOAD_FAST(arg=0, lineno=1140)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=6, inst=LOAD_CONST(arg=1, lineno=1140)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=8, inst=BINARY_SUBSCR(arg=None, lineno=1140)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0', '$const6.1.1']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=12, inst=STORE_FAST(arg=3, lineno=1140)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=14, inst=LOAD_FAST(arg=1, lineno=1141)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=16, inst=UNARY_NEGATIVE(arg=None, lineno=1141)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$threshold14.3']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=18, inst=LOAD_FAST(arg=3, lineno=1141)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$16unary_negative.4']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=20, inst=SWAP(arg=2, lineno=1141)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$16unary_negative.4', '$x018.5']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=22, inst=COPY(arg=2, lineno=1141)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$x018.5', '$16unary_negative.4']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=24, inst=COMPARE_OP(arg=26, lineno=1141)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$x018.5', '$16unary_negative.4', '$x018.5']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=28, inst=POP_JUMP_IF_FALSE(arg=5, lineno=1141)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$x018.5', '$24compare_op.6']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=30, stack=('$x018.5',), blockstack=(), npush=0), Edge(pc=40, stack=('$x018.5',), blockstack=(), npush=0)]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=30 nstack_initial=1), State(pc_initial=40 nstack_initial=1)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: ['$phi30.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=30 nstack_initial=1)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=30, inst=LOAD_FAST(arg=1, lineno=1141)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$phi30.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=32, inst=COMPARE_OP(arg=26, lineno=1141)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$phi30.0', '$threshold30.1']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=36, inst=POP_JUMP_IF_FALSE(arg=5, lineno=1141)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$32compare_op.2']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=38, stack=(), blockstack=(), npush=0), Edge(pc=48, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=40 nstack_initial=1), State(pc_initial=38 nstack_initial=0), State(pc_initial=48 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: ['$phi40.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=40 nstack_initial=1)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=40, inst=POP_TOP(arg=None, lineno=1141)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$phi40.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=42, inst=JUMP_FORWARD(arg=2, lineno=1141)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=48, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=38 nstack_initial=0), State(pc_initial=48 nstack_initial=0), State(pc_initial=48 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=38 nstack_initial=0)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=38, inst=JUMP_FORWARD(arg=2, lineno=1141)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=44, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=48 nstack_initial=0), State(pc_initial=48 nstack_initial=0), State(pc_initial=44 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=48 nstack_initial=0)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=48, inst=LOAD_FAST(arg=0, lineno=1144)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=50, inst=LOAD_CONST(arg=2, lineno=1144)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$x48.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=52, inst=BINARY_SUBSCR(arg=None, lineno=1144)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$x48.0', '$const50.1.2']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=56, inst=STORE_FAST(arg=4, lineno=1144)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$52binary_subscr.2']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=58, inst=LOAD_FAST(arg=1, lineno=1145)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=60, inst=UNARY_NEGATIVE(arg=None, lineno=1145)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$threshold58.3']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=62, inst=LOAD_FAST(arg=4, lineno=1145)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$60unary_negative.4']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=64, inst=SWAP(arg=2, lineno=1145)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$60unary_negative.4', '$x162.5']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=66, inst=COPY(arg=2, lineno=1145)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$x162.5', '$60unary_negative.4']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=68, inst=COMPARE_OP(arg=26, lineno=1145)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$x162.5', '$60unary_negative.4', '$x162.5']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=72, inst=POP_JUMP_IF_FALSE(arg=5, lineno=1145)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$x162.5', '$68compare_op.6']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=74, stack=('$x162.5',), blockstack=(), npush=0), Edge(pc=84, stack=('$x162.5',), blockstack=(), npush=0)]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=48 nstack_initial=0), State(pc_initial=44 nstack_initial=0), State(pc_initial=74 nstack_initial=1), State(pc_initial=84 nstack_initial=1)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=44 nstack_initial=0), State(pc_initial=74 nstack_initial=1), State(pc_initial=84 nstack_initial=1)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=44 nstack_initial=0)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=44, inst=LOAD_CONST(arg=1, lineno=1142)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=46, inst=STORE_FAST(arg=3, lineno=1142)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$const44.0.1']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=48, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=74 nstack_initial=1), State(pc_initial=84 nstack_initial=1), State(pc_initial=48 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: ['$phi74.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=74 nstack_initial=1)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=74, inst=LOAD_FAST(arg=1, lineno=1145)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$phi74.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=76, inst=COMPARE_OP(arg=26, lineno=1145)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$phi74.0', '$threshold74.1']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=80, inst=POP_JUMP_IF_FALSE(arg=5, lineno=1145)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$76compare_op.2']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=82, stack=(), blockstack=(), npush=0), Edge(pc=92, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=84 nstack_initial=1), State(pc_initial=48 nstack_initial=0), State(pc_initial=82 nstack_initial=0), State(pc_initial=92 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: ['$phi84.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=84 nstack_initial=1)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=84, inst=POP_TOP(arg=None, lineno=1145)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$phi84.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=86, inst=JUMP_FORWARD(arg=2, lineno=1145)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=92, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=48 nstack_initial=0), State(pc_initial=82 nstack_initial=0), State(pc_initial=92 nstack_initial=0), State(pc_initial=92 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=82 nstack_initial=0), State(pc_initial=92 nstack_initial=0), State(pc_initial=92 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=82 nstack_initial=0)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=82, inst=JUMP_FORWARD(arg=2, lineno=1145)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=88, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=92 nstack_initial=0), State(pc_initial=92 nstack_initial=0), State(pc_initial=88 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=92 nstack_initial=0)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=92, inst=LOAD_FAST(arg=2, lineno=1148)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=94, inst=POP_JUMP_IF_FALSE(arg=43, lineno=1148)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$zero_pos92.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=96, stack=(), blockstack=(), npush=0), Edge(pc=182, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=92 nstack_initial=0), State(pc_initial=88 nstack_initial=0), State(pc_initial=96 nstack_initial=0), State(pc_initial=182 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=88 nstack_initial=0), State(pc_initial=96 nstack_initial=0), State(pc_initial=182 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=88 nstack_initial=0)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=88, inst=LOAD_CONST(arg=1, lineno=1146)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=90, inst=STORE_FAST(arg=4, lineno=1146)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$const88.0.1']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=92, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=96 nstack_initial=0), State(pc_initial=182 nstack_initial=0), State(pc_initial=92 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=96 nstack_initial=0)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=96, inst=LOAD_GLOBAL(arg=1, lineno=1149)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=106, inst=LOAD_ATTR(arg=2, lineno=1149)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$null$96.1', '$96load_global.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=126, inst=LOAD_FAST(arg=3, lineno=1149)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$null$96.1', '$106load_attr.2']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=128, inst=CALL(arg=1, lineno=1149)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$null$96.1', '$106load_attr.2', '$x0126.3']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=136, inst=LOAD_GLOBAL(arg=1, lineno=1149)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$128call.4']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=146, inst=LOAD_ATTR(arg=2, lineno=1149)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$128call.4', '$null$136.6', '$136load_global.5']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=166, inst=LOAD_FAST(arg=4, lineno=1149)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$128call.4', '$null$136.6', '$146load_attr.7']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=168, inst=CALL(arg=1, lineno=1149)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$128call.4', '$null$136.6', '$146load_attr.7', '$x1166.8']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=176, inst=COMPARE_OP(arg=55, lineno=1149)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$128call.4', '$168call.9']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=180, inst=RETURN_VALUE(arg=None, lineno=1149)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$176compare_op.10']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=182 nstack_initial=0), State(pc_initial=92 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=182 nstack_initial=0)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=182, inst=LOAD_GLOBAL(arg=1, lineno=1151)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=192, inst=LOAD_ATTR(arg=4, lineno=1151)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$null$182.1', '$182load_global.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=212, inst=LOAD_FAST(arg=3, lineno=1151)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$null$182.1', '$192load_attr.2']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=214, inst=CALL(arg=1, lineno=1151)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$null$182.1', '$192load_attr.2', '$x0212.3']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=222, inst=LOAD_GLOBAL(arg=1, lineno=1151)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$214call.4']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=232, inst=LOAD_ATTR(arg=4, lineno=1151)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$214call.4', '$null$222.6', '$222load_global.5']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=252, inst=LOAD_FAST(arg=4, lineno=1151)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$214call.4', '$null$222.6', '$232load_attr.7']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=254, inst=CALL(arg=1, lineno=1151)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$214call.4', '$null$222.6', '$232load_attr.7', '$x1252.8']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=262, inst=COMPARE_OP(arg=55, lineno=1151)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$214call.4', '$254call.9']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=266, inst=RETURN_VALUE(arg=None, lineno=1151)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$262compare_op.10']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=92 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | -------------------------Prune PHIs-------------------------
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | Used_phis: defaultdict(<class 'set'>,
+            {State(pc_initial=0 nstack_initial=0): set(),
+             State(pc_initial=30 nstack_initial=1): {'$phi30.0'},
+             State(pc_initial=38 nstack_initial=0): set(),
+             State(pc_initial=40 nstack_initial=1): set(),
+             State(pc_initial=44 nstack_initial=0): set(),
+             State(pc_initial=48 nstack_initial=0): set(),
+             State(pc_initial=74 nstack_initial=1): {'$phi74.0'},
+             State(pc_initial=82 nstack_initial=0): set(),
+             State(pc_initial=84 nstack_initial=1): set(),
+             State(pc_initial=88 nstack_initial=0): set(),
+             State(pc_initial=92 nstack_initial=0): set(),
+             State(pc_initial=96 nstack_initial=0): set(),
+             State(pc_initial=182 nstack_initial=0): set()})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | defmap: {'$phi30.0': State(pc_initial=0 nstack_initial=0),
+ '$phi40.0': State(pc_initial=0 nstack_initial=0),
+ '$phi74.0': State(pc_initial=48 nstack_initial=0),
+ '$phi84.0': State(pc_initial=48 nstack_initial=0)}
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | phismap: defaultdict(<class 'set'>,
+            {'$phi30.0': {('$x018.5', State(pc_initial=0 nstack_initial=0))},
+             '$phi40.0': {('$x018.5', State(pc_initial=0 nstack_initial=0))},
+             '$phi74.0': {('$x162.5', State(pc_initial=48 nstack_initial=0))},
+             '$phi84.0': {('$x162.5', State(pc_initial=48 nstack_initial=0))}})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | changing phismap: defaultdict(<class 'set'>,
+            {'$phi30.0': {('$x018.5', State(pc_initial=0 nstack_initial=0))},
+             '$phi40.0': {('$x018.5', State(pc_initial=0 nstack_initial=0))},
+             '$phi74.0': {('$x162.5', State(pc_initial=48 nstack_initial=0))},
+             '$phi84.0': {('$x162.5', State(pc_initial=48 nstack_initial=0))}})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | keep phismap: {'$phi30.0': {('$x018.5', State(pc_initial=0 nstack_initial=0))},
+ '$phi74.0': {('$x162.5', State(pc_initial=48 nstack_initial=0))}}
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | new_out: defaultdict(<class 'dict'>,
+            {State(pc_initial=0 nstack_initial=0): {'$phi30.0': '$x018.5'},
+             State(pc_initial=48 nstack_initial=0): {'$phi74.0': '$x162.5'}})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | ----------------------DONE Prune PHIs-----------------------
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=0 nstack_initial=0):
+AdaptBlockInfo(insts=((0, {}), (2, {}), (4, {'res': '$x4.0'}), (6, {'res': '$const6.1.1'}), (8, {'index': '$const6.1.1', 'target': '$x4.0', 'res': '$8binary_subscr.2'}), (12, {'value': '$8binary_subscr.2'}), (14, {'res': '$threshold14.3'}), (16, {'value': '$threshold14.3', 'res': '$16unary_negative.4'}), (18, {'res': '$x018.5'}), (24, {'lhs': '$16unary_negative.4', 'rhs': '$x018.5', 'res': '$24compare_op.6'}), (28, {'pred': '$24compare_op.6'})), outgoing_phis={'$phi30.0': '$x018.5'}, blockstack=(), active_try_block=None, outgoing_edgepushed={30: ('$x018.5',), 40: ('$x018.5',)})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=30 nstack_initial=1):
+AdaptBlockInfo(insts=((30, {'res': '$threshold30.1'}), (32, {'lhs': '$phi30.0', 'rhs': '$threshold30.1', 'res': '$32compare_op.2'}), (36, {'pred': '$32compare_op.2'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={38: (), 48: ()})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=38 nstack_initial=0):
+AdaptBlockInfo(insts=((38, {}),), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={44: ()})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=40 nstack_initial=1):
+AdaptBlockInfo(insts=((42, {}),), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={48: ()})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=44 nstack_initial=0):
+AdaptBlockInfo(insts=((44, {'res': '$const44.0.1'}), (46, {'value': '$const44.0.1'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={48: ()})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=48 nstack_initial=0):
+AdaptBlockInfo(insts=((48, {'res': '$x48.0'}), (50, {'res': '$const50.1.2'}), (52, {'index': '$const50.1.2', 'target': '$x48.0', 'res': '$52binary_subscr.2'}), (56, {'value': '$52binary_subscr.2'}), (58, {'res': '$threshold58.3'}), (60, {'value': '$threshold58.3', 'res': '$60unary_negative.4'}), (62, {'res': '$x162.5'}), (68, {'lhs': '$60unary_negative.4', 'rhs': '$x162.5', 'res': '$68compare_op.6'}), (72, {'pred': '$68compare_op.6'})), outgoing_phis={'$phi74.0': '$x162.5'}, blockstack=(), active_try_block=None, outgoing_edgepushed={74: ('$x162.5',), 84: ('$x162.5',)})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=74 nstack_initial=1):
+AdaptBlockInfo(insts=((74, {'res': '$threshold74.1'}), (76, {'lhs': '$phi74.0', 'rhs': '$threshold74.1', 'res': '$76compare_op.2'}), (80, {'pred': '$76compare_op.2'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={82: (), 92: ()})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=82 nstack_initial=0):
+AdaptBlockInfo(insts=((82, {}),), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={88: ()})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=84 nstack_initial=1):
+AdaptBlockInfo(insts=((86, {}),), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={92: ()})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=88 nstack_initial=0):
+AdaptBlockInfo(insts=((88, {'res': '$const88.0.1'}), (90, {'value': '$const88.0.1'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={92: ()})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=92 nstack_initial=0):
+AdaptBlockInfo(insts=((92, {'res': '$zero_pos92.0'}), (94, {'pred': '$zero_pos92.0'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={96: (), 182: ()})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=96 nstack_initial=0):
+AdaptBlockInfo(insts=((96, {'idx': 0, 'res': '$96load_global.0'}), (106, {'item': '$96load_global.0', 'res': '$106load_attr.2'}), (126, {'res': '$x0126.3'}), (128, {'func': '$106load_attr.2', 'args': ['$x0126.3'], 'kw_names': None, 'res': '$128call.4'}), (136, {'idx': 0, 'res': '$136load_global.5'}), (146, {'item': '$136load_global.5', 'res': '$146load_attr.7'}), (166, {'res': '$x1166.8'}), (168, {'func': '$146load_attr.7', 'args': ['$x1166.8'], 'kw_names': None, 'res': '$168call.9'}), (176, {'lhs': '$128call.4', 'rhs': '$168call.9', 'res': '$176compare_op.10'}), (180, {'retval': '$176compare_op.10', 'castval': '$180return_value.11'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=182 nstack_initial=0):
+AdaptBlockInfo(insts=((182, {'idx': 0, 'res': '$182load_global.0'}), (192, {'item': '$182load_global.0', 'res': '$192load_attr.2'}), (212, {'res': '$x0212.3'}), (214, {'func': '$192load_attr.2', 'args': ['$x0212.3'], 'kw_names': None, 'res': '$214call.4'}), (222, {'idx': 0, 'res': '$222load_global.5'}), (232, {'item': '$222load_global.5', 'res': '$232load_attr.7'}), (252, {'res': '$x1252.8'}), (254, {'func': '$232load_attr.7', 'args': ['$x1252.8'], 'kw_names': None, 'res': '$254call.9'}), (262, {'lhs': '$214call.4', 'rhs': '$254call.9', 'res': '$262compare_op.10'}), (266, {'retval': '$262compare_op.10', 'castval': '$266return_value.11'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.interpreter    | label 0:
+    x = arg(0, name=x)                       ['x']
+    threshold = arg(1, name=threshold)       ['threshold']
+    zero_pos = arg(2, name=zero_pos)         ['zero_pos']
+    $const6.1.1 = const(int, 0)              ['$const6.1.1']
+    x0 = getitem(value=x, index=$const6.1.1, fn=<built-in function getitem>) ['$const6.1.1', 'x', 'x0']
+    $16unary_negative.4 = unary(fn=<built-in function neg>, value=threshold) ['$16unary_negative.4', 'threshold']
+    $24compare_op.6 = $16unary_negative.4 <= x0 ['$16unary_negative.4', '$24compare_op.6', 'x0']
+    $bool28 = global(bool: <class 'bool'>)   ['$bool28']
+    $28pred = call $bool28($24compare_op.6, func=$bool28, args=(Var($24compare_op.6, audio.py:1141),), kws=(), vararg=None, varkwarg=None, target=None) ['$24compare_op.6', '$28pred', '$bool28']
+    $phi30.0 = x0                            ['$phi30.0', 'x0']
+    branch $28pred, 30, 40                   ['$28pred']
+label 30:
+    $32compare_op.2 = $phi30.0 <= threshold  ['$32compare_op.2', '$phi30.0', 'threshold']
+    $bool36 = global(bool: <class 'bool'>)   ['$bool36']
+    $36pred = call $bool36($32compare_op.2, func=$bool36, args=(Var($32compare_op.2, audio.py:1141),), kws=(), vararg=None, varkwarg=None, target=None) ['$32compare_op.2', '$36pred', '$bool36']
+    branch $36pred, 38, 48                   ['$36pred']
+label 38:
+    jump 44                                  []
+label 40:
+    jump 48                                  []
+label 44:
+    x0 = const(int, 0)                       ['x0']
+    jump 48                                  []
+label 48:
+    $const50.1.2 = const(int, -1)            ['$const50.1.2']
+    x1 = getitem(value=x, index=$const50.1.2, fn=<built-in function getitem>) ['$const50.1.2', 'x', 'x1']
+    $60unary_negative.4 = unary(fn=<built-in function neg>, value=threshold) ['$60unary_negative.4', 'threshold']
+    $68compare_op.6 = $60unary_negative.4 <= x1 ['$60unary_negative.4', '$68compare_op.6', 'x1']
+    $bool72 = global(bool: <class 'bool'>)   ['$bool72']
+    $72pred = call $bool72($68compare_op.6, func=$bool72, args=(Var($68compare_op.6, audio.py:1145),), kws=(), vararg=None, varkwarg=None, target=None) ['$68compare_op.6', '$72pred', '$bool72']
+    $phi74.0 = x1                            ['$phi74.0', 'x1']
+    branch $72pred, 74, 84                   ['$72pred']
+label 74:
+    $76compare_op.2 = $phi74.0 <= threshold  ['$76compare_op.2', '$phi74.0', 'threshold']
+    $bool80 = global(bool: <class 'bool'>)   ['$bool80']
+    $80pred = call $bool80($76compare_op.2, func=$bool80, args=(Var($76compare_op.2, audio.py:1145),), kws=(), vararg=None, varkwarg=None, target=None) ['$76compare_op.2', '$80pred', '$bool80']
+    branch $80pred, 82, 92                   ['$80pred']
+label 82:
+    jump 88                                  []
+label 84:
+    jump 92                                  []
+label 88:
+    x1 = const(int, 0)                       ['x1']
+    jump 92                                  []
+label 92:
+    $bool94 = global(bool: <class 'bool'>)   ['$bool94']
+    $94pred = call $bool94(zero_pos, func=$bool94, args=(Var(zero_pos, audio.py:1137),), kws=(), vararg=None, varkwarg=None, target=None) ['$94pred', '$bool94', 'zero_pos']
+    branch $94pred, 96, 182                  ['$94pred']
+label 96:
+    $96load_global.0 = global(np: <module 'numpy' from 'C:\\kodlamalar\\python\\srt-tts-2026-super\\venv\\Lib\\site-packages\\numpy\\__init__.py'>) ['$96load_global.0']
+    $106load_attr.2 = getattr(value=$96load_global.0, attr=signbit) ['$106load_attr.2', '$96load_global.0']
+    $128call.4 = call $106load_attr.2(x0, func=$106load_attr.2, args=[Var(x0, audio.py:1140)], kws=(), vararg=None, varkwarg=None, target=None) ['$106load_attr.2', '$128call.4', 'x0']
+    $136load_global.5 = global(np: <module 'numpy' from 'C:\\kodlamalar\\python\\srt-tts-2026-super\\venv\\Lib\\site-packages\\numpy\\__init__.py'>) ['$136load_global.5']
+    $146load_attr.7 = getattr(value=$136load_global.5, attr=signbit) ['$136load_global.5', '$146load_attr.7']
+    $168call.9 = call $146load_attr.7(x1, func=$146load_attr.7, args=[Var(x1, audio.py:1144)], kws=(), vararg=None, varkwarg=None, target=None) ['$146load_attr.7', '$168call.9', 'x1']
+    $176compare_op.10 = $128call.4 != $168call.9 ['$128call.4', '$168call.9', '$176compare_op.10']
+    $180return_value.11 = cast(value=$176compare_op.10) ['$176compare_op.10', '$180return_value.11']
+    return $180return_value.11               ['$180return_value.11']
+label 182:
+    $182load_global.0 = global(np: <module 'numpy' from 'C:\\kodlamalar\\python\\srt-tts-2026-super\\venv\\Lib\\site-packages\\numpy\\__init__.py'>) ['$182load_global.0']
+    $192load_attr.2 = getattr(value=$182load_global.0, attr=sign) ['$182load_global.0', '$192load_attr.2']
+    $214call.4 = call $192load_attr.2(x0, func=$192load_attr.2, args=[Var(x0, audio.py:1140)], kws=(), vararg=None, varkwarg=None, target=None) ['$192load_attr.2', '$214call.4', 'x0']
+    $222load_global.5 = global(np: <module 'numpy' from 'C:\\kodlamalar\\python\\srt-tts-2026-super\\venv\\Lib\\site-packages\\numpy\\__init__.py'>) ['$222load_global.5']
+    $232load_attr.7 = getattr(value=$222load_global.5, attr=sign) ['$222load_global.5', '$232load_attr.7']
+    $254call.9 = call $232load_attr.7(x1, func=$232load_attr.7, args=[Var(x1, audio.py:1144)], kws=(), vararg=None, varkwarg=None, target=None) ['$232load_attr.7', '$254call.9', 'x1']
+    $262compare_op.10 = $214call.4 != $254call.9 ['$214call.4', '$254call.9', '$262compare_op.10']
+    $266return_value.11 = cast(value=$262compare_op.10) ['$262compare_op.10', '$266return_value.11']
+    return $266return_value.11               ['$266return_value.11']
+
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | bytecode dump:
+>          0	NOP(arg=None, lineno=1023)
+           2	RESUME(arg=0, lineno=1023)
+           4	LOAD_FAST(arg=0, lineno=1026)
+           6	LOAD_CONST(arg=1, lineno=1026)
+           8	BINARY_SUBSCR(arg=None, lineno=1026)
+          12	LOAD_FAST(arg=0, lineno=1026)
+          14	LOAD_CONST(arg=2, lineno=1026)
+          16	BINARY_SUBSCR(arg=None, lineno=1026)
+          20	COMPARE_OP(arg=68, lineno=1026)
+          24	LOAD_FAST(arg=0, lineno=1026)
+          26	LOAD_CONST(arg=1, lineno=1026)
+          28	BINARY_SUBSCR(arg=None, lineno=1026)
+          32	LOAD_FAST(arg=0, lineno=1026)
+          34	LOAD_CONST(arg=3, lineno=1026)
+          36	BINARY_SUBSCR(arg=None, lineno=1026)
+          40	COMPARE_OP(arg=92, lineno=1026)
+          44	BINARY_OP(arg=1, lineno=1026)
+          48	RETURN_VALUE(arg=None, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=0 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=0 nstack_initial=0)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=0, inst=NOP(arg=None, lineno=1023)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=2, inst=RESUME(arg=0, lineno=1023)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=4, inst=LOAD_FAST(arg=0, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=6, inst=LOAD_CONST(arg=1, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=8, inst=BINARY_SUBSCR(arg=None, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0', '$const6.1.1']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=12, inst=LOAD_FAST(arg=0, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=14, inst=LOAD_CONST(arg=2, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$x12.3']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=16, inst=BINARY_SUBSCR(arg=None, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$x12.3', '$const14.4.2']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=20, inst=COMPARE_OP(arg=68, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$16binary_subscr.5']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=24, inst=LOAD_FAST(arg=0, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=26, inst=LOAD_CONST(arg=1, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$x24.7']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=28, inst=BINARY_SUBSCR(arg=None, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$x24.7', '$const26.8.1']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=32, inst=LOAD_FAST(arg=0, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=34, inst=LOAD_CONST(arg=3, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9', '$x32.10']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=36, inst=BINARY_SUBSCR(arg=None, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9', '$x32.10', '$const34.11.3']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=40, inst=COMPARE_OP(arg=92, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9', '$36binary_subscr.12']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=44, inst=BINARY_OP(arg=1, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$40compare_op.13']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=48, inst=RETURN_VALUE(arg=None, lineno=1026)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$binop_and_44.14']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | -------------------------Prune PHIs-------------------------
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | Used_phis: defaultdict(<class 'set'>, {State(pc_initial=0 nstack_initial=0): set()})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | defmap: {}
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | phismap: defaultdict(<class 'set'>, {})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | changing phismap: defaultdict(<class 'set'>, {})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | keep phismap: {}
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | new_out: defaultdict(<class 'dict'>, {})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | ----------------------DONE Prune PHIs-----------------------
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=0 nstack_initial=0):
+AdaptBlockInfo(insts=((0, {}), (2, {}), (4, {'res': '$x4.0'}), (6, {'res': '$const6.1.1'}), (8, {'index': '$const6.1.1', 'target': '$x4.0', 'res': '$8binary_subscr.2'}), (12, {'res': '$x12.3'}), (14, {'res': '$const14.4.2'}), (16, {'index': '$const14.4.2', 'target': '$x12.3', 'res': '$16binary_subscr.5'}), (20, {'lhs': '$8binary_subscr.2', 'rhs': '$16binary_subscr.5', 'res': '$20compare_op.6'}), (24, {'res': '$x24.7'}), (26, {'res': '$const26.8.1'}), (28, {'index': '$const26.8.1', 'target': '$x24.7', 'res': '$28binary_subscr.9'}), (32, {'res': '$x32.10'}), (34, {'res': '$const34.11.3'}), (36, {'index': '$const34.11.3', 'target': '$x32.10', 'res': '$36binary_subscr.12'}), (40, {'lhs': '$28binary_subscr.9', 'rhs': '$36binary_subscr.12', 'res': '$40compare_op.13'}), (44, {'op': '&', 'lhs': '$20compare_op.6', 'rhs': '$40compare_op.13', 'res': '$binop_and_44.14'}), (48, {'retval': '$binop_and_44.14', 'castval': '$48return_value.15'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.interpreter    | label 0:
+    x = arg(0, name=x)                       ['x']
+    $const6.1.1 = const(int, 0)              ['$const6.1.1']
+    $8binary_subscr.2 = getitem(value=x, index=$const6.1.1, fn=<built-in function getitem>) ['$8binary_subscr.2', '$const6.1.1', 'x']
+    $const14.4.2 = const(int, -1)            ['$const14.4.2']
+    $16binary_subscr.5 = getitem(value=x, index=$const14.4.2, fn=<built-in function getitem>) ['$16binary_subscr.5', '$const14.4.2', 'x']
+    $20compare_op.6 = $8binary_subscr.2 > $16binary_subscr.5 ['$16binary_subscr.5', '$20compare_op.6', '$8binary_subscr.2']
+    $const26.8.1 = const(int, 0)             ['$const26.8.1']
+    $28binary_subscr.9 = getitem(value=x, index=$const26.8.1, fn=<built-in function getitem>) ['$28binary_subscr.9', '$const26.8.1', 'x']
+    $const34.11.3 = const(int, 1)            ['$const34.11.3']
+    $36binary_subscr.12 = getitem(value=x, index=$const34.11.3, fn=<built-in function getitem>) ['$36binary_subscr.12', '$const34.11.3', 'x']
+    $40compare_op.13 = $28binary_subscr.9 >= $36binary_subscr.12 ['$28binary_subscr.9', '$36binary_subscr.12', '$40compare_op.13']
+    $binop_and_44.14 = $20compare_op.6 & $40compare_op.13 ['$20compare_op.6', '$40compare_op.13', '$binop_and_44.14']
+    $48return_value.15 = cast(value=$binop_and_44.14) ['$48return_value.15', '$binop_and_44.14']
+    return $48return_value.15                ['$48return_value.15']
+
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | bytecode dump:
+>          0	NOP(arg=None, lineno=1029)
+           2	RESUME(arg=0, lineno=1029)
+           4	LOAD_FAST(arg=0, lineno=1032)
+           6	LOAD_CONST(arg=1, lineno=1032)
+           8	BINARY_SUBSCR(arg=None, lineno=1032)
+          12	LOAD_FAST(arg=0, lineno=1032)
+          14	LOAD_CONST(arg=2, lineno=1032)
+          16	BINARY_SUBSCR(arg=None, lineno=1032)
+          20	COMPARE_OP(arg=2, lineno=1032)
+          24	LOAD_FAST(arg=0, lineno=1032)
+          26	LOAD_CONST(arg=1, lineno=1032)
+          28	BINARY_SUBSCR(arg=None, lineno=1032)
+          32	LOAD_FAST(arg=0, lineno=1032)
+          34	LOAD_CONST(arg=3, lineno=1032)
+          36	BINARY_SUBSCR(arg=None, lineno=1032)
+          40	COMPARE_OP(arg=26, lineno=1032)
+          44	BINARY_OP(arg=1, lineno=1032)
+          48	RETURN_VALUE(arg=None, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=0 nstack_initial=0)])
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=0 nstack_initial=0)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=0, inst=NOP(arg=None, lineno=1029)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=2, inst=RESUME(arg=0, lineno=1029)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=4, inst=LOAD_FAST(arg=0, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=6, inst=LOAD_CONST(arg=1, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=8, inst=BINARY_SUBSCR(arg=None, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0', '$const6.1.1']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=12, inst=LOAD_FAST(arg=0, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=14, inst=LOAD_CONST(arg=2, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$x12.3']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=16, inst=BINARY_SUBSCR(arg=None, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$x12.3', '$const14.4.2']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=20, inst=COMPARE_OP(arg=2, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$16binary_subscr.5']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=24, inst=LOAD_FAST(arg=0, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=26, inst=LOAD_CONST(arg=1, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$x24.7']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=28, inst=BINARY_SUBSCR(arg=None, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$x24.7', '$const26.8.1']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=32, inst=LOAD_FAST(arg=0, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=34, inst=LOAD_CONST(arg=3, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9', '$x32.10']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=36, inst=BINARY_SUBSCR(arg=None, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9', '$x32.10', '$const34.11.3']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=40, inst=COMPARE_OP(arg=26, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$28binary_subscr.9', '$36binary_subscr.12']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=44, inst=BINARY_OP(arg=1, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$20compare_op.6', '$40compare_op.13']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | dispatch pc=48, inst=RETURN_VALUE(arg=None, lineno=1032)
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | stack ['$binop_and_44.14']
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | end state. edges=[]
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | -------------------------Prune PHIs-------------------------
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | Used_phis: defaultdict(<class 'set'>, {State(pc_initial=0 nstack_initial=0): set()})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | defmap: {}
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | phismap: defaultdict(<class 'set'>, {})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | changing phismap: defaultdict(<class 'set'>, {})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | keep phismap: {}
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | new_out: defaultdict(<class 'dict'>, {})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | ----------------------DONE Prune PHIs-----------------------
+2026-03-23 00:18:52 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=0 nstack_initial=0):
+AdaptBlockInfo(insts=((0, {}), (2, {}), (4, {'res': '$x4.0'}), (6, {'res': '$const6.1.1'}), (8, {'index': '$const6.1.1', 'target': '$x4.0', 'res': '$8binary_subscr.2'}), (12, {'res': '$x12.3'}), (14, {'res': '$const14.4.2'}), (16, {'index': '$const14.4.2', 'target': '$x12.3', 'res': '$16binary_subscr.5'}), (20, {'lhs': '$8binary_subscr.2', 'rhs': '$16binary_subscr.5', 'res': '$20compare_op.6'}), (24, {'res': '$x24.7'}), (26, {'res': '$const26.8.1'}), (28, {'index': '$const26.8.1', 'target': '$x24.7', 'res': '$28binary_subscr.9'}), (32, {'res': '$x32.10'}), (34, {'res': '$const34.11.3'}), (36, {'index': '$const34.11.3', 'target': '$x32.10', 'res': '$36binary_subscr.12'}), (40, {'lhs': '$28binary_subscr.9', 'rhs': '$36binary_subscr.12', 'res': '$40compare_op.13'}), (44, {'op': '&', 'lhs': '$20compare_op.6', 'rhs': '$40compare_op.13', 'res': '$binop_and_44.14'}), (48, {'retval': '$binop_and_44.14', 'castval': '$48return_value.15'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={})
+2026-03-23 00:18:52 [DEBUG  ] numba.core.interpreter    | label 0:
+    x = arg(0, name=x)                       ['x']
+    $const6.1.1 = const(int, 0)              ['$const6.1.1']
+    $8binary_subscr.2 = getitem(value=x, index=$const6.1.1, fn=<built-in function getitem>) ['$8binary_subscr.2', '$const6.1.1', 'x']
+    $const14.4.2 = const(int, -1)            ['$const14.4.2']
+    $16binary_subscr.5 = getitem(value=x, index=$const14.4.2, fn=<built-in function getitem>) ['$16binary_subscr.5', '$const14.4.2', 'x']
+    $20compare_op.6 = $8binary_subscr.2 < $16binary_subscr.5 ['$16binary_subscr.5', '$20compare_op.6', '$8binary_subscr.2']
+    $const26.8.1 = const(int, 0)             ['$const26.8.1']
+    $28binary_subscr.9 = getitem(value=x, index=$const26.8.1, fn=<built-in function getitem>) ['$28binary_subscr.9', '$const26.8.1', 'x']
+    $const34.11.3 = const(int, 1)            ['$const34.11.3']
+    $36binary_subscr.12 = getitem(value=x, index=$const34.11.3, fn=<built-in function getitem>) ['$36binary_subscr.12', '$const34.11.3', 'x']
+    $40compare_op.13 = $28binary_subscr.9 <= $36binary_subscr.12 ['$28binary_subscr.9', '$36binary_subscr.12', '$40compare_op.13']
+    $binop_and_44.14 = $20compare_op.6 & $40compare_op.13 ['$20compare_op.6', '$40compare_op.13', '$binop_and_44.14']
+    $48return_value.15 = cast(value=$binop_and_44.14) ['$48return_value.15', '$binop_and_44.14']
+    return $48return_value.15                ['$48return_value.15']
+
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | bytecode dump:
+>          0	NOP(arg=None, lineno=416)
+           2	RESUME(arg=0, lineno=416)
+           4	LOAD_FAST(arg=0, lineno=419)
+           6	LOAD_CONST(arg=1, lineno=419)
+           8	BINARY_SUBSCR(arg=None, lineno=419)
+          12	LOAD_FAST(arg=0, lineno=419)
+          14	LOAD_CONST(arg=2, lineno=419)
+          16	BINARY_SUBSCR(arg=None, lineno=419)
+          20	BINARY_OP(arg=0, lineno=419)
+          24	LOAD_CONST(arg=3, lineno=419)
+          26	LOAD_FAST(arg=0, lineno=419)
+          28	LOAD_CONST(arg=4, lineno=419)
+          30	BINARY_SUBSCR(arg=None, lineno=419)
+          34	BINARY_OP(arg=5, lineno=419)
+          38	BINARY_OP(arg=10, lineno=419)
+          42	STORE_FAST(arg=1, lineno=419)
+          44	LOAD_FAST(arg=0, lineno=420)
+          46	LOAD_CONST(arg=1, lineno=420)
+          48	BINARY_SUBSCR(arg=None, lineno=420)
+          52	LOAD_FAST(arg=0, lineno=420)
+          54	LOAD_CONST(arg=2, lineno=420)
+          56	BINARY_SUBSCR(arg=None, lineno=420)
+          60	BINARY_OP(arg=10, lineno=420)
+          64	LOAD_CONST(arg=3, lineno=420)
+          66	BINARY_OP(arg=11, lineno=420)
+          70	STORE_FAST(arg=2, lineno=420)
+          72	LOAD_GLOBAL(arg=1, lineno=422)
+          82	LOAD_ATTR(arg=2, lineno=422)
+         102	LOAD_FAST(arg=2, lineno=422)
+         104	CALL(arg=1, lineno=422)
+         112	LOAD_GLOBAL(arg=1, lineno=422)
+         122	LOAD_ATTR(arg=2, lineno=422)
+         142	LOAD_FAST(arg=1, lineno=422)
+         144	CALL(arg=1, lineno=422)
+         152	COMPARE_OP(arg=92, lineno=422)
+         156	POP_JUMP_IF_FALSE(arg=1, lineno=422)
+         158	RETURN_CONST(arg=4, lineno=425)
+>        160	LOAD_FAST(arg=2, lineno=427)
+         162	UNARY_NEGATIVE(arg=None, lineno=427)
+         164	LOAD_FAST(arg=1, lineno=427)
+         166	BINARY_OP(arg=11, lineno=427)
+         170	RETURN_VALUE(arg=None, lineno=427)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=0 nstack_initial=0)])
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=0 nstack_initial=0)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=0, inst=NOP(arg=None, lineno=416)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=2, inst=RESUME(arg=0, lineno=416)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=4, inst=LOAD_FAST(arg=0, lineno=419)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=6, inst=LOAD_CONST(arg=1, lineno=419)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=8, inst=BINARY_SUBSCR(arg=None, lineno=419)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$x4.0', '$const6.1.1']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=12, inst=LOAD_FAST(arg=0, lineno=419)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=14, inst=LOAD_CONST(arg=2, lineno=419)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$x12.3']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=16, inst=BINARY_SUBSCR(arg=None, lineno=419)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$x12.3', '$const14.4.2']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=20, inst=BINARY_OP(arg=0, lineno=419)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$8binary_subscr.2', '$16binary_subscr.5']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=24, inst=LOAD_CONST(arg=3, lineno=419)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$binop_add20.6']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=26, inst=LOAD_FAST(arg=0, lineno=419)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$binop_add20.6', '$const24.7.3']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=28, inst=LOAD_CONST(arg=4, lineno=419)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$binop_add20.6', '$const24.7.3', '$x26.8']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=30, inst=BINARY_SUBSCR(arg=None, lineno=419)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$binop_add20.6', '$const24.7.3', '$x26.8', '$const28.9.4']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=34, inst=BINARY_OP(arg=5, lineno=419)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$binop_add20.6', '$const24.7.3', '$30binary_subscr.10']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=38, inst=BINARY_OP(arg=10, lineno=419)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$binop_add20.6', '$binop_mul34.11']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=42, inst=STORE_FAST(arg=1, lineno=419)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$binop_sub38.12']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=44, inst=LOAD_FAST(arg=0, lineno=420)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=46, inst=LOAD_CONST(arg=1, lineno=420)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$x44.13']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=48, inst=BINARY_SUBSCR(arg=None, lineno=420)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$x44.13', '$const46.14.1']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=52, inst=LOAD_FAST(arg=0, lineno=420)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$48binary_subscr.15']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=54, inst=LOAD_CONST(arg=2, lineno=420)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$48binary_subscr.15', '$x52.16']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=56, inst=BINARY_SUBSCR(arg=None, lineno=420)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$48binary_subscr.15', '$x52.16', '$const54.17.2']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=60, inst=BINARY_OP(arg=10, lineno=420)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$48binary_subscr.15', '$56binary_subscr.18']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=64, inst=LOAD_CONST(arg=3, lineno=420)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$binop_sub60.19']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=66, inst=BINARY_OP(arg=11, lineno=420)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$binop_sub60.19', '$const64.20.3']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=70, inst=STORE_FAST(arg=2, lineno=420)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$binop_truediv66.21']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=72, inst=LOAD_GLOBAL(arg=1, lineno=422)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=82, inst=LOAD_ATTR(arg=2, lineno=422)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$null$72.23', '$72load_global.22']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=102, inst=LOAD_FAST(arg=2, lineno=422)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$null$72.23', '$82load_attr.24']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=104, inst=CALL(arg=1, lineno=422)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$null$72.23', '$82load_attr.24', '$b102.25']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=112, inst=LOAD_GLOBAL(arg=1, lineno=422)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$104call.26']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=122, inst=LOAD_ATTR(arg=2, lineno=422)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$104call.26', '$null$112.28', '$112load_global.27']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=142, inst=LOAD_FAST(arg=1, lineno=422)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$104call.26', '$null$112.28', '$122load_attr.29']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=144, inst=CALL(arg=1, lineno=422)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$104call.26', '$null$112.28', '$122load_attr.29', '$a142.30']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=152, inst=COMPARE_OP(arg=92, lineno=422)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$104call.26', '$144call.31']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=156, inst=POP_JUMP_IF_FALSE(arg=1, lineno=422)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$152compare_op.32']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | end state. edges=[Edge(pc=158, stack=(), blockstack=(), npush=0), Edge(pc=160, stack=(), blockstack=(), npush=0)]
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=158 nstack_initial=0), State(pc_initial=160 nstack_initial=0)])
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=158 nstack_initial=0)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=158, inst=RETURN_CONST(arg=4, lineno=425)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | end state. edges=[]
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | pending: deque([State(pc_initial=160 nstack_initial=0)])
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack: []
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | state.pc_initial: State(pc_initial=160 nstack_initial=0)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=160, inst=LOAD_FAST(arg=2, lineno=427)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack []
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=162, inst=UNARY_NEGATIVE(arg=None, lineno=427)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$b160.0']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=164, inst=LOAD_FAST(arg=1, lineno=427)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$162unary_negative.1']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=166, inst=BINARY_OP(arg=11, lineno=427)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$162unary_negative.1', '$a164.2']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | dispatch pc=170, inst=RETURN_VALUE(arg=None, lineno=427)
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | stack ['$binop_truediv166.3']
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | end state. edges=[]
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | -------------------------Prune PHIs-------------------------
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | Used_phis: defaultdict(<class 'set'>,
+            {State(pc_initial=0 nstack_initial=0): set(),
+             State(pc_initial=158 nstack_initial=0): set(),
+             State(pc_initial=160 nstack_initial=0): set()})
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | defmap: {}
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | phismap: defaultdict(<class 'set'>, {})
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | changing phismap: defaultdict(<class 'set'>, {})
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | keep phismap: {}
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | new_out: defaultdict(<class 'dict'>, {})
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | ----------------------DONE Prune PHIs-----------------------
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=0 nstack_initial=0):
+AdaptBlockInfo(insts=((0, {}), (2, {}), (4, {'res': '$x4.0'}), (6, {'res': '$const6.1.1'}), (8, {'index': '$const6.1.1', 'target': '$x4.0', 'res': '$8binary_subscr.2'}), (12, {'res': '$x12.3'}), (14, {'res': '$const14.4.2'}), (16, {'index': '$const14.4.2', 'target': '$x12.3', 'res': '$16binary_subscr.5'}), (20, {'op': '+', 'lhs': '$8binary_subscr.2', 'rhs': '$16binary_subscr.5', 'res': '$binop_add20.6'}), (24, {'res': '$const24.7.3'}), (26, {'res': '$x26.8'}), (28, {'res': '$const28.9.4'}), (30, {'index': '$const28.9.4', 'target': '$x26.8', 'res': '$30binary_subscr.10'}), (34, {'op': '*', 'lhs': '$const24.7.3', 'rhs': '$30binary_subscr.10', 'res': '$binop_mul34.11'}), (38, {'op': '-', 'lhs': '$binop_add20.6', 'rhs': '$binop_mul34.11', 'res': '$binop_sub38.12'}), (42, {'value': '$binop_sub38.12'}), (44, {'res': '$x44.13'}), (46, {'res': '$const46.14.1'}), (48, {'index': '$const46.14.1', 'target': '$x44.13', 'res': '$48binary_subscr.15'}), (52, {'res': '$x52.16'}), (54, {'res': '$const54.17.2'}), (56, {'index': '$const54.17.2', 'target': '$x52.16', 'res': '$56binary_subscr.18'}), (60, {'op': '-', 'lhs': '$48binary_subscr.15', 'rhs': '$56binary_subscr.18', 'res': '$binop_sub60.19'}), (64, {'res': '$const64.20.3'}), (66, {'op': '/', 'lhs': '$binop_sub60.19', 'rhs': '$const64.20.3', 'res': '$binop_truediv66.21'}), (70, {'value': '$binop_truediv66.21'}), (72, {'idx': 0, 'res': '$72load_global.22'}), (82, {'item': '$72load_global.22', 'res': '$82load_attr.24'}), (102, {'res': '$b102.25'}), (104, {'func': '$82load_attr.24', 'args': ['$b102.25'], 'kw_names': None, 'res': '$104call.26'}), (112, {'idx': 0, 'res': '$112load_global.27'}), (122, {'item': '$112load_global.27', 'res': '$122load_attr.29'}), (142, {'res': '$a142.30'}), (144, {'func': '$122load_attr.29', 'args': ['$a142.30'], 'kw_names': None, 'res': '$144call.31'}), (152, {'lhs': '$104call.26', 'rhs': '$144call.31', 'res': '$152compare_op.32'}), (156, {'pred': '$152compare_op.32'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={158: (), 160: ()})
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=158 nstack_initial=0):
+AdaptBlockInfo(insts=((158, {'retval': '$const158.0', 'castval': '$158return_const.1'}),), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={})
+2026-03-23 00:18:53 [DEBUG  ] numba.core.byteflow       | block_infos State(pc_initial=160 nstack_initial=0):
+AdaptBlockInfo(insts=((160, {'res': '$b160.0'}), (162, {'value': '$b160.0', 'res': '$162unary_negative.1'}), (164, {'res': '$a164.2'}), (166, {'op': '/', 'lhs': '$162unary_negative.1', 'rhs': '$a164.2', 'res': '$binop_truediv166.3'}), (170, {'retval': '$binop_truediv166.3', 'castval': '$170return_value.4'})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={})
+2026-03-23 00:18:53 [DEBUG  ] numba.core.interpreter    | label 0:
+    x = arg(0, name=x)                       ['x']
+    $const6.1.1 = const(int, 1)              ['$const6.1.1']
+    $8binary_subscr.2 = getitem(value=x, index=$const6.1.1, fn=<built-in function getitem>) ['$8binary_subscr.2', '$const6.1.1', 'x']
+    $const14.4.2 = const(int, -1)            ['$const14.4.2']
+    $16binary_subscr.5 = getitem(value=x, index=$const14.4.2, fn=<built-in function getitem>) ['$16binary_subscr.5', '$const14.4.2', 'x']
+    $binop_add20.6 = $8binary_subscr.2 + $16binary_subscr.5 ['$16binary_subscr.5', '$8binary_subscr.2', '$binop_add20.6']
+    $const24.7.3 = const(int, 2)             ['$const24.7.3']
+    $const28.9.4 = const(int, 0)             ['$const28.9.4']
+    $30binary_subscr.10 = getitem(value=x, index=$const28.9.4, fn=<built-in function getitem>) ['$30binary_subscr.10', '$const28.9.4', 'x']
+    $binop_mul34.11 = $const24.7.3 * $30binary_subscr.10 ['$30binary_subscr.10', '$binop_mul34.11', '$const24.7.3']
+    a = $binop_add20.6 - $binop_mul34.11     ['$binop_add20.6', '$binop_mul34.11', 'a']
+    $const46.14.1 = const(int, 1)            ['$const46.14.1']
+    $48binary_subscr.15 = getitem(value=x, index=$const46.14.1, fn=<built-in function getitem>) ['$48binary_subscr.15', '$const46.14.1', 'x']
+    $const54.17.2 = const(int, -1)           ['$const54.17.2']
+    $56binary_subscr.18 = getitem(value=x, index=$const54.17.2, fn=<built-in function getitem>) ['$56binary_subscr.18', '$const54.17.2', 'x']
+    $binop_sub60.19 = $48binary_subscr.15 - $56binary_subscr.18 ['$48binary_subscr.15', '$56binary_subscr.18', '$binop_sub60.19']
+    $const64.20.3 = const(int, 2)            ['$const64.20.3']
+    b = $binop_sub60.19 / $const64.20.3      ['$binop_sub60.19', '$const64.20.3', 'b']
+    $72load_global.22 = global(np: <module 'numpy' from 'C:\\kodlamalar\\python\\srt-tts-2026-super\\venv\\Lib\\site-packages\\numpy\\__init__.py'>) ['$72load_global.22']
+    $82load_attr.24 = getattr(value=$72load_global.22, attr=abs) ['$72load_global.22', '$82load_attr.24']
+    $104call.26 = call $82load_attr.24(b, func=$82load_attr.24, args=[Var(b, pitch.py:420)], kws=(), vararg=None, varkwarg=None, target=None) ['$104call.26', '$82load_attr.24', 'b']
+    $112load_global.27 = global(np: <module 'numpy' from 'C:\\kodlamalar\\python\\srt-tts-2026-super\\venv\\Lib\\site-packages\\numpy\\__init__.py'>) ['$112load_global.27']
+    $122load_attr.29 = getattr(value=$112load_global.27, attr=abs) ['$112load_global.27', '$122load_attr.29']
+    $144call.31 = call $122load_attr.29(a, func=$122load_attr.29, args=[Var(a, pitch.py:419)], kws=(), vararg=None, varkwarg=None, target=None) ['$122load_attr.29', '$144call.31', 'a']
+    $152compare_op.32 = $104call.26 >= $144call.31 ['$104call.26', '$144call.31', '$152compare_op.32']
+    $bool156 = global(bool: <class 'bool'>)  ['$bool156']
+    $156pred = call $bool156($152compare_op.32, func=$bool156, args=(Var($152compare_op.32, pitch.py:422),), kws=(), vararg=None, varkwarg=None, target=None) ['$152compare_op.32', '$156pred', '$bool156']
+    branch $156pred, 158, 160                ['$156pred']
+label 158:
+    $const158.0 = const(int, 0)              ['$const158.0']
+    $158return_const.1 = cast(value=$const158.0) ['$158return_const.1', '$const158.0']
+    return $158return_const.1                ['$158return_const.1']
+label 160:
+    $162unary_negative.1 = unary(fn=<built-in function neg>, value=b) ['$162unary_negative.1', 'b']
+    $binop_truediv166.3 = $162unary_negative.1 / a ['$162unary_negative.1', '$binop_truediv166.3', 'a']
+    $170return_value.4 = cast(value=$binop_truediv166.3) ['$170return_value.4', '$binop_truediv166.3']
+    return $170return_value.4                ['$170return_value.4']
+
+2026-03-23 00:19:10 [INFO   ] DubSync.SrtParser         | Kodlama algılandı: utf-8 (güven: 85.7%)
+2026-03-23 00:19:10 [INFO   ] DubSync.SrtParser         | SRT yüklendi: 2542 satır, 2 konuşmacı, süre: 01:51:35,460
+2026-03-23 00:19:10 [INFO   ] DubSync.SubtitleTable     | Tablo yüklendi: 2542 satır
+2026-03-23 00:19:11 [INFO   ] DubSync.CharacterPanel    | Karakter paneli yüklendi: 2 karakter
+2026-03-23 00:19:11 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_01 → Vladimir (Didi)
+2026-03-23 00:19:11 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → 
+2026-03-23 00:19:11 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:19:17 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:19:17 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:22:56 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:22:56 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_01 → Vladimir (Didi)
+2026-03-23 00:22:56 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → 
+2026-03-23 00:22:56 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:22:56 [INFO   ] DubSync.Main              | DubSync Pro kapatıldı. Çıkış kodu: 0
+2026-03-23 00:32:22 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 00:32:22 [INFO   ] DubSync.Main              | DubSync Pro v1.0 başlatılıyor...
+2026-03-23 00:32:22 [INFO   ] DubSync.Main              | Python: 3.12.0
+2026-03-23 00:32:22 [INFO   ] DubSync.Main              | Çalışma dizini: C:\kodlamalar\python\srt-tts-2026-super
+2026-03-23 00:32:22 [INFO   ] DubSync.Main              | Mod: Python script
+2026-03-23 00:32:22 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 00:32:22 [INFO   ] DubSync.ConfigManager     | Ayar dosyası yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:32:22 [INFO   ] DubSync.Main              | Ayarlar yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:32:23 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:32:23 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:32:23 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'den yüklendi.
+2026-03-23 00:32:23 [INFO   ] DubSync.MainWindow        | Ana pencere oluşturuldu.
+2026-03-23 00:32:23 [INFO   ] DubSync.Main              | Ana pencere gösterildi. Uygulama hazır.
+2026-03-23 00:33:14 [INFO   ] DubSync.SrtParser         | Kodlama algılandı: utf-8 (güven: 85.7%)
+2026-03-23 00:33:14 [INFO   ] DubSync.SrtParser         | SRT yüklendi: 2542 satır, 2 konuşmacı, süre: 01:51:35,460
+2026-03-23 00:33:14 [INFO   ] DubSync.SubtitleTable     | Tablo yüklendi: 2542 satır
+2026-03-23 00:33:14 [INFO   ] DubSync.CharacterPanel    | Karakter paneli yüklendi: 2 karakter
+2026-03-23 00:33:14 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_01 → Vladimir (Didi)
+2026-03-23 00:33:14 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → 
+2026-03-23 00:33:14 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:33:26 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:33:26 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:33:39 [INFO   ] DubSync.XTTSEngine        | CPU modu kullanılacak (GPU uyumsuz veya mevcut değil). XTTS CPU'da yavaş çalışır ama ses kalitesi aynıdır.
+2026-03-23 00:33:39 [INFO   ] DubSync.XTTSEngine        | XTTS-v2 yükleniyor (cihaz=cpu)... İlk seferde model indirilir (~1.8GB).
+2026-03-23 00:33:39 [DEBUG  ] fsspec.local              | open file: C:/kodlamalar/python/srt-tts-2026-super/venv/Lib/site-packages/TTS/.models.json
+2026-03-23 00:34:19 [INFO   ] TTS.utils.manage          | Downloading model to C:\Users\Reci\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-23 00:38:15 [INFO   ] TTS.utils.manage          | Model's license - CPML
+2026-03-23 00:38:15 [INFO   ] TTS.utils.manage          | Check https://coqui.ai/cpml.txt for more info.
+2026-03-23 00:38:15 [DEBUG  ] fsspec.local              | open file: C:/Users/Reci/AppData/Local/tts/tts_models--multilingual--multi-dataset--xtts_v2/config.json
+2026-03-23 00:38:15 [INFO   ] TTS.tts.models            | Using model: xtts
+2026-03-23 00:38:33 [DEBUG  ] fsspec.local              | open file: C:/Users/Reci/AppData/Local/tts/tts_models--multilingual--multi-dataset--xtts_v2/model.pth
+2026-03-23 00:38:35 [INFO   ] DubSync.XTTSEngine        | XTTS-v2 hazır: cihaz=cpu, dil=tr
+2026-03-23 00:38:35 [INFO   ] TTS.utils.synthesizer     | Text split into sentences.
+2026-03-23 00:38:35 [INFO   ] TTS.utils.synthesizer     | Input: ['Merhaba, ben Vladimir (Didi).', 'Bu bir ses önizlemesidir.']
+2026-03-23 00:38:36 [INFO   ] TTS.utils.voices          | Generated voice from reference audio
+2026-03-23 00:38:46 [INFO   ] TTS.utils.voices          | Generated voice from reference audio
+2026-03-23 00:38:54 [INFO   ] TTS.utils.synthesizer     | Processing time: 19.036
+2026-03-23 00:38:54 [INFO   ] TTS.utils.synthesizer     | Real-time factor: 3.401
+2026-03-23 00:41:03 [INFO   ] DubSync.EdgeEngine        | Edge TTS başlatıldı: 322 ses yüklendi.
+2026-03-23 00:41:05 [DEBUG  ] pydub.converter           | subprocess.call(['ffmpeg', '-y', '-f', 'mp3', '-i', 'C:\\Users\\Reci\\AppData\\Local\\Temp\\dubsync_preview\\preview_eb8eaebd.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2026-03-23 00:41:05 [DEBUG  ] DubSync.EdgeEngine        | MP3→WAV dönüşümü (pydub): C:\Users\Reci\AppData\Local\Temp\dubsync_preview\preview_eb8eaebd.wav
+2026-03-23 00:52:23 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:52:23 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_01 → Vladimir (Didi)
+2026-03-23 00:52:23 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → Estragon (Gogo)
+2026-03-23 00:52:23 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:52:23 [INFO   ] DubSync.Main              | DubSync Pro kapatıldı. Çıkış kodu: 0
+2026-03-23 00:52:36 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 00:52:36 [INFO   ] DubSync.Main              | DubSync Pro v1.0 başlatılıyor...
+2026-03-23 00:52:36 [INFO   ] DubSync.Main              | Python: 3.12.0
+2026-03-23 00:52:36 [INFO   ] DubSync.Main              | Çalışma dizini: C:\kodlamalar\python\srt-tts-2026-super
+2026-03-23 00:52:36 [INFO   ] DubSync.Main              | Mod: Python script
+2026-03-23 00:52:36 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 00:52:36 [INFO   ] DubSync.ConfigManager     | Ayar dosyası yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:52:36 [INFO   ] DubSync.Main              | Ayarlar yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:52:36 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:52:36 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:52:36 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'den yüklendi.
+2026-03-23 00:52:36 [INFO   ] DubSync.MainWindow        | Ana pencere oluşturuldu.
+2026-03-23 00:52:37 [INFO   ] DubSync.Main              | Ana pencere gösterildi. Uygulama hazır.
+2026-03-23 00:55:22 [INFO   ] DubSync.SrtParser         | Kodlama algılandı: utf-8 (güven: 95.3%)
+2026-03-23 00:55:22 [INFO   ] DubSync.SrtParser         | SRT yüklendi: 10 satır, 1 konuşmacı, süre: 00:00:36,972
+2026-03-23 00:55:22 [INFO   ] DubSync.SubtitleTable     | Tablo yüklendi: 10 satır
+2026-03-23 00:55:22 [INFO   ] DubSync.CharacterPanel    | Karakter paneli yüklendi: 1 karakter
+2026-03-23 00:55:22 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → Estragon (Gogo)
+2026-03-23 00:55:22 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:56:01 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 00:56:01 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 00:56:33 [INFO   ] DubSync.XTTSEngine        | CPU modu kullanılacak (GPU uyumsuz veya mevcut değil). XTTS CPU'da yavaş çalışır ama ses kalitesi aynıdır.
+2026-03-23 00:56:33 [INFO   ] DubSync.XTTSEngine        | XTTS-v2 yükleniyor (cihaz=cpu)... İlk seferde model indirilir (~1.8GB).
+2026-03-23 00:56:33 [DEBUG  ] fsspec.local              | open file: C:/kodlamalar/python/srt-tts-2026-super/venv/Lib/site-packages/TTS/.models.json
+2026-03-23 00:56:33 [INFO   ] TTS.utils.manage          | tts_models/multilingual/multi-dataset/xtts_v2 is already downloaded.
+2026-03-23 00:56:33 [DEBUG  ] fsspec.local              | open file: C:/Users/Reci/AppData/Local/tts/tts_models--multilingual--multi-dataset--xtts_v2/config.json
+2026-03-23 00:56:33 [DEBUG  ] fsspec.http               | Retrieve file size for https://huggingface.co/coqui/XTTS-v2/resolve/main/config.json
+2026-03-23 00:56:34 [DEBUG  ] fsspec.http               | Fetch range for <File-like object HTTPFileSystem, https://huggingface.co/coqui/XTTS-v2/resolve/main/config.json>: 0-4368
+2026-03-23 00:56:34 [DEBUG  ] fsspec.http               | https://huggingface.co/coqui/XTTS-v2/resolve/main/config.json : bytes=0-4367
+2026-03-23 00:56:34 [DEBUG  ] fsspec                    | <File-like object HTTPFileSystem, https://huggingface.co/coqui/XTTS-v2/resolve/main/config.json> read: 0 - 4368  , bytes: 0 hits, 1 misses, 4368 total requested bytes
+2026-03-23 00:56:34 [DEBUG  ] fsspec.local              | open file: C:/Users/Reci/AppData/Local/tts/tts_models--multilingual--multi-dataset--xtts_v2/config.json
+2026-03-23 00:56:34 [INFO   ] TTS.tts.models            | Using model: xtts
+2026-03-23 00:56:49 [DEBUG  ] fsspec.local              | open file: C:/Users/Reci/AppData/Local/tts/tts_models--multilingual--multi-dataset--xtts_v2/model.pth
+2026-03-23 00:56:51 [INFO   ] DubSync.XTTSEngine        | XTTS-v2 hazır: cihaz=cpu, dil=tr
+2026-03-23 00:56:51 [INFO   ] TTS.utils.synthesizer     | Text split into sentences.
+2026-03-23 00:56:51 [INFO   ] TTS.utils.synthesizer     | Input: ['Merhaba, ben Engineer.', 'Bu bir ses önizlemesidir.']
+2026-03-23 00:56:53 [INFO   ] TTS.utils.voices          | Generated voice from reference audio
+2026-03-23 00:57:03 [INFO   ] TTS.utils.voices          | Generated voice from reference audio
+2026-03-23 00:57:10 [INFO   ] TTS.utils.synthesizer     | Processing time: 19.153
+2026-03-23 00:57:10 [INFO   ] TTS.utils.synthesizer     | Real-time factor: 3.112
+2026-03-23 01:13:40 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 01:13:40 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → Engineer
+2026-03-23 01:13:40 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 01:13:40 [INFO   ] DubSync.Main              | DubSync Pro kapatıldı. Çıkış kodu: 0
+2026-03-23 01:19:24 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 01:19:24 [INFO   ] DubSync.Main              | DubSync Pro v1.0 başlatılıyor...
+2026-03-23 01:19:24 [INFO   ] DubSync.Main              | Python: 3.12.0
+2026-03-23 01:19:24 [INFO   ] DubSync.Main              | Çalışma dizini: C:\kodlamalar\python\srt-tts-2026-super
+2026-03-23 01:19:24 [INFO   ] DubSync.Main              | Mod: Python script
+2026-03-23 01:19:24 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 01:19:24 [INFO   ] DubSync.ConfigManager     | Ayar dosyası yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 01:19:24 [INFO   ] DubSync.Main              | Ayarlar yüklendi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 01:19:26 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 01:19:26 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 01:19:26 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'den yüklendi.
+2026-03-23 01:19:26 [INFO   ] DubSync.MainWindow        | Ana pencere oluşturuldu.
+2026-03-23 01:19:26 [INFO   ] DubSync.Main              | Ana pencere gösterildi. Uygulama hazır.
+2026-03-23 01:20:33 [INFO   ] DubSync.SrtParser         | Kodlama algılandı: utf-8 (güven: 95.3%)
+2026-03-23 01:20:33 [INFO   ] DubSync.SrtParser         | SRT yüklendi: 10 satır, 1 konuşmacı, süre: 00:00:36,972
+2026-03-23 01:20:33 [INFO   ] DubSync.SubtitleTable     | Tablo yüklendi: 10 satır
+2026-03-23 01:20:33 [INFO   ] DubSync.CharacterPanel    | Karakter paneli yüklendi: 1 karakter
+2026-03-23 01:20:33 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → Engineer
+2026-03-23 01:20:33 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 01:20:53 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 01:20:53 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super\dubsync_pro_settings.json
+2026-03-23 01:20:55 [INFO   ] DubSync.XTTSEngine        | CPU modu kullanılacak (GPU uyumsuz veya mevcut değil). XTTS CPU'da yavaş çalışır ama ses kalitesi aynıdır.
+2026-03-23 01:20:55 [INFO   ] DubSync.XTTSEngine        | XTTS-v2 yükleniyor (cihaz=cpu)... İlk seferde model indirilir (~1.8GB).
+2026-03-23 01:20:55 [DEBUG  ] fsspec.local              | open file: C:/kodlamalar/python/srt-tts-2026-super/venv/Lib/site-packages/TTS/.models.json
+2026-03-23 01:20:55 [INFO   ] TTS.utils.manage          | tts_models/multilingual/multi-dataset/xtts_v2 is already downloaded.
+2026-03-23 01:20:55 [DEBUG  ] fsspec.local              | open file: C:/Users/Reci/AppData/Local/tts/tts_models--multilingual--multi-dataset--xtts_v2/config.json
+2026-03-23 01:20:55 [DEBUG  ] fsspec.http               | Retrieve file size for https://huggingface.co/coqui/XTTS-v2/resolve/main/config.json
+2026-03-23 01:20:55 [DEBUG  ] fsspec.http               | Fetch range for <File-like object HTTPFileSystem, https://huggingface.co/coqui/XTTS-v2/resolve/main/config.json>: 0-4368
+2026-03-23 01:20:55 [DEBUG  ] fsspec.http               | https://huggingface.co/coqui/XTTS-v2/resolve/main/config.json : bytes=0-4367
+2026-03-23 01:20:56 [DEBUG  ] fsspec                    | <File-like object HTTPFileSystem, https://huggingface.co/coqui/XTTS-v2/resolve/main/config.json> read: 0 - 4368  , bytes: 0 hits, 1 misses, 4368 total requested bytes
+2026-03-23 01:20:56 [DEBUG  ] fsspec.local              | open file: C:/Users/Reci/AppData/Local/tts/tts_models--multilingual--multi-dataset--xtts_v2/config.json
+2026-03-23 01:20:56 [INFO   ] TTS.tts.models            | Using model: xtts
+2026-03-23 01:21:09 [DEBUG  ] fsspec.local              | open file: C:/Users/Reci/AppData/Local/tts/tts_models--multilingual--multi-dataset--xtts_v2/model.pth
+2026-03-23 01:21:10 [INFO   ] DubSync.XTTSEngine        | XTTS-v2 hazır: cihaz=cpu, dil=tr
+2026-03-23 01:21:10 [INFO   ] TTS.utils.synthesizer     | Text split into sentences.
+2026-03-23 01:21:10 [INFO   ] TTS.utils.synthesizer     | Input: ['Merhaba, ben Engineer.', 'Bu bir ses önizlemesidir.']
+2026-03-23 01:21:11 [INFO   ] TTS.utils.voices          | Generated voice from reference audio
+2026-03-23 01:21:23 [INFO   ] TTS.utils.voices          | Generated voice from reference audio
+2026-03-23 01:21:34 [INFO   ] TTS.utils.synthesizer     | Processing time: 23.686
+2026-03-23 01:21:34 [INFO   ] TTS.utils.synthesizer     | Real-time factor: 3.217
+2026-03-23 01:22:01 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → Engineer
+2026-03-23 01:22:01 [ERROR  ] DubSync.MainWindow        | Seslendirme pipeline hatası: 'TTSManager' object has no attribute 'motorlari_otomatik_kaydet_ve_baslat'
+Traceback (most recent call last):
+  File "C:\kodlamalar\python\srt-tts-2026-super\gui\main_window.py", line 610, in _seslendirme_pipeline
+    self._tts_manager.motorlari_otomatik_kaydet_ve_baslat()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TTSManager' object has no attribute 'motorlari_otomatik_kaydet_ve_baslat'
