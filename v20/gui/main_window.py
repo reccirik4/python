@@ -797,12 +797,12 @@ class MainWindow(QMainWindow):
             from core.video_exporter import VideoExporter
             video_suresi_ms = VideoExporter.video_suresi_al(video_yolu)
 
-            birlestirir.birlesik_ses_olustur(
-                satirlar=dosya.satirlar,
-                segment_dosyalari=segmentler,
+            birlesim_sonuc = birlestirir.birlesir(
+                dosya=dosya,
+                segmentler=segmentler,
                 zamanlama_sonuclari=zamanlama_sonuclari,
                 cikis_yolu=birlesik_ses_yolu,
-                toplam_sure_ms=video_suresi_ms,
+                video_sure_ms=video_suresi_ms,
             )
 
             if not os.path.isfile(birlesik_ses_yolu):
@@ -822,18 +822,18 @@ class MainWindow(QMainWindow):
             ducker = AudioDucker.ayarlardan_olustur(config)
             mikslenmis_ses_yolu = os.path.join(cikis_ana, "final_mixed.wav")
 
-            ducking_modu = config.al("ducking.mod", "basit")
+            ducking_modu = config.al("ducking.yontem", "basit")
             if ducking_modu == "sidechain":
                 ducker.sidechain_duck(
                     orijinal_ses=video_yolu,
                     tts_ses=birlesik_ses_yolu,
                     cikis_yolu=mikslenmis_ses_yolu,
-                    satirlar=dosya.satirlar,
                 )
             else:
                 ducker.basit_duck(
                     orijinal_ses=video_yolu,
                     tts_ses=birlesik_ses_yolu,
+                    dosya=dosya,
                     cikis_yolu=mikslenmis_ses_yolu,
                 )
 
@@ -851,25 +851,22 @@ class MainWindow(QMainWindow):
             self._sinyal_ilerleme.emit(90, "Video export...")
 
             exporter = VideoExporter.ayarlardan_olustur(config)
-            cikis_video = exporter._cikis_yolu_belirle(video_yolu)
-            cikis_video = VideoExporter._benzersiz_yol(cikis_video)
 
-            basarili_mi = exporter.videoya_birlesir(
+            export_sonuc = exporter.export(
                 video_yolu=video_yolu,
                 ses_yolu=mikslenmis_ses_yolu,
-                cikis_yolu=cikis_video,
             )
 
-            if basarili_mi and os.path.isfile(cikis_video):
-                boyut_mb = os.path.getsize(cikis_video) / (1024 * 1024)
+            if export_sonuc.basarili and os.path.isfile(export_sonuc.dosya_yolu):
                 self._sinyal_log.emit(
-                    f"Video hazır: {os.path.basename(cikis_video)} "
-                    f"({boyut_mb:.1f} MB)",
+                    f"Video hazır: {os.path.basename(export_sonuc.dosya_yolu)} "
+                    f"({export_sonuc.dosya_boyutu_mb:.1f} MB)",
                     "success",
                 )
                 self._sinyal_bitti.emit(True)
             else:
-                self._sinyal_log.emit("Video export başarısız!", "error")
+                hata = export_sonuc.hata_mesaji or "Bilinmeyen hata"
+                self._sinyal_log.emit(f"Video export başarısız: {hata}", "error")
                 self._sinyal_bitti.emit(False)
 
         except Exception as e:
