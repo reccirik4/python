@@ -822,16 +822,28 @@ class MainWindow(QMainWindow):
             ducker = AudioDucker.ayarlardan_olustur(config)
             mikslenmis_ses_yolu = os.path.join(cikis_ana, "final_mixed.wav")
 
+            # Önce videodan orijinal sesi WAV'a çıkar
+            orijinal_ses_yolu = os.path.join(cikis_ana, "orijinal_ses.wav")
+            ses_cikarildi = AudioDucker.videodan_ses_cikar(
+                video_yolu, orijinal_ses_yolu, sr=config.al("ses.ornekleme_hizi", 48000)
+            )
+            if not ses_cikarildi:
+                self._sinyal_log.emit(
+                    "Videodan ses çıkarılamadı! FFmpeg kontrol edin.", "error"
+                )
+                self._sinyal_bitti.emit(False)
+                return
+
             ducking_modu = config.al("ducking.yontem", "basit")
             if ducking_modu == "sidechain":
                 ducker.sidechain_duck(
-                    orijinal_ses=video_yolu,
+                    orijinal_ses=orijinal_ses_yolu,
                     tts_ses=birlesik_ses_yolu,
                     cikis_yolu=mikslenmis_ses_yolu,
                 )
             else:
                 ducker.basit_duck(
-                    orijinal_ses=video_yolu,
+                    orijinal_ses=orijinal_ses_yolu,
                     tts_ses=birlesik_ses_yolu,
                     dosya=dosya,
                     cikis_yolu=mikslenmis_ses_yolu,
