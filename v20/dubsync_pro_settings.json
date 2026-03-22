@@ -28,7 +28,7 @@
       "ses_seviyesi": "+0%"
     },
     "xtts_v2": {
-      "aktif": true,
+      "aktif": false,
       "model_yolu": "",
       "referans_ses_klasoru": "",
       "gpu_kullan": true,
@@ -71,7 +71,7 @@
     "SPEAKER_00": {
       "isim": "Engineer",
       "motor": "xtts_v2",
-      "ses": "xtts_clone",
+      "ses": "C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav",
       "cinsiyet": "erkek",
       "hiz": "+0%",
       "perde": "+0Hz"

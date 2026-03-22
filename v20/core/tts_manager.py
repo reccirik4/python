@@ -230,10 +230,16 @@ class TTSManager:
         if karakter:
             motor_adi = karakter.get("motor", "")
             ses_id = karakter.get("ses", "")
+            klon_yolu = karakter.get("klon_yolu", "")
             ek = {
                 "hiz": karakter.get("hiz", "+0%"),
                 "perde": karakter.get("perde", "+0Hz"),
+                "klon_yolu": klon_yolu,
             }
+
+            # XTTS: ses_id dosya yolu değilse, klon_yolu'nu kullan
+            if motor_adi == "xtts_v2" and klon_yolu and os.path.isfile(klon_yolu):
+                ses_id = klon_yolu
         else:
             # Karakter tanımlanmamış, varsayılanı kullan
             motor_adi = self._config.varsayilan_motor()

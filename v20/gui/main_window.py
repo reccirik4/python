@@ -687,7 +687,6 @@ class MainWindow(QMainWindow):
             if not kaydedilenler:
                 self._sinyal_log.emit("Hiçbir TTS motoru başlatılamadı!", "error")
                 self._sinyal_bitti.emit(False)
-                loop.close()
                 return
 
             self._sinyal_log.emit(
@@ -730,14 +729,12 @@ class MainWindow(QMainWindow):
                     "Hiçbir ses üretilemedi! İşlem durduruluyor.", "error"
                 )
                 self._sinyal_bitti.emit(False)
-                loop.close()
                 return
 
             # İptal kontrolü
             if self._tts_manager.ilerleme and self._tts_manager.ilerleme.iptal:
                 self._sinyal_log.emit("Seslendirme iptal edildi.", "warning")
                 self._sinyal_bitti.emit(False)
-                loop.close()
                 return
 
             # ── ADIM 3: Zamanlama analizi ──
@@ -790,7 +787,6 @@ class MainWindow(QMainWindow):
                     "Birleşik ses dosyası oluşturulamadı!", "error"
                 )
                 self._sinyal_bitti.emit(False)
-                loop.close()
                 return
 
             self._sinyal_log.emit("  Birleşik ses hazır.", "success")
@@ -823,7 +819,6 @@ class MainWindow(QMainWindow):
                     "Miksleme başarısız!", "error"
                 )
                 self._sinyal_bitti.emit(False)
-                loop.close()
                 return
 
             self._sinyal_log.emit("  Miksleme tamamlandı.", "success")
@@ -863,11 +858,12 @@ class MainWindow(QMainWindow):
 
         finally:
             try:
-                if self._tts_manager:
+                if self._tts_manager and not loop.is_closed():
                     loop.run_until_complete(self._tts_manager.motorlari_kapat())
             except Exception:
                 pass
-            loop.close()
+            if not loop.is_closed():
+                loop.close()
 
     # --------------------------------------------------------
     # Ses Önizleme

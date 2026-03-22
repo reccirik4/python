@@ -360,7 +360,6 @@ class ConfigManager:
             "cinsiyet": cinsiyet,
             "hiz": hiz,
             "perde": perde,
-            "klon_yolu": klon_yolu,
         }
         self._degismis = True
         logger.info("Karakter eklendi/güncellendi: %s → %s", karakter_id, isim)

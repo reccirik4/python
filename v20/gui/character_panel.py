@@ -637,6 +637,7 @@ class CharacterPanel(QWidget):
                 cinsiyet=veri.get("cinsiyet", "erkek"),
                 hiz=veri.get("hiz", "+0%"),
                 perde=veri.get("perde", "+0Hz"),
+                klon_yolu=veri.get("klon_yolu", ""),
             )
 
     # --------------------------------------------------------
