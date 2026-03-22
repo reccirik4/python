@@ -757,10 +757,25 @@ class MainWindow(QMainWindow):
             for satir, sonuc in sonuclar:
                 if sonuc.basarili and sonuc.dosya_yolu:
                     segmentler[satir.sira] = sonuc.dosya_yolu
-                    zs = analizor.satir_analiz(satir, sonuc)
+                    zs = analizor.satir_analiz(satir, sonuc.sure_ms)
                     zamanlama_sonuclari[satir.sira] = zs
 
-            rapor = analizor.rapor_olustur(list(zamanlama_sonuclari.values()))
+            # Rapor oluştur (AnalizRaporu doğrudan)
+            from core.timing_analyzer import AnalizRaporu, ZamanlamaDurum
+            rapor = AnalizRaporu()
+            rapor.toplam_satir = len(zamanlama_sonuclari)
+            for zs in zamanlama_sonuclari.values():
+                rapor.sonuclar.append(zs)
+                if zs.durum == ZamanlamaDurum.SIGIYOR:
+                    rapor.sigiyor += 1
+                elif zs.durum == ZamanlamaDurum.HAFIF_HIZLANDIR:
+                    rapor.hafif_hizlandir += 1
+                elif zs.durum == ZamanlamaDurum.ORTA_HIZLANDIR:
+                    rapor.orta_hizlandir += 1
+                elif zs.durum == ZamanlamaDurum.TASMA:
+                    rapor.tasma += 1
+                elif zs.durum == ZamanlamaDurum.BOS:
+                    rapor.bos += 1
             self._sinyal_log.emit(
                 f"  Zamanlama: {rapor.sigiyor} sığıyor, "
                 f"{rapor.hafif_hizlandir + rapor.orta_hizlandir} hızlandırılacak, "
