@@ -596,6 +596,14 @@ class MainWindow(QMainWindow):
         self.log("Seslendirme başlatılıyor...")
         self._ilerleme_guncelle(0, "Hazırlanıyor...")
 
+        # Karakter panelindeki güncel verileri config'e kaydet (klon_yolu dahil)
+        # Bu ana thread'de çalışır — GUI erişimi güvenli
+        try:
+            self._karakter_panel.config_e_kaydet(self._config)
+            self._config.kaydet()
+        except Exception:
+            pass
+
         # Arka plan thread'inde pipeline'ı çalıştır
         import threading
         self._seslendirme_thread = threading.Thread(
