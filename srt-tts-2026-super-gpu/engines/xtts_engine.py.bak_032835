@@ -337,27 +337,12 @@ class XTTSEngine(BaseEngine):
         Path(cikis_yolu).parent.mkdir(parents=True, exist_ok=True)
 
         try:
-            # tts_to_file yerine tts() + soundfile.write
-            # (torchcodec + nightly torch Windows'ta WinError 87 veriyor)
-            import numpy as np
-            import soundfile as sf
-
-            wav = self._tts.tts(
+            self._tts.tts_to_file(
                 text=metin,
                 speaker_wav=referans_yolu,
                 language=self._dil,
+                file_path=cikis_yolu,
             )
-
-            # Liste veya tensor → numpy array
-            if not isinstance(wav, np.ndarray):
-                wav = np.array(wav, dtype=np.float32)
-
-            # Normalize (clipping önleme)
-            peak = np.max(np.abs(wav))
-            if peak > 0.99:
-                wav = wav * (0.95 / peak)
-
-            sf.write(cikis_yolu, wav, 24000, subtype="PCM_24")
 
             if not os.path.isfile(cikis_yolu):
                 return SesUretimSonucu(

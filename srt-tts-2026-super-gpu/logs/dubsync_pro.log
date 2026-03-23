@@ -1,0 +1,204 @@
+2026-03-23 03:11:26 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 03:11:26 [INFO   ] DubSync.Main              | DubSync Pro v1.0 başlatılıyor...
+2026-03-23 03:11:26 [INFO   ] DubSync.Main              | Python: 3.12.0
+2026-03-23 03:11:26 [INFO   ] DubSync.Main              | Çalışma dizini: C:\kodlamalar\python\srt-tts-2026-super-gpu
+2026-03-23 03:11:26 [INFO   ] DubSync.Main              | Mod: Python script
+2026-03-23 03:11:26 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 03:11:26 [INFO   ] DubSync.ConfigManager     | Ayar dosyası yüklendi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:11:26 [INFO   ] DubSync.Main              | Ayarlar yüklendi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:11:27 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'den yüklendi.
+2026-03-23 03:11:27 [INFO   ] DubSync.MainWindow        | Ana pencere oluşturuldu.
+2026-03-23 03:11:29 [INFO   ] DubSync.Main              | Ana pencere gösterildi. Uygulama hazır.
+2026-03-23 03:13:25 [INFO   ] DubSync.SrtParser         | Kodlama algılandı: utf-8 (güven: 95.3%)
+2026-03-23 03:13:25 [INFO   ] DubSync.SrtParser         | SRT yüklendi: 10 satır, 1 konuşmacı, süre: 00:00:36,972
+2026-03-23 03:13:25 [INFO   ] DubSync.SubtitleTable     | Tablo yüklendi: 10 satır
+2026-03-23 03:13:25 [INFO   ] DubSync.CharacterPanel    | Karakter paneli yüklendi: 1 karakter
+2026-03-23 03:13:25 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → Engineer
+2026-03-23 03:13:25 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:13:42 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → Engineer
+2026-03-23 03:13:42 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:13:42 [INFO   ] DubSync.TTSManager        | Motor kaydedildi: edge_tts (Microsoft Edge TTS)
+2026-03-23 03:13:42 [INFO   ] DubSync.TTSManager        | XTTS-v2 kullanılamıyor: coqui-tts paketi yüklü değil. Kurulum: pip install coqui-tts>=0.27.0
+2026-03-23 03:13:42 [INFO   ] DubSync.TTSManager        | Otomatik motor kaydı: ['edge_tts']
+2026-03-23 03:13:43 [INFO   ] DubSync.EdgeEngine        | Edge TTS başlatıldı: 322 ses yüklendi.
+2026-03-23 03:13:43 [INFO   ] DubSync.TTSManager        | Motor başlatıldı: edge_tts
+2026-03-23 03:13:43 [WARNING] DubSync.TTSManager        | Motor kayıtlı değil, atlanıyor: xtts_v2
+2026-03-23 03:13:43 [INFO   ] DubSync.TTSManager        | Toplu üretim başlıyor: 10 satır, çıkış: C:\capcutdrafts\denemeler\3-the ingenious design\dubsync_output\segments
+2026-03-23 03:13:43 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:13:43 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:13:43 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:13:43 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:13:43 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:13:43 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:13:43 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:13:43 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:13:43 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:13:43 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:13:43 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:13:43 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:13:43 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:13:43 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:13:43 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:13:43 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:13:43 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:13:43 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:13:43 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:13:43 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:13:43 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:13:43 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:13:43 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:13:43 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:13:43 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:13:43 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:13:43 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:13:43 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:13:43 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:13:43 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:13:43 [INFO   ] DubSync.TTSManager        | Toplu üretim tamamlandı: 0 başarılı, 10 hatalı, 0 atlanan
+2026-03-23 03:13:43 [INFO   ] DubSync.EdgeEngine        | Edge TTS kapatıldı.
+2026-03-23 03:13:43 [INFO   ] DubSync.TTSManager        | Motor kapatıldı: edge_tts
+2026-03-23 03:14:17 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 03:14:17 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → Engineer
+2026-03-23 03:14:17 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:14:17 [INFO   ] DubSync.Main              | DubSync Pro kapatıldı. Çıkış kodu: 0
+2026-03-23 03:20:14 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 03:20:14 [INFO   ] DubSync.Main              | DubSync Pro v1.0 başlatılıyor...
+2026-03-23 03:20:14 [INFO   ] DubSync.Main              | Python: 3.12.0
+2026-03-23 03:20:14 [INFO   ] DubSync.Main              | Çalışma dizini: C:\kodlamalar\python\srt-tts-2026-super-gpu
+2026-03-23 03:20:14 [INFO   ] DubSync.Main              | Mod: Python script
+2026-03-23 03:20:14 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 03:20:14 [INFO   ] DubSync.ConfigManager     | Ayar dosyası yüklendi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:20:14 [INFO   ] DubSync.Main              | Ayarlar yüklendi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:20:14 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'den yüklendi.
+2026-03-23 03:20:14 [INFO   ] DubSync.MainWindow        | Ana pencere oluşturuldu.
+2026-03-23 03:20:16 [INFO   ] DubSync.Main              | Ana pencere gösterildi. Uygulama hazır.
+2026-03-23 03:20:38 [INFO   ] DubSync.SrtParser         | Kodlama algılandı: utf-8 (güven: 95.3%)
+2026-03-23 03:20:38 [INFO   ] DubSync.SrtParser         | SRT yüklendi: 10 satır, 1 konuşmacı, süre: 00:00:36,972
+2026-03-23 03:20:38 [INFO   ] DubSync.SubtitleTable     | Tablo yüklendi: 10 satır
+2026-03-23 03:20:38 [INFO   ] DubSync.CharacterPanel    | Karakter paneli yüklendi: 1 karakter
+2026-03-23 03:20:38 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → Engineer
+2026-03-23 03:20:38 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:20:43 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → Engineer
+2026-03-23 03:20:43 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:20:43 [INFO   ] DubSync.TTSManager        | Motor kaydedildi: edge_tts (Microsoft Edge TTS)
+2026-03-23 03:20:44 [INFO   ] DubSync.TTSManager        | XTTS-v2 kullanılamıyor: coqui-tts paketi yüklü değil. Kurulum: pip install coqui-tts>=0.27.0
+2026-03-23 03:20:44 [INFO   ] DubSync.TTSManager        | Otomatik motor kaydı: ['edge_tts']
+2026-03-23 03:20:45 [INFO   ] DubSync.EdgeEngine        | Edge TTS başlatıldı: 322 ses yüklendi.
+2026-03-23 03:20:45 [INFO   ] DubSync.TTSManager        | Motor başlatıldı: edge_tts
+2026-03-23 03:20:45 [WARNING] DubSync.TTSManager        | Motor kayıtlı değil, atlanıyor: xtts_v2
+2026-03-23 03:20:45 [INFO   ] DubSync.TTSManager        | Toplu üretim başlıyor: 10 satır, çıkış: C:\capcutdrafts\denemeler\3-the ingenious design\dubsync_output\segments
+2026-03-23 03:20:45 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:20:45 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:20:45 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:20:45 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:20:45 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:20:45 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:20:45 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:20:45 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:20:45 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:20:45 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:20:45 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:20:45 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:20:45 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:20:45 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:20:45 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:20:45 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:20:45 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:20:45 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:20:45 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:20:45 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:20:45 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:20:45 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:20:45 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:20:45 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:20:45 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:20:45 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:20:45 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:20:45 [WARNING] DubSync.TTSManager        | Karakter 'SPEAKER_00' için motor bulunamadı: 'xtts_v2'
+2026-03-23 03:20:45 [INFO   ] DubSync.TTSManager        | Fallback motor kullanılıyor: edge_tts
+2026-03-23 03:20:45 [ERROR  ] DubSync.EdgeEngine        | Edge TTS ses üretim hatası: Invalid voice 'C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav'.
+2026-03-23 03:20:45 [INFO   ] DubSync.TTSManager        | Toplu üretim tamamlandı: 0 başarılı, 10 hatalı, 0 atlanan
+2026-03-23 03:20:45 [INFO   ] DubSync.EdgeEngine        | Edge TTS kapatıldı.
+2026-03-23 03:20:45 [INFO   ] DubSync.TTSManager        | Motor kapatıldı: edge_tts
+2026-03-23 03:21:03 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 03:21:03 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → Engineer
+2026-03-23 03:21:03 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:21:03 [INFO   ] DubSync.Main              | DubSync Pro kapatıldı. Çıkış kodu: 0
+2026-03-23 03:23:26 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 03:23:26 [INFO   ] DubSync.Main              | DubSync Pro v1.0 başlatılıyor...
+2026-03-23 03:23:26 [INFO   ] DubSync.Main              | Python: 3.12.0
+2026-03-23 03:23:26 [INFO   ] DubSync.Main              | Çalışma dizini: C:\kodlamalar\python\srt-tts-2026-super-gpu
+2026-03-23 03:23:26 [INFO   ] DubSync.Main              | Mod: Python script
+2026-03-23 03:23:26 [INFO   ] DubSync.Main              | ============================================================
+2026-03-23 03:23:26 [INFO   ] DubSync.ConfigManager     | Ayar dosyası yüklendi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:23:26 [INFO   ] DubSync.Main              | Ayarlar yüklendi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:23:26 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'den yüklendi.
+2026-03-23 03:23:26 [INFO   ] DubSync.MainWindow        | Ana pencere oluşturuldu.
+2026-03-23 03:23:27 [INFO   ] DubSync.Main              | Ana pencere gösterildi. Uygulama hazır.
+2026-03-23 03:23:54 [INFO   ] DubSync.SrtParser         | Kodlama algılandı: utf-8 (güven: 95.3%)
+2026-03-23 03:23:54 [INFO   ] DubSync.SrtParser         | SRT yüklendi: 10 satır, 1 konuşmacı, süre: 00:00:36,972
+2026-03-23 03:23:54 [INFO   ] DubSync.SubtitleTable     | Tablo yüklendi: 10 satır
+2026-03-23 03:23:54 [INFO   ] DubSync.CharacterPanel    | Karakter paneli yüklendi: 1 karakter
+2026-03-23 03:23:54 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → Engineer
+2026-03-23 03:23:54 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:23:58 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → Engineer
+2026-03-23 03:23:58 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:23:58 [INFO   ] DubSync.TTSManager        | Motor kaydedildi: edge_tts (Microsoft Edge TTS)
+2026-03-23 03:23:59 [INFO   ] DubSync.TTSManager        | Motor kaydedildi: xtts_v2 (XTTS-v2 (Lokal Klonlama))
+2026-03-23 03:23:59 [INFO   ] DubSync.TTSManager        | Otomatik motor kaydı: ['edge_tts', 'xtts_v2']
+2026-03-23 03:24:00 [INFO   ] DubSync.EdgeEngine        | Edge TTS başlatıldı: 322 ses yüklendi.
+2026-03-23 03:24:00 [INFO   ] DubSync.TTSManager        | Motor başlatıldı: edge_tts
+2026-03-23 03:24:00 [INFO   ] DubSync.XTTSEngine        | GPU kullanılabilir: NVIDIA GeForce RTX 5050 Laptop GPU (sm_1200)
+2026-03-23 03:24:00 [INFO   ] DubSync.XTTSEngine        | XTTS-v2 yükleniyor (cihaz=cuda)... İlk seferde model indirilir (~1.8GB).
+2026-03-23 03:24:00 [DEBUG  ] fsspec.local              | open file: C:/kodlamalar/python/srt-tts-2026-super-gpu/venv/Lib/site-packages/TTS/.models.json
+2026-03-23 03:24:00 [INFO   ] TTS.utils.manage          | tts_models/multilingual/multi-dataset/xtts_v2 is already downloaded.
+2026-03-23 03:24:00 [DEBUG  ] fsspec.local              | open file: C:/Users/Reci/AppData/Local/tts/tts_models--multilingual--multi-dataset--xtts_v2/config.json
+2026-03-23 03:24:00 [DEBUG  ] fsspec.http               | Retrieve file size for https://huggingface.co/coqui/XTTS-v2/resolve/main/config.json
+2026-03-23 03:24:00 [DEBUG  ] fsspec.http               | Fetch range for <File-like object HTTPFileSystem, https://huggingface.co/coqui/XTTS-v2/resolve/main/config.json>: 0-4368
+2026-03-23 03:24:00 [DEBUG  ] fsspec.http               | https://huggingface.co/coqui/XTTS-v2/resolve/main/config.json : bytes=0-4367
+2026-03-23 03:24:00 [DEBUG  ] fsspec                    | <File-like object HTTPFileSystem, https://huggingface.co/coqui/XTTS-v2/resolve/main/config.json> read: 0 - 4368  , bytes: 0 hits, 1 misses, 4368 total requested bytes
+2026-03-23 03:24:00 [DEBUG  ] fsspec.local              | open file: C:/Users/Reci/AppData/Local/tts/tts_models--multilingual--multi-dataset--xtts_v2/config.json
+2026-03-23 03:24:00 [INFO   ] TTS.tts.models            | Using model: xtts
+2026-03-23 03:24:14 [DEBUG  ] fsspec.local              | open file: C:/Users/Reci/AppData/Local/tts/tts_models--multilingual--multi-dataset--xtts_v2/model.pth
+2026-03-23 03:24:17 [INFO   ] DubSync.XTTSEngine        | XTTS-v2 hazır: cihaz=cuda, dil=tr
+2026-03-23 03:24:17 [INFO   ] DubSync.TTSManager        | Motor başlatıldı: xtts_v2
+2026-03-23 03:24:17 [INFO   ] DubSync.TTSManager        | Toplu üretim başlıyor: 10 satır, çıkış: C:\capcutdrafts\denemeler\3-the ingenious design\dubsync_output\segments
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Text split into sentences.
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Input: ['Peki içecek kutusu neden basınçlıdır?']
+2026-03-23 03:24:17 [ERROR  ] DubSync.XTTSEngine        | XTTS ses üretim hatası: [WinError 87] Parametre hatalı: '.'
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Text split into sentences.
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Input: ['Çünkü iç basınç, ince duvarlarına rağmen güçlü bir kutu oluşturur.']
+2026-03-23 03:24:17 [ERROR  ] DubSync.XTTSEngine        | XTTS ses üretim hatası: [WinError 87] Parametre hatalı: '.'
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Text split into sentences.
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Input: ['Kapalı basınçlı bir kutuyu sıkın, zar zor eğilir.']
+2026-03-23 03:24:17 [ERROR  ] DubSync.XTTSEngine        | XTTS ses üretim hatası: [WinError 87] Parametre hatalı: '.'
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Text split into sentences.
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Input: ['Sonra boş bir kutuyu sıkın, kolayca bükülür.']
+2026-03-23 03:24:17 [ERROR  ] DubSync.XTTSEngine        | XTTS ses üretim hatası: [WinError 87] Parametre hatalı: '.'
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Text split into sentences.
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Input: ['Kutu duvarları ince, sadece 75 mikrom kalınlığında ve zayıftır.']
+2026-03-23 03:24:17 [ERROR  ] DubSync.XTTSEngine        | XTTS ses üretim hatası: [WinError 87] Parametre hatalı: '.'
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Text split into sentences.
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Input: ['Ama iç basınç dışa doğru eşit iter ve duvarı gergin tutar.']
+2026-03-23 03:24:17 [ERROR  ] DubSync.XTTSEngine        | XTTS ses üretim hatası: [WinError 87] Parametre hatalı: '.'
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Text split into sentences.
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Input: ['Bu gerilim çok önemlidir.']
+2026-03-23 03:24:17 [ERROR  ] DubSync.XTTSEngine        | XTTS ses üretim hatası: [WinError 87] Parametre hatalı: '.'
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Text split into sentences.
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Input: ['İnce duvar bir zincir gibi davranır.']
+2026-03-23 03:24:17 [ERROR  ] DubSync.XTTSEngine        | XTTS ses üretim hatası: [WinError 87] Parametre hatalı: '.'
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Text split into sentences.
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Input: ['Basınç altında dayanıksızdır ama gerilim de çok güçlüdür.']
+2026-03-23 03:24:17 [ERROR  ] DubSync.XTTSEngine        | XTTS ses üretim hatası: [WinError 87] Parametre hatalı: '.'
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Text split into sentences.
+2026-03-23 03:24:17 [INFO   ] TTS.utils.synthesizer     | Input: ['Basınçlı bir kutu ortalama bir yetişkinin ağırlığını rahatlıkla taşır.']
+2026-03-23 03:24:17 [ERROR  ] DubSync.XTTSEngine        | XTTS ses üretim hatası: [WinError 87] Parametre hatalı: '.'
+2026-03-23 03:24:17 [INFO   ] DubSync.TTSManager        | Toplu üretim tamamlandı: 0 başarılı, 10 hatalı, 0 atlanan
+2026-03-23 03:24:17 [INFO   ] DubSync.EdgeEngine        | Edge TTS kapatıldı.
+2026-03-23 03:24:17 [INFO   ] DubSync.TTSManager        | Motor kapatıldı: edge_tts
+2026-03-23 03:24:17 [INFO   ] DubSync.XTTSEngine        | XTTS-v2 kapatıldı, bellek temizlendi.
+2026-03-23 03:24:17 [INFO   ] DubSync.TTSManager        | Motor kapatıldı: xtts_v2
+2026-03-23 03:24:37 [INFO   ] DubSync.SettingsPanel     | Ayarlar config'e kaydedildi.
+2026-03-23 03:24:37 [INFO   ] DubSync.ConfigManager     | Karakter eklendi/güncellendi: SPEAKER_00 → Engineer
+2026-03-23 03:24:37 [INFO   ] DubSync.ConfigManager     | Ayarlar kaydedildi: C:\kodlamalar\python\srt-tts-2026-super-gpu\dubsync_pro_settings.json
+2026-03-23 03:24:37 [INFO   ] DubSync.Main              | DubSync Pro kapatıldı. Çıkış kodu: 0
