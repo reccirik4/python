@@ -1,0 +1,70 @@
+# ============================================================
+# DubSync Pro v1.0 — Bağımlılıklar
+# ============================================================
+# Kurulum: pip install -r requirements.txt
+# Opsiyonel paketler için aşağıdaki ilgili satırın başındaki
+# # işaretini kaldırın.
+# ============================================================
+
+# === GUI ===
+PyQt6>=6.10.0                  # Ana arayüz (Qt6 tabanlı)
+
+# === SRT / Altyazı İşleme ===
+pysrt>=1.1.2                   # SRT dosya okuma/yazma
+chardet>=5.0.0                 # Otomatik karakter kodlaması algılama
+
+# === Ses Üretimi (Ücretsiz TTS) ===
+edge-tts>=7.0.0                # Microsoft Edge Neural TTS (ücretsiz)
+aiohttp>=3.9.0                 # Async HTTP (edge-tts bağımlılığı)
+
+# === Ses İşleme ===
+numpy>=1.26.0                  # Sayısal ses dizileri
+soundfile>=0.12.0              # WAV/FLAC okuma/yazma (libsndfile tabanlı)
+librosa>=0.10.0                # Ses analiz, time stretch, resample
+pydub>=0.25.1                  # Ses format dönüşüm, fade, normalize
+
+# === Video İşleme ===
+ffmpeg-python>=0.2.0           # FFmpeg Python wrapper
+
+# ============================================================
+# OPSİYONEL: Kaliteli Time Stretch (Rubber Band)
+# ============================================================
+# Kurulum: pip install pyrubberband
+# NOT: rubberband-cli ayrıca kurulmalıdır:
+#   Windows: https://breakfastquay.com/rubberband/ adresinden
+#            indirip PATH'e ekleyin.
+#   Linux:   sudo apt install rubberband-cli
+#   macOS:   brew install rubberband
+# ------------------------------------------------------------
+# pyrubberband>=0.4.0
+
+# ============================================================
+# OPSİYONEL: Ses Klonlama — XTTS-v2 (GPU gerekli, min 4GB VRAM)
+# ============================================================
+# Kurulum (sırasıyla):
+#   1. pip install coqui-tts>=0.27.0
+#   2. pip install transformers>=4.46.0,<4.57.0
+#   3. pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu126
+#
+# NOT: Orijinal "TTS" paketi değil, "coqui-tts" fork'u kullanılmalı!
+#      Orijinal paket Aralık 2023'te terk edildi.
+#      RTX 5050 (Blackwell/sm_120) için cu126 gerekli.
+# ------------------------------------------------------------
+# coqui-tts>=0.27.0
+# transformers>=4.46.0,<4.57.0
+
+# ============================================================
+# OPSİYONEL: OpenAI TTS API
+# ============================================================
+# Kurulum: pip install openai
+# NOT: dubsync_pro_settings.json dosyasında api_key gereklidir.
+# ------------------------------------------------------------
+# openai>=1.0.0
+
+# ============================================================
+# OPSİYONEL: ElevenLabs TTS API
+# ============================================================
+# Kurulum: pip install elevenlabs
+# NOT: dubsync_pro_settings.json dosyasında api_key gereklidir.
+# ------------------------------------------------------------
+# elevenlabs>=1.0.0

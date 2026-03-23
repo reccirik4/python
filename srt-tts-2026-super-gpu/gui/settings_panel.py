@@ -1,0 +1,565 @@
+# -*- coding: utf-8 -*-
+"""
+DubSync Pro — Ayarlar Paneli (settings_panel.py)
+
+TTS motor yönetimi (aktif/pasif, API anahtarları), zamanlama
+parametreleri (max hız, fade), çıkış ayarları (format, codec, bitrate)
+ve genel tercihleri tek panelde toplar.
+"""
+
+import logging
+from typing import Optional
+
+from PyQt6.QtCore import Qt, pyqtSignal
+from PyQt6.QtWidgets import (
+    QWidget,
+    QVBoxLayout,
+    QHBoxLayout,
+    QFormLayout,
+    QLabel,
+    QPushButton,
+    QLineEdit,
+    QComboBox,
+    QCheckBox,
+    QSpinBox,
+    QDoubleSpinBox,
+    QGroupBox,
+    QScrollArea,
+    QFrame,
+    QTabWidget,
+)
+
+from core.config_manager import ConfigManager
+
+logger = logging.getLogger("DubSync.SettingsPanel")
+
+
+class SettingsPanel(QWidget):
+    """
+    Uygulama ayarları paneli.
+
+    3 sekme:
+    1. TTS Motorları — Motor aktif/pasif, API anahtarları, varsayılan motor
+    2. Zamanlama — Max hız oranı, fade, time stretch motoru
+    3. Çıkış — Video/ses codec, bitrate, format, dosya son eki
+    """
+
+    ayarlar_degisti = pyqtSignal()
+    dil_degisti = pyqtSignal(str)  # Dil kodu değiştiğinde (ör: "tr", "en")
+
+    def __init__(self, parent: Optional[QWidget] = None):
+        super().__init__(parent)
+        self._config: Optional[ConfigManager] = None
+        self._yukleniyor: bool = False
+        self.setMinimumWidth(220)
+        self.setMaximumWidth(320)
+        self._olustur()
+
+    def _olustur(self):
+        """Panel yapısını oluşturur."""
+        ana_layout = QVBoxLayout(self)
+        ana_layout.setContentsMargins(0, 0, 0, 0)
+        ana_layout.setSpacing(0)
+
+        baslik = QLabel("⚙️ Ayarlar")
+        baslik.setStyleSheet("font-weight: bold; font-size: 13px; padding: 4px;")
+        ana_layout.addWidget(baslik)
+
+        # Sekmeli yapı
+        self._sekmeler = QTabWidget()
+        self._sekmeler.setStyleSheet(
+            "QTabWidget::pane { border: 1px solid #ddd; border-top: none; }"
+            "QTabBar::tab { font-size: 11px; padding: 5px 10px; }"
+            "QTabBar::tab:selected { font-weight: bold; }"
+        )
+
+        self._sekmeler.addTab(self._motor_sekmesi_olustur(), "Motorlar")
+        self._sekmeler.addTab(self._zamanlama_sekmesi_olustur(), "Zamanlama")
+        self._sekmeler.addTab(self._cikis_sekmesi_olustur(), "Çıkış")
+
+        ana_layout.addWidget(self._sekmeler, stretch=1)
+
+    # --------------------------------------------------------
+    # Sekme 1: TTS Motorları
+    # --------------------------------------------------------
+
+    def _motor_sekmesi_olustur(self) -> QScrollArea:
+        """TTS motor ayarları sekmesi."""
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setFrameShape(QFrame.Shape.NoFrame)
+
+        widget = QWidget()
+        layout = QVBoxLayout(widget)
+        layout.setSpacing(8)
+        layout.setContentsMargins(8, 8, 8, 8)
+
+        # Varsayılan motor
+        grp_varsayilan = QGroupBox("Varsayılan Motor")
+        grp_varsayilan.setStyleSheet("QGroupBox { font-size: 11px; }")
+        fl = QFormLayout(grp_varsayilan)
+        fl.setSpacing(4)
+        self._cmb_varsayilan_motor = QComboBox()
+        self._cmb_varsayilan_motor.addItems(["edge_tts", "xtts_v2", "openai", "elevenlabs"])
+        self._cmb_varsayilan_motor.setStyleSheet("font-size: 11px;")
+        self._cmb_varsayilan_motor.currentTextChanged.connect(self._degisiklik)
+        fl.addRow("Motor:", self._cmb_varsayilan_motor)
+
+        # Hedef dil
+        self._cmb_hedef_dil = QComboBox()
+        self._cmb_hedef_dil.setStyleSheet("font-size: 11px;")
+        self._dil_listesini_doldur()
+        self._cmb_hedef_dil.currentIndexChanged.connect(self._dil_degisim)
+        fl.addRow("Hedef dil:", self._cmb_hedef_dil)
+
+        layout.addWidget(grp_varsayilan)
+
+        # Edge TTS
+        grp_edge = QGroupBox("Edge TTS (Ücretsiz)")
+        grp_edge.setStyleSheet("QGroupBox { font-size: 11px; }")
+        fl_edge = QFormLayout(grp_edge)
+        fl_edge.setSpacing(4)
+        self._chk_edge = QCheckBox("Aktif")
+        self._chk_edge.setChecked(True)
+        self._chk_edge.stateChanged.connect(self._degisiklik)
+        fl_edge.addRow(self._chk_edge)
+
+        self._cmb_edge_erkek = QComboBox()
+        self._cmb_edge_erkek.setEditable(True)
+        self._cmb_edge_erkek.addItem("tr-TR-AhmetNeural")
+        self._cmb_edge_erkek.setStyleSheet("font-size: 10px;")
+        fl_edge.addRow("Erkek ses:", self._cmb_edge_erkek)
+
+        self._cmb_edge_kadin = QComboBox()
+        self._cmb_edge_kadin.setEditable(True)
+        self._cmb_edge_kadin.addItem("tr-TR-EmelNeural")
+        self._cmb_edge_kadin.setStyleSheet("font-size: 10px;")
+        fl_edge.addRow("Kadın ses:", self._cmb_edge_kadin)
+        layout.addWidget(grp_edge)
+
+        # XTTS-v2
+        grp_xtts = QGroupBox("XTTS-v2 (Lokal Klonlama)")
+        grp_xtts.setStyleSheet("QGroupBox { font-size: 11px; }")
+        fl_xtts = QFormLayout(grp_xtts)
+        fl_xtts.setSpacing(4)
+        self._chk_xtts = QCheckBox("Aktif")
+        self._chk_xtts.stateChanged.connect(self._degisiklik)
+        fl_xtts.addRow(self._chk_xtts)
+
+        self._chk_xtts_gpu = QCheckBox("GPU Kullan")
+        self._chk_xtts_gpu.setChecked(True)
+        fl_xtts.addRow(self._chk_xtts_gpu)
+        layout.addWidget(grp_xtts)
+
+        # OpenAI
+        grp_openai = QGroupBox("OpenAI TTS (API)")
+        grp_openai.setStyleSheet("QGroupBox { font-size: 11px; }")
+        fl_openai = QFormLayout(grp_openai)
+        fl_openai.setSpacing(4)
+        self._chk_openai = QCheckBox("Aktif")
+        self._chk_openai.stateChanged.connect(self._degisiklik)
+        fl_openai.addRow(self._chk_openai)
+
+        self._txt_openai_key = QLineEdit()
+        self._txt_openai_key.setPlaceholderText("sk-...")
+        self._txt_openai_key.setEchoMode(QLineEdit.EchoMode.Password)
+        self._txt_openai_key.setStyleSheet("font-size: 10px;")
+        fl_openai.addRow("API Key:", self._txt_openai_key)
+
+        self._cmb_openai_model = QComboBox()
+        self._cmb_openai_model.addItems(["tts-1-hd", "tts-1"])
+        self._cmb_openai_model.setStyleSheet("font-size: 10px;")
+        fl_openai.addRow("Model:", self._cmb_openai_model)
+        layout.addWidget(grp_openai)
+
+        # ElevenLabs
+        grp_eleven = QGroupBox("ElevenLabs (API)")
+        grp_eleven.setStyleSheet("QGroupBox { font-size: 11px; }")
+        fl_eleven = QFormLayout(grp_eleven)
+        fl_eleven.setSpacing(4)
+        self._chk_eleven = QCheckBox("Aktif")
+        self._chk_eleven.stateChanged.connect(self._degisiklik)
+        fl_eleven.addRow(self._chk_eleven)
+
+        self._txt_eleven_key = QLineEdit()
+        self._txt_eleven_key.setPlaceholderText("API anahtarı...")
+        self._txt_eleven_key.setEchoMode(QLineEdit.EchoMode.Password)
+        self._txt_eleven_key.setStyleSheet("font-size: 10px;")
+        fl_eleven.addRow("API Key:", self._txt_eleven_key)
+
+        self._cmb_eleven_model = QComboBox()
+        self._cmb_eleven_model.addItems(["eleven_multilingual_v2", "eleven_monolingual_v1"])
+        self._cmb_eleven_model.setStyleSheet("font-size: 10px;")
+        fl_eleven.addRow("Model:", self._cmb_eleven_model)
+        layout.addWidget(grp_eleven)
+
+        layout.addStretch()
+        scroll.setWidget(widget)
+        return scroll
+
+    # --------------------------------------------------------
+    # Sekme 2: Zamanlama
+    # --------------------------------------------------------
+
+    def _zamanlama_sekmesi_olustur(self) -> QScrollArea:
+        """Zamanlama ayarları sekmesi."""
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setFrameShape(QFrame.Shape.NoFrame)
+
+        widget = QWidget()
+        layout = QVBoxLayout(widget)
+        layout.setSpacing(8)
+        layout.setContentsMargins(8, 8, 8, 8)
+
+        # Hız ayarları
+        grp_hiz = QGroupBox("Hız Sınırları")
+        grp_hiz.setStyleSheet("QGroupBox { font-size: 11px; }")
+        fl_hiz = QFormLayout(grp_hiz)
+        fl_hiz.setSpacing(4)
+
+        self._spn_max_hiz = QDoubleSpinBox()
+        self._spn_max_hiz.setRange(1.0, 4.0)
+        self._spn_max_hiz.setSingleStep(0.1)
+        self._spn_max_hiz.setValue(2.0)
+        self._spn_max_hiz.setSuffix("x")
+        self._spn_max_hiz.setStyleSheet("font-size: 11px;")
+        self._spn_max_hiz.setToolTip("Maksimum hızlandırma oranı (2.0 = %200)")
+        self._spn_max_hiz.valueChanged.connect(self._degisiklik)
+        fl_hiz.addRow("Max hız:", self._spn_max_hiz)
+
+        layout.addWidget(grp_hiz)
+
+        # Fade ayarları
+        grp_fade = QGroupBox("Fade & Sessizlik")
+        grp_fade.setStyleSheet("QGroupBox { font-size: 11px; }")
+        fl_fade = QFormLayout(grp_fade)
+        fl_fade.setSpacing(4)
+
+        self._spn_fade_in = QSpinBox()
+        self._spn_fade_in.setRange(0, 200)
+        self._spn_fade_in.setValue(30)
+        self._spn_fade_in.setSuffix(" ms")
+        self._spn_fade_in.setStyleSheet("font-size: 11px;")
+        self._spn_fade_in.valueChanged.connect(self._degisiklik)
+        fl_fade.addRow("Fade-in:", self._spn_fade_in)
+
+        self._spn_fade_out = QSpinBox()
+        self._spn_fade_out.setRange(0, 200)
+        self._spn_fade_out.setValue(30)
+        self._spn_fade_out.setSuffix(" ms")
+        self._spn_fade_out.setStyleSheet("font-size: 11px;")
+        self._spn_fade_out.valueChanged.connect(self._degisiklik)
+        fl_fade.addRow("Fade-out:", self._spn_fade_out)
+
+        self._spn_min_sessizlik = QSpinBox()
+        self._spn_min_sessizlik.setRange(0, 500)
+        self._spn_min_sessizlik.setValue(50)
+        self._spn_min_sessizlik.setSuffix(" ms")
+        self._spn_min_sessizlik.setStyleSheet("font-size: 11px;")
+        self._spn_min_sessizlik.valueChanged.connect(self._degisiklik)
+        fl_fade.addRow("Min sessizlik:", self._spn_min_sessizlik)
+
+        layout.addWidget(grp_fade)
+
+        # Time stretch motoru
+        grp_stretch = QGroupBox("Time Stretch")
+        grp_stretch.setStyleSheet("QGroupBox { font-size: 11px; }")
+        fl_stretch = QFormLayout(grp_stretch)
+        fl_stretch.setSpacing(4)
+
+        self._cmb_stretch_motor = QComboBox()
+        self._cmb_stretch_motor.addItems(["otomatik", "librosa", "rubberband"])
+        self._cmb_stretch_motor.setStyleSheet("font-size: 11px;")
+        self._cmb_stretch_motor.setToolTip(
+            "otomatik: rubberband varsa onu, yoksa librosa kullanır"
+        )
+        self._cmb_stretch_motor.currentTextChanged.connect(self._degisiklik)
+        fl_stretch.addRow("Motor:", self._cmb_stretch_motor)
+
+        layout.addWidget(grp_stretch)
+
+        # Ses kalitesi
+        grp_ses = QGroupBox("Ses Kalitesi")
+        grp_ses.setStyleSheet("QGroupBox { font-size: 11px; }")
+        fl_ses = QFormLayout(grp_ses)
+        fl_ses.setSpacing(4)
+
+        self._cmb_sr = QComboBox()
+        self._cmb_sr.addItems(["48000", "44100", "22050"])
+        self._cmb_sr.setStyleSheet("font-size: 11px;")
+        self._cmb_sr.currentTextChanged.connect(self._degisiklik)
+        fl_ses.addRow("Sample rate:", self._cmb_sr)
+
+        self._cmb_bit = QComboBox()
+        self._cmb_bit.addItems(["24", "16"])
+        self._cmb_bit.setStyleSheet("font-size: 11px;")
+        self._cmb_bit.currentTextChanged.connect(self._degisiklik)
+        fl_ses.addRow("Bit derinlik:", self._cmb_bit)
+
+        self._spn_lufs = QDoubleSpinBox()
+        self._spn_lufs.setRange(-40.0, -10.0)
+        self._spn_lufs.setSingleStep(0.5)
+        self._spn_lufs.setValue(-24.0)
+        self._spn_lufs.setSuffix(" LUFS")
+        self._spn_lufs.setStyleSheet("font-size: 11px;")
+        self._spn_lufs.setToolTip("Yayın standardı: -24 LUFS")
+        self._spn_lufs.valueChanged.connect(self._degisiklik)
+        fl_ses.addRow("Normalize:", self._spn_lufs)
+
+        layout.addWidget(grp_ses)
+
+        layout.addStretch()
+        scroll.setWidget(widget)
+        return scroll
+
+    # --------------------------------------------------------
+    # Sekme 3: Çıkış
+    # --------------------------------------------------------
+
+    def _cikis_sekmesi_olustur(self) -> QScrollArea:
+        """Çıkış ayarları sekmesi."""
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setFrameShape(QFrame.Shape.NoFrame)
+
+        widget = QWidget()
+        layout = QVBoxLayout(widget)
+        layout.setSpacing(8)
+        layout.setContentsMargins(8, 8, 8, 8)
+
+        grp_video = QGroupBox("Video Çıkış")
+        grp_video.setStyleSheet("QGroupBox { font-size: 11px; }")
+        fl_video = QFormLayout(grp_video)
+        fl_video.setSpacing(4)
+
+        self._cmb_cikis_format = QComboBox()
+        self._cmb_cikis_format.addItems(["mp4", "mkv"])
+        self._cmb_cikis_format.setStyleSheet("font-size: 11px;")
+        self._cmb_cikis_format.currentTextChanged.connect(self._degisiklik)
+        fl_video.addRow("Format:", self._cmb_cikis_format)
+
+        self._cmb_video_codec = QComboBox()
+        self._cmb_video_codec.addItems(["copy", "libx264", "libx265"])
+        self._cmb_video_codec.setStyleSheet("font-size: 11px;")
+        self._cmb_video_codec.setToolTip("copy = yeniden encode yok (kalite kaybı yok)")
+        self._cmb_video_codec.currentTextChanged.connect(self._degisiklik)
+        fl_video.addRow("Video codec:", self._cmb_video_codec)
+
+        self._cmb_ses_codec = QComboBox()
+        self._cmb_ses_codec.addItems(["aac", "flac", "pcm_s24le"])
+        self._cmb_ses_codec.setStyleSheet("font-size: 11px;")
+        self._cmb_ses_codec.currentTextChanged.connect(self._degisiklik)
+        fl_video.addRow("Ses codec:", self._cmb_ses_codec)
+
+        self._cmb_ses_bitrate = QComboBox()
+        self._cmb_ses_bitrate.addItems(["320k", "256k", "192k", "128k"])
+        self._cmb_ses_bitrate.setStyleSheet("font-size: 11px;")
+        self._cmb_ses_bitrate.currentTextChanged.connect(self._degisiklik)
+        fl_video.addRow("Ses bitrate:", self._cmb_ses_bitrate)
+
+        layout.addWidget(grp_video)
+
+        grp_dosya = QGroupBox("Dosya")
+        grp_dosya.setStyleSheet("QGroupBox { font-size: 11px; }")
+        fl_dosya = QFormLayout(grp_dosya)
+        fl_dosya.setSpacing(4)
+
+        self._txt_son_ek = QLineEdit("_dubbed")
+        self._txt_son_ek.setStyleSheet("font-size: 11px;")
+        self._txt_son_ek.setToolTip("Çıkış dosya adına eklenir: film_dubbed.mp4")
+        self._txt_son_ek.textChanged.connect(self._degisiklik)
+        fl_dosya.addRow("Son ek:", self._txt_son_ek)
+
+        self._chk_uzerine_yaz = QCheckBox("Üzerine yaz")
+        self._chk_uzerine_yaz.setToolTip("Mevcut dosya varsa üzerine yaz")
+        self._chk_uzerine_yaz.stateChanged.connect(self._degisiklik)
+        fl_dosya.addRow(self._chk_uzerine_yaz)
+
+        self._chk_sadece_ses = QCheckBox("Sadece ses çıkışı")
+        self._chk_sadece_ses.setToolTip("Video oluşturma, sadece WAV/MP3 çıktı al")
+        self._chk_sadece_ses.stateChanged.connect(self._degisiklik)
+        fl_dosya.addRow(self._chk_sadece_ses)
+
+        layout.addWidget(grp_dosya)
+
+        layout.addStretch()
+        scroll.setWidget(widget)
+        return scroll
+
+    # --------------------------------------------------------
+    # Config Senkronizasyonu
+    # --------------------------------------------------------
+
+    def config_yukle(self, config: ConfigManager):
+        """Config'den tüm ayarları widget'lara yükler."""
+        self._yukleniyor = True
+        self._config = config
+
+        # Motorlar sekmesi
+        self._cmb_varsayilan_motor.setCurrentText(
+            config.al("tts_motorlari.varsayilan", "edge_tts")
+        )
+
+        # Hedef dil
+        hedef_dil = config.al("genel.hedef_dil", "tr")
+        idx = self._cmb_hedef_dil.findData(hedef_dil)
+        if idx >= 0:
+            self._cmb_hedef_dil.setCurrentIndex(idx)
+
+        self._chk_edge.setChecked(config.al("tts_motorlari.edge_tts.aktif", True))
+        self._cmb_edge_erkek.setCurrentText(
+            config.al("tts_motorlari.edge_tts.varsayilan_ses_erkek", "tr-TR-AhmetNeural")
+        )
+        self._cmb_edge_kadin.setCurrentText(
+            config.al("tts_motorlari.edge_tts.varsayilan_ses_kadin", "tr-TR-EmelNeural")
+        )
+        self._chk_xtts.setChecked(config.al("tts_motorlari.xtts_v2.aktif", False))
+        self._chk_xtts_gpu.setChecked(config.al("tts_motorlari.xtts_v2.gpu_kullan", True))
+        self._chk_openai.setChecked(config.al("tts_motorlari.openai.aktif", False))
+        self._txt_openai_key.setText(config.al("tts_motorlari.openai.api_key", ""))
+        self._cmb_openai_model.setCurrentText(config.al("tts_motorlari.openai.model", "tts-1-hd"))
+        self._chk_eleven.setChecked(config.al("tts_motorlari.elevenlabs.aktif", False))
+        self._txt_eleven_key.setText(config.al("tts_motorlari.elevenlabs.api_key", ""))
+        self._cmb_eleven_model.setCurrentText(
+            config.al("tts_motorlari.elevenlabs.model", "eleven_multilingual_v2")
+        )
+
+        # Zamanlama sekmesi
+        self._spn_max_hiz.setValue(config.al("zamanlama.max_hiz_orani", 2.0))
+        self._spn_fade_in.setValue(config.al("zamanlama.fade_in_ms", 30))
+        self._spn_fade_out.setValue(config.al("zamanlama.fade_out_ms", 30))
+        self._spn_min_sessizlik.setValue(config.al("zamanlama.min_sessizlik_ms", 50))
+        self._cmb_stretch_motor.setCurrentText(
+            config.al("zamanlama.time_stretch_motoru", "otomatik")
+        )
+        self._cmb_sr.setCurrentText(str(config.al("ses.ornekleme_hizi", 48000)))
+        self._cmb_bit.setCurrentText(str(config.al("ses.bit_derinlik", 24)))
+        self._spn_lufs.setValue(config.al("ses.lufs_hedef", -24.0))
+
+        # Çıkış sekmesi
+        self._cmb_cikis_format.setCurrentText(config.al("cikis.format", "mp4"))
+        self._cmb_video_codec.setCurrentText(config.al("cikis.video_codec", "copy"))
+        self._cmb_ses_codec.setCurrentText(config.al("cikis.ses_codec", "aac"))
+        self._cmb_ses_bitrate.setCurrentText(config.al("cikis.ses_bitrate", "320k"))
+        self._txt_son_ek.setText(config.al("cikis.dosya_son_eki", "_dubbed"))
+        self._chk_uzerine_yaz.setChecked(config.al("cikis.uzerine_yaz", False))
+        self._chk_sadece_ses.setChecked(config.al("cikis.sadece_ses", False))
+
+        self._yukleniyor = False
+        logger.info("Ayarlar config'den yüklendi.")
+
+    def config_e_kaydet(self, config: ConfigManager):
+        """Widget değerlerini Config'e yazar."""
+        # Motorlar
+        config.ayarla("tts_motorlari.varsayilan", self._cmb_varsayilan_motor.currentText())
+        config.ayarla("genel.hedef_dil", self._cmb_hedef_dil.currentData() or "tr")
+        config.ayarla("tts_motorlari.edge_tts.aktif", self._chk_edge.isChecked())
+        config.ayarla("tts_motorlari.edge_tts.varsayilan_ses_erkek", self._cmb_edge_erkek.currentText())
+        config.ayarla("tts_motorlari.edge_tts.varsayilan_ses_kadin", self._cmb_edge_kadin.currentText())
+        config.ayarla("tts_motorlari.xtts_v2.aktif", self._chk_xtts.isChecked())
+        config.ayarla("tts_motorlari.xtts_v2.gpu_kullan", self._chk_xtts_gpu.isChecked())
+        config.ayarla("tts_motorlari.openai.aktif", self._chk_openai.isChecked())
+        config.ayarla("tts_motorlari.openai.api_key", self._txt_openai_key.text())
+        config.ayarla("tts_motorlari.openai.model", self._cmb_openai_model.currentText())
+        config.ayarla("tts_motorlari.elevenlabs.aktif", self._chk_eleven.isChecked())
+        config.ayarla("tts_motorlari.elevenlabs.api_key", self._txt_eleven_key.text())
+        config.ayarla("tts_motorlari.elevenlabs.model", self._cmb_eleven_model.currentText())
+
+        # Zamanlama
+        config.ayarla("zamanlama.max_hiz_orani", self._spn_max_hiz.value())
+        config.ayarla("zamanlama.fade_in_ms", self._spn_fade_in.value())
+        config.ayarla("zamanlama.fade_out_ms", self._spn_fade_out.value())
+        config.ayarla("zamanlama.min_sessizlik_ms", self._spn_min_sessizlik.value())
+        config.ayarla("zamanlama.time_stretch_motoru", self._cmb_stretch_motor.currentText())
+        config.ayarla("ses.ornekleme_hizi", int(self._cmb_sr.currentText()))
+        config.ayarla("ses.bit_derinlik", int(self._cmb_bit.currentText()))
+        config.ayarla("ses.lufs_hedef", self._spn_lufs.value())
+
+        # Çıkış
+        config.ayarla("cikis.format", self._cmb_cikis_format.currentText())
+        config.ayarla("cikis.video_codec", self._cmb_video_codec.currentText())
+        config.ayarla("cikis.ses_codec", self._cmb_ses_codec.currentText())
+        config.ayarla("cikis.ses_bitrate", self._cmb_ses_bitrate.currentText())
+        config.ayarla("cikis.dosya_son_eki", self._txt_son_ek.text())
+        config.ayarla("cikis.uzerine_yaz", self._chk_uzerine_yaz.isChecked())
+        config.ayarla("cikis.sadece_ses", self._chk_sadece_ses.isChecked())
+
+        logger.info("Ayarlar config'e kaydedildi.")
+
+    # --------------------------------------------------------
+    # Sinyal
+    # --------------------------------------------------------
+
+    def _degisiklik(self):
+        """Herhangi bir ayar değiştiğinde sinyal gönderir."""
+        if self._yukleniyor:
+            return
+        self.ayarlar_degisti.emit()
+
+    # --------------------------------------------------------
+    # Dil Yönetimi
+    # --------------------------------------------------------
+
+    # Desteklenen diller: kod → (Türkçe ad, Edge TTS erkek ses, Edge TTS kadın ses)
+    DILLER = {
+        "tr": ("Türkçe", "tr-TR-AhmetNeural", "tr-TR-EmelNeural"),
+        "en": ("İngilizce", "en-US-GuyNeural", "en-US-JennyNeural"),
+        "de": ("Almanca", "de-DE-ConradNeural", "de-DE-KatjaNeural"),
+        "fr": ("Fransızca", "fr-FR-HenriNeural", "fr-FR-DeniseNeural"),
+        "es": ("İspanyolca", "es-ES-AlvaroNeural", "es-ES-ElviraNeural"),
+        "it": ("İtalyanca", "it-IT-DiegoNeural", "it-IT-ElsaNeural"),
+        "pt": ("Portekizce", "pt-BR-AntonioNeural", "pt-BR-FranciscaNeural"),
+        "ru": ("Rusça", "ru-RU-DmitryNeural", "ru-RU-SvetlanaNeural"),
+        "ja": ("Japonca", "ja-JP-KeitaNeural", "ja-JP-NanamiNeural"),
+        "ko": ("Korece", "ko-KR-InJoonNeural", "ko-KR-SunHiNeural"),
+        "zh": ("Çince", "zh-CN-YunxiNeural", "zh-CN-XiaoxiaoNeural"),
+        "ar": ("Arapça", "ar-SA-HamedNeural", "ar-SA-ZariyahNeural"),
+        "hi": ("Hintçe", "hi-IN-MadhurNeural", "hi-IN-SwaraNeural"),
+        "nl": ("Felemenkçe", "nl-NL-MaartenNeural", "nl-NL-ColetteNeural"),
+        "pl": ("Lehçe", "pl-PL-MarekNeural", "pl-PL-ZofiaNeural"),
+        "sv": ("İsveççe", "sv-SE-MattiasNeural", "sv-SE-SofieNeural"),
+        "da": ("Danca", "da-DK-JeppeNeural", "da-DK-ChristelNeural"),
+        "fi": ("Fince", "fi-FI-HarriNeural", "fi-FI-NooraNeural"),
+        "el": ("Yunanca", "el-GR-NestorasNeural", "el-GR-AthinaNeural"),
+        "cs": ("Çekçe", "cs-CZ-AntoninNeural", "cs-CZ-VlastaNeural"),
+        "hu": ("Macarca", "hu-HU-TamasNeural", "hu-HU-NoemiNeural"),
+        "ro": ("Rumence", "ro-RO-EmilNeural", "ro-RO-AlinaNeural"),
+        "uk": ("Ukraynaca", "uk-UA-OstapNeural", "uk-UA-PolinaNeural"),
+        "id": ("Endonezce", "id-ID-ArdiNeural", "id-ID-GadisNeural"),
+        "th": ("Tayca", "th-TH-NiwatNeural", "th-TH-PremwadeeNeural"),
+        "vi": ("Vietnamca", "vi-VN-NamMinhNeural", "vi-VN-HoaiMyNeural"),
+    }
+
+    def _dil_listesini_doldur(self):
+        """Hedef dil dropdown'unu doldurur."""
+        self._cmb_hedef_dil.blockSignals(True)
+        self._cmb_hedef_dil.clear()
+        for kod, (ad, _, _) in self.DILLER.items():
+            self._cmb_hedef_dil.addItem(f"{ad} ({kod})", kod)
+        self._cmb_hedef_dil.blockSignals(False)
+
+    def _dil_degisim(self):
+        """Dil değiştiğinde Edge TTS seslerini günceller ve sinyal gönderir."""
+        kod = self._cmb_hedef_dil.currentData()
+        if not kod:
+            return
+
+        dil_bilgi = self.DILLER.get(kod)
+        if dil_bilgi:
+            _, erkek, kadin = dil_bilgi
+            # Edge TTS ses dropdown'larını güncelle
+            self._cmb_edge_erkek.blockSignals(True)
+            self._cmb_edge_kadin.blockSignals(True)
+            self._cmb_edge_erkek.setCurrentText(erkek)
+            self._cmb_edge_kadin.setCurrentText(kadin)
+            self._cmb_edge_erkek.blockSignals(False)
+            self._cmb_edge_kadin.blockSignals(False)
+
+        self.dil_degisti.emit(kod)
+        self._degisiklik()
+
+    @property
+    def hedef_dil(self) -> str:
+        """Seçili hedef dil kodu."""
+        return self._cmb_hedef_dil.currentData() or "tr"

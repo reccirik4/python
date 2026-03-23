@@ -1,0 +1,493 @@
+# -*- coding: utf-8 -*-
+"""
+DubSync Pro — Ayar Yöneticisi (config_manager.py)
+
+JSON ayar dosyasını okur, yazar ve varsayılan değerlerle birleştirir.
+Karakter atamaları, TTS motor ayarları ve ducking parametrelerini yönetir.
+"""
+
+import json
+import os
+import copy
+import logging
+from pathlib import Path
+from typing import Any, Optional
+
+logger = logging.getLogger("DubSync.ConfigManager")
+
+
+# ============================================================
+# Varsayılan Ayarlar
+# ============================================================
+# dubsync_pro_settings.json bulunamazsa veya eksik anahtarlar
+# varsa bu değerler kullanılır.
+# ============================================================
+
+VARSAYILAN_AYARLAR: dict = {
+    "genel": {
+        "dil": "tr",
+        "son_srt_klasoru": "",
+        "son_video_klasoru": "",
+        "son_cikis_klasoru": "",
+        "pencere_genislik": 1400,
+        "pencere_yukseklik": 900,
+        "pencere_tam_ekran": False,
+    },
+    "ses": {
+        "ornekleme_hizi": 48000,
+        "bit_derinlik": 24,
+        "kanal": 1,
+        "format": "wav",
+        "lufs_hedef": -24.0,
+        "normalize": True,
+    },
+    "tts_motorlari": {
+        "varsayilan": "edge_tts",
+        "edge_tts": {
+            "aktif": True,
+            "varsayilan_ses_erkek": "tr-TR-AhmetNeural",
+            "varsayilan_ses_kadin": "tr-TR-EmelNeural",
+            "hiz": "+0%",
+            "perde": "+0Hz",
+            "ses_seviyesi": "+0%",
+        },
+        "xtts_v2": {
+            "aktif": False,
+            "model_yolu": "",
+            "referans_ses_klasoru": "",
+            "gpu_kullan": True,
+            "dil": "tr",
+        },
+        "openai": {
+            "aktif": False,
+            "api_key": "",
+            "model": "tts-1-hd",
+            "varsayilan_ses": "onyx",
+            "hiz": 1.0,
+        },
+        "elevenlabs": {
+            "aktif": False,
+            "api_key": "",
+            "model": "eleven_multilingual_v2",
+            "varsayilan_ses_id": "",
+            "stabilite": 0.5,
+            "benzerlik": 0.75,
+            "stil": 0.0,
+        },
+    },
+    "karakterler": {},
+    "zamanlama": {
+        "max_hiz_orani": 2.0,
+        "min_hiz_orani": 1.0,
+        "min_sessizlik_ms": 50,
+        "fade_in_ms": 30,
+        "fade_out_ms": 30,
+        "on_bosluk_ms": 0,
+        "son_bosluk_ms": 0,
+        "time_stretch_motoru": "otomatik",
+    },
+    "ducking": {
+        "yontem": "basit",
+        "aktif": True,
+        "duck_seviye_db": -15,
+        "attack_ms": 200,
+        "release_ms": 500,
+        "on_duck_ms": 150,
+        "esik_db": -30,
+        "sidechain": {
+            "threshold": 0.02,
+            "ratio": 4,
+            "attack": 200,
+            "release": 1000,
+        },
+    },
+    "cikis": {
+        "video_codec": "copy",
+        "ses_codec": "aac",
+        "ses_bitrate": "320k",
+        "format": "mp4",
+        "sadece_ses": False,
+        "ses_cikis_format": "wav",
+        "dosya_son_eki": "_dubbed",
+        "uzerine_yaz": False,
+    },
+    "diarizasyon": {
+        "otomatik_algilama": True,
+        "desenler": [
+            "\\[SPEAKER_(\\d+)\\]",
+            "\\(SPEAKER_(\\d+)\\)",
+            "SPEAKER_(\\d+):",
+            "\\[([A-ZÇĞİÖŞÜa-zçğıöşü\\s]+)\\]",
+            "\\(([A-ZÇĞİÖŞÜa-zçğıöşü\\s]+)\\)",
+        ],
+    },
+}
+
+
+class ConfigManager:
+    """
+    DubSync Pro ayar yöneticisi.
+
+    - JSON dosyasını okur/yazar.
+    - Eksik anahtarları varsayılanlarla doldurur.
+    - Karakter ve motor ayarlarına kolay erişim sağlar.
+    - Değişiklikleri otomatik kaydeder (isteğe bağlı).
+    """
+
+    def __init__(self, ayar_dosyasi: Optional[str] = None):
+        """
+        Args:
+            ayar_dosyasi: JSON ayar dosyasının yolu.
+                          None ise çalışma dizininde
+                          'dubsync_pro_settings.json' aranır.
+        """
+        if ayar_dosyasi is None:
+            # Önce script'in bulunduğu dizinde ara
+            script_dizin = Path(__file__).resolve().parent.parent
+            ayar_dosyasi = str(script_dizin / "dubsync_pro_settings.json")
+
+        self._dosya_yolu: str = ayar_dosyasi
+        self._ayarlar: dict = {}
+        self._degismis: bool = False
+
+        self.yukle()
+
+    # --------------------------------------------------------
+    # Dosya İşlemleri
+    # --------------------------------------------------------
+
+    def yukle(self) -> None:
+        """
+        Ayar dosyasını yükler. Dosya yoksa veya geçersizse
+        varsayılan ayarları kullanır.
+        """
+        if os.path.isfile(self._dosya_yolu):
+            try:
+                with open(self._dosya_yolu, "r", encoding="utf-8") as f:
+                    okunan = json.load(f)
+                logger.info("Ayar dosyası yüklendi: %s", self._dosya_yolu)
+            except (json.JSONDecodeError, OSError) as e:
+                logger.warning(
+                    "Ayar dosyası okunamadı (%s), varsayılanlar kullanılıyor: %s",
+                    e,
+                    self._dosya_yolu,
+                )
+                okunan = {}
+        else:
+            logger.info(
+                "Ayar dosyası bulunamadı, varsayılanlar kullanılıyor: %s",
+                self._dosya_yolu,
+            )
+            okunan = {}
+
+        # Varsayılanlarla birleştir (eksik anahtarları doldur)
+        self._ayarlar = self._derin_birlestir(
+            copy.deepcopy(VARSAYILAN_AYARLAR), okunan
+        )
+
+        # _comment anahtarlarını koru (JSON'da açıklama amaçlı)
+        for anahtar, deger in okunan.items():
+            if anahtar.startswith("_"):
+                self._ayarlar[anahtar] = deger
+
+        self._degismis = False
+
+    def kaydet(self) -> bool:
+        """
+        Ayarları JSON dosyasına yazar.
+
+        Returns:
+            True: başarılı, False: hata oluştu.
+        """
+        try:
+            # Dizin yoksa oluştur
+            dizin = os.path.dirname(self._dosya_yolu)
+            if dizin and not os.path.isdir(dizin):
+                os.makedirs(dizin, exist_ok=True)
+
+            # _comment anahtarlarını temizle (sadece asıl verileri kaydet)
+            kayit_verisi = {
+                k: v for k, v in self._ayarlar.items() if not k.startswith("_")
+            }
+
+            with open(self._dosya_yolu, "w", encoding="utf-8") as f:
+                json.dump(kayit_verisi, f, ensure_ascii=False, indent=2)
+
+            self._degismis = False
+            logger.info("Ayarlar kaydedildi: %s", self._dosya_yolu)
+            return True
+
+        except OSError as e:
+            logger.error("Ayarlar kaydedilemedi: %s", e)
+            return False
+
+    def sifirla(self) -> None:
+        """Tüm ayarları varsayılana döndürür."""
+        self._ayarlar = copy.deepcopy(VARSAYILAN_AYARLAR)
+        self._degismis = True
+        logger.info("Ayarlar varsayılana sıfırlandı.")
+
+    # --------------------------------------------------------
+    # Genel Erişim
+    # --------------------------------------------------------
+
+    def al(self, yol: str, varsayilan: Any = None) -> Any:
+        """
+        Nokta notasyonuyla iç içe ayarlara erişir.
+
+        Args:
+            yol: "ducking.duck_seviye_db" veya "tts_motorlari.edge_tts.aktif"
+            varsayilan: Anahtar bulunamazsa döndürülecek değer.
+
+        Returns:
+            Ayar değeri veya varsayılan.
+
+        Örnek:
+            >>> config.al("ses.ornekleme_hizi")
+            48000
+            >>> config.al("tts_motorlari.openai.api_key")
+            ""
+        """
+        parcalar = yol.split(".")
+        deger = self._ayarlar
+        for parca in parcalar:
+            if isinstance(deger, dict) and parca in deger:
+                deger = deger[parca]
+            else:
+                return varsayilan
+        return deger
+
+    def ayarla(self, yol: str, deger: Any) -> None:
+        """
+        Nokta notasyonuyla iç içe ayar değerini günceller.
+
+        Args:
+            yol: "ducking.duck_seviye_db"
+            deger: Yeni değer.
+
+        Örnek:
+            >>> config.ayarla("ducking.duck_seviye_db", -12)
+        """
+        parcalar = yol.split(".")
+        hedef = self._ayarlar
+        for parca in parcalar[:-1]:
+            if parca not in hedef or not isinstance(hedef[parca], dict):
+                hedef[parca] = {}
+            hedef = hedef[parca]
+        hedef[parcalar[-1]] = deger
+        self._degismis = True
+
+    @property
+    def degismis(self) -> bool:
+        """Kaydedilmemiş değişiklik var mı?"""
+        return self._degismis
+
+    @property
+    def dosya_yolu(self) -> str:
+        """Ayar dosyasının tam yolu."""
+        return self._dosya_yolu
+
+    @property
+    def tum_ayarlar(self) -> dict:
+        """Tüm ayarların bir kopyası."""
+        return copy.deepcopy(self._ayarlar)
+
+    # --------------------------------------------------------
+    # Karakter Yönetimi
+    # --------------------------------------------------------
+
+    def karakter_listesi(self) -> list[str]:
+        """
+        Tanımlı karakter kimliklerinin listesi.
+
+        Returns:
+            ["SPEAKER_00", "SPEAKER_01", ...] gibi liste.
+        """
+        karakterler = self._ayarlar.get("karakterler", {})
+        # _ornek_ ile başlayan anahtarları filtrele
+        return [k for k in karakterler if not k.startswith("_")]
+
+    def karakter_al(self, karakter_id: str) -> Optional[dict]:
+        """
+        Belirtilen karakterin ayarlarını döndürür.
+
+        Args:
+            karakter_id: "SPEAKER_00" gibi kimlik.
+
+        Returns:
+            {"isim": "Pozzo", "motor": "edge_tts", ...} veya None.
+        """
+        return self._ayarlar.get("karakterler", {}).get(karakter_id)
+
+    def karakter_ekle(
+        self,
+        karakter_id: str,
+        isim: str = "",
+        motor: str = "",
+        ses: str = "",
+        cinsiyet: str = "erkek",
+        hiz: str = "+0%",
+        perde: str = "+0Hz",
+        klon_yolu: str = "",
+    ) -> None:
+        """
+        Yeni karakter ekler veya mevcut karakteri günceller.
+
+        Args:
+            karakter_id: "SPEAKER_00" gibi kimlik.
+            isim: Görünen isim (örn: "Pozzo").
+            motor: TTS motor adı. Boşsa varsayılan motor kullanılır.
+            ses: TTS ses adı. Boşsa motorun varsayılan sesi kullanılır.
+            cinsiyet: "erkek" veya "kadin".
+            hiz: Konuşma hızı (örn: "+10%", "-5%").
+            perde: Ses perdesi (örn: "+5Hz", "-10Hz").
+        """
+        if "karakterler" not in self._ayarlar:
+            self._ayarlar["karakterler"] = {}
+
+        # Motor boşsa varsayılanı kullan
+        if not motor:
+            motor = self.al("tts_motorlari.varsayilan", "edge_tts")
+
+        # Ses boşsa motora ve cinsiyete göre varsayılanı bul
+        if not ses:
+            ses = self._varsayilan_ses_bul(motor, cinsiyet)
+
+        self._ayarlar["karakterler"][karakter_id] = {
+            "isim": isim,
+            "motor": motor,
+            "ses": ses,
+            "cinsiyet": cinsiyet,
+            "hiz": hiz,
+            "perde": perde,
+        }
+        self._degismis = True
+        logger.info("Karakter eklendi/güncellendi: %s → %s", karakter_id, isim)
+
+    def karakter_sil(self, karakter_id: str) -> bool:
+        """
+        Karakteri siler.
+
+        Returns:
+            True: silindi, False: bulunamadı.
+        """
+        karakterler = self._ayarlar.get("karakterler", {})
+        if karakter_id in karakterler:
+            del karakterler[karakter_id]
+            self._degismis = True
+            logger.info("Karakter silindi: %s", karakter_id)
+            return True
+        return False
+
+    def karakter_temizle(self) -> None:
+        """Tüm karakter atamalarını temizler."""
+        self._ayarlar["karakterler"] = {}
+        self._degismis = True
+        logger.info("Tüm karakter atamaları temizlendi.")
+
+    # --------------------------------------------------------
+    # Motor Yardımcıları
+    # --------------------------------------------------------
+
+    def aktif_motorlar(self) -> list[str]:
+        """
+        Aktif (etkinleştirilmiş) TTS motorlarının listesi.
+
+        Returns:
+            ["edge_tts", "openai"] gibi liste.
+        """
+        motorlar = self._ayarlar.get("tts_motorlari", {})
+        sonuc = []
+        for ad, ayar in motorlar.items():
+            if isinstance(ayar, dict) and ayar.get("aktif", False):
+                sonuc.append(ad)
+        return sonuc
+
+    def motor_ayar_al(self, motor_adi: str) -> Optional[dict]:
+        """
+        Belirtilen motorun ayarlarını döndürür.
+
+        Args:
+            motor_adi: "edge_tts", "openai" vb.
+
+        Returns:
+            Motor ayar sözlüğü veya None.
+        """
+        return self._ayarlar.get("tts_motorlari", {}).get(motor_adi)
+
+    def varsayilan_motor(self) -> str:
+        """Varsayılan TTS motor adını döndürür."""
+        return self.al("tts_motorlari.varsayilan", "edge_tts")
+
+    # --------------------------------------------------------
+    # Diarizasyon Desenleri
+    # --------------------------------------------------------
+
+    def diarizasyon_desenleri(self) -> list[str]:
+        """Diarizasyon regex desenlerini döndürür."""
+        return self.al("diarizasyon.desenler", VARSAYILAN_AYARLAR["diarizasyon"]["desenler"])
+
+    # --------------------------------------------------------
+    # Dahili Yardımcılar
+    # --------------------------------------------------------
+
+    def _varsayilan_ses_bul(self, motor: str, cinsiyet: str) -> str:
+        """Motora ve cinsiyete göre varsayılan ses adını döndürür."""
+        motor_ayar = self.motor_ayar_al(motor)
+        if motor_ayar is None:
+            return ""
+
+        if cinsiyet == "kadin":
+            return motor_ayar.get(
+                "varsayilan_ses_kadin",
+                motor_ayar.get("varsayilan_ses", ""),
+            )
+        return motor_ayar.get(
+            "varsayilan_ses_erkek",
+            motor_ayar.get("varsayilan_ses", ""),
+        )
+
+    @staticmethod
+    def _derin_birlestir(temel: dict, uygulanan: dict) -> dict:
+        """
+        İki sözlüğü derin birleştirir. Uygulanan değerler temel
+        değerlerin üzerine yazılır, eksik anahtarlar temel'den korunur.
+
+        Args:
+            temel: Varsayılan değerleri içeren sözlük.
+            uygulanan: Kullanıcı değerlerini içeren sözlük.
+
+        Returns:
+            Birleştirilmiş sözlük.
+        """
+        sonuc = copy.deepcopy(temel)
+        for anahtar, deger in uygulanan.items():
+            if anahtar.startswith("_"):
+                # _comment gibi açıklama anahtarlarını atla
+                continue
+            if (
+                anahtar in sonuc
+                and isinstance(sonuc[anahtar], dict)
+                and isinstance(deger, dict)
+            ):
+                sonuc[anahtar] = ConfigManager._derin_birlestir(
+                    sonuc[anahtar], deger
+                )
+            else:
+                sonuc[anahtar] = copy.deepcopy(deger)
+        return sonuc
+
+    # --------------------------------------------------------
+    # Temsil
+    # --------------------------------------------------------
+
+    def __repr__(self) -> str:
+        durum = "değişmiş" if self._degismis else "güncel"
+        karakter_sayisi = len(self.karakter_listesi())
+        motor_sayisi = len(self.aktif_motorlar())
+        return (
+            f"<ConfigManager dosya='{self._dosya_yolu}' "
+            f"durum={durum} "
+            f"karakterler={karakter_sayisi} "
+            f"aktif_motorlar={motor_sayisi}>"
+        )

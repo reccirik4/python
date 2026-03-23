@@ -1,0 +1,134 @@
+{
+  "genel": {
+    "dil": "tr",
+    "son_srt_klasoru": "C:\\capcutdrafts\\denemeler\\3-the ingenious design",
+    "son_video_klasoru": "C:\\capcutdrafts\\denemeler\\3-the ingenious design",
+    "son_cikis_klasoru": "",
+    "pencere_genislik": 1536,
+    "pencere_yukseklik": 793,
+    "pencere_tam_ekran": false,
+    "hedef_dil": "tr"
+  },
+  "ses": {
+    "ornekleme_hizi": 48000,
+    "bit_derinlik": 24,
+    "kanal": 1,
+    "format": "wav",
+    "lufs_hedef": -24.0,
+    "normalize": true
+  },
+  "tts_motorlari": {
+    "varsayilan": "xtts_v2",
+    "edge_tts": {
+      "aktif": true,
+      "varsayilan_ses_erkek": "tr-TR-AhmetNeural",
+      "varsayilan_ses_kadin": "tr-TR-EmelNeural",
+      "hiz": "+0%",
+      "perde": "+0Hz",
+      "ses_seviyesi": "+0%"
+    },
+    "xtts_v2": {
+      "aktif": true,
+      "model_yolu": "",
+      "referans_ses_klasoru": "",
+      "gpu_kullan": true,
+      "dil": "tr"
+    },
+    "openai": {
+      "aktif": false,
+      "api_key": "",
+      "model": "tts-1-hd",
+      "varsayilan_ses": "onyx",
+      "hiz": 1.0
+    },
+    "elevenlabs": {
+      "aktif": false,
+      "api_key": "",
+      "model": "eleven_multilingual_v2",
+      "varsayilan_ses_id": "",
+      "stabilite": 0.5,
+      "benzerlik": 0.75,
+      "stil": 0.0
+    }
+  },
+  "karakterler": {
+    "SPEAKER_01": {
+      "isim": "Vladimir (Didi)",
+      "motor": "xtts_v2",
+      "ses": "C:/capcutdrafts/denemeler/waiting for godot/uzun/dubsync_clones/SPEAKER_01_referans.wav",
+      "cinsiyet": "erkek",
+      "hiz": "+0%",
+      "perde": "+0Hz"
+    },
+    "SPEAKER_03": {
+      "isim": "Vladimir (Didi)",
+      "motor": "xtts_v2",
+      "ses": "xtts_clone",
+      "cinsiyet": "erkek",
+      "hiz": "+0%",
+      "perde": "+0Hz"
+    },
+    "SPEAKER_00": {
+      "isim": "Engineer",
+      "motor": "xtts_v2",
+      "ses": "C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav",
+      "cinsiyet": "erkek",
+      "hiz": "+0%",
+      "perde": "+0Hz",
+      "klon_yolu": "C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav"
+    },
+    "SPEAKER_02": {
+      "isim": "",
+      "motor": "edge_tts",
+      "ses": "tr-TR-AhmetNeural",
+      "cinsiyet": "erkek",
+      "hiz": "+0%",
+      "perde": "+0Hz"
+    }
+  },
+  "zamanlama": {
+    "max_hiz_orani": 2.0,
+    "min_hiz_orani": 1.0,
+    "min_sessizlik_ms": 50,
+    "fade_in_ms": 30,
+    "fade_out_ms": 30,
+    "on_bosluk_ms": 0,
+    "son_bosluk_ms": 0,
+    "time_stretch_motoru": "otomatik"
+  },
+  "ducking": {
+    "yontem": "basit",
+    "aktif": true,
+    "duck_seviye_db": -18,
+    "attack_ms": 200,
+    "release_ms": 500,
+    "on_duck_ms": 150,
+    "esik_db": -30,
+    "sidechain": {
+      "threshold": 0.02,
+      "ratio": 4,
+      "attack": 200,
+      "release": 1000
+    }
+  },
+  "cikis": {
+    "video_codec": "copy",
+    "ses_codec": "aac",
+    "ses_bitrate": "320k",
+    "format": "mp4",
+    "sadece_ses": false,
+    "ses_cikis_format": "wav",
+    "dosya_son_eki": "_dubbed",
+    "uzerine_yaz": false
+  },
+  "diarizasyon": {
+    "otomatik_algilama": true,
+    "desenler": [
+      "\\[SPEAKER_(\\d+)\\]",
+      "\\(SPEAKER_(\\d+)\\)",
+      "SPEAKER_(\\d+):",
+      "\\[([A-ZÇĞİÖŞÜa-zçğıöşü\\s]+)\\]",
+      "\\(([A-ZÇĞİÖŞÜa-zçğıöşü\\s]+)\\)"
+    ]
+  }
+}
