@@ -1,13 +1,13 @@
 {
   "genel": {
     "dil": "tr",
-    "son_srt_klasoru": "C:\\capcutdrafts\\denemeler\\3-the ingenious design",
-    "son_video_klasoru": "C:\\capcutdrafts\\denemeler\\3-the ingenious design",
+    "son_srt_klasoru": "C:\\capcutdrafts\\denemeler\\7",
+    "son_video_klasoru": "C:\\capcutdrafts\\denemeler\\7\\2026-03-21-1-shorts-copy (1)(1)",
     "son_cikis_klasoru": "",
     "pencere_genislik": 1536,
     "pencere_yukseklik": 793,
     "pencere_tam_ekran": false,
-    "hedef_dil": "tr"
+    "hedef_dil": "en"
   },
   "ses": {
     "ornekleme_hizi": 48000,
@@ -21,8 +21,8 @@
     "varsayilan": "xtts_v2",
     "edge_tts": {
       "aktif": true,
-      "varsayilan_ses_erkek": "tr-TR-AhmetNeural",
-      "varsayilan_ses_kadin": "tr-TR-EmelNeural",
+      "varsayilan_ses_erkek": "en-US-GuyNeural",
+      "varsayilan_ses_kadin": "en-US-JennyNeural",
       "hiz": "+0%",
       "perde": "+0Hz",
       "ses_seviyesi": "+0%"
@@ -32,7 +32,7 @@
       "model_yolu": "",
       "referans_ses_klasoru": "",
       "gpu_kullan": true,
-      "dil": "tr"
+      "dil": "en"
     },
     "openai": {
       "aktif": false,
@@ -69,13 +69,13 @@
       "perde": "+0Hz"
     },
     "SPEAKER_00": {
-      "isim": "Engineer",
+      "isim": "MMA",
       "motor": "xtts_v2",
-      "ses": "C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav",
+      "ses": "C:\\kodlamalar\\python\\srt-tts-2026-super-gpu\\dubsync_voices\\MMA-en.wav",
       "cinsiyet": "erkek",
       "hiz": "+0%",
       "perde": "+0Hz",
-      "klon_yolu": "C:/capcutdrafts/denemeler/3-the ingenious design/dubsync_clones/SPEAKER_00_referans.wav"
+      "klon_yolu": "C:\\kodlamalar\\python\\srt-tts-2026-super-gpu\\dubsync_voices\\MMA-en.wav"
     },
     "SPEAKER_02": {
       "isim": "",

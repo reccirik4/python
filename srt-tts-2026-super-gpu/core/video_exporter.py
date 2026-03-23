@@ -12,8 +12,10 @@ import os
 import subprocess
 import shutil
 import json
+import re
+import threading
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Callable
 
 logger = logging.getLogger("DubSync.VideoExporter")
 
@@ -243,7 +245,7 @@ class VideoExporter:
         video_yolu: str,
         ses_yolu: str,
         cikis_yolu: Optional[str] = None,
-        ilerleme_callback=None,
+        ilerleme_callback: Optional[Callable[[float], None]] = None,
     ) -> ExportSonucu:
         """
         Orijinal video ile yeni ses dosyasını birleştirir.
@@ -255,7 +257,7 @@ class VideoExporter:
             video_yolu: Orijinal video dosya yolu.
             ses_yolu: Yeni ses dosya yolu (WAV veya diğer).
             cikis_yolu: Çıkış dosya yolu. None ise otomatik oluşturulur.
-            ilerleme_callback: İlerleme fonksiyonu (yüzde: float).
+            ilerleme_callback: İlerleme fonksiyonu (yüzde: float 0-100).
 
         Returns:
             ExportSonucu nesnesi.
@@ -291,6 +293,9 @@ class VideoExporter:
 
         Path(cikis_yolu).parent.mkdir(parents=True, exist_ok=True)
 
+        # Video süresini al (ilerleme hesabı için)
+        video_suresi_ms = self.video_suresi_al(video_yolu)
+
         # FFmpeg komutu
         cmd = self._ffmpeg_komutu_olustur(video_yolu, ses_yolu, cikis_yolu)
 
@@ -301,10 +306,41 @@ class VideoExporter:
                 cmd,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
+                universal_newlines=True,
+                encoding="utf-8",
+                errors="replace",
             )
 
-            # Çıktıyı oku (ilerleme bilgisi stderr'den gelir)
-            _, stderr_veri = proc.communicate(timeout=1800)  # 30 dk timeout
+            # [DÜZELTİLDİ] stderr'den ilerleme oku (FFmpeg progress bilgisi)
+            stderr_satirlar = []
+
+            def _stderr_oku():
+                """stderr'i thread'de oku ve ilerleme callback'i çağır."""
+                for satir in proc.stderr:
+                    stderr_satirlar.append(satir)
+                    if ilerleme_callback and video_suresi_ms > 0:
+                        # FFmpeg "time=HH:MM:SS.mm" formatında ilerleme verir
+                        eslesme = re.search(r"time=(\d+):(\d+):(\d+)\.(\d+)", satir)
+                        if eslesme:
+                            try:
+                                saat = int(eslesme.group(1))
+                                dakika = int(eslesme.group(2))
+                                saniye = int(eslesme.group(3))
+                                gecen_ms = (saat * 3600 + dakika * 60 + saniye) * 1000
+                                yuzde = min(99.0, (gecen_ms / video_suresi_ms) * 100)
+                                ilerleme_callback(yuzde)
+                            except (ValueError, ZeroDivisionError):
+                                pass
+
+            stderr_thread = threading.Thread(target=_stderr_oku, daemon=True)
+            stderr_thread.start()
+
+            # Stdout'u boşalt (genellikle boş)
+            proc.stdout.read()
+
+            # Süreç bitişini bekle
+            proc.wait(timeout=1800)  # 30 dk timeout
+            stderr_thread.join(timeout=5)
 
             if proc.returncode == 0 and os.path.isfile(cikis_yolu):
                 boyut = os.path.getsize(cikis_yolu) / (1024 * 1024)
@@ -317,9 +353,13 @@ class VideoExporter:
                 if bilgi:
                     sonuc.video_sure_ms = bilgi.sure_ms
 
+                # [DÜZELTİLDİ] Tamamlandı — %100 bildir
+                if ilerleme_callback:
+                    ilerleme_callback(100.0)
+
                 logger.info(sonuc.ozet())
             else:
-                hata = stderr_veri.decode(errors="replace")[-500:]
+                hata = "".join(stderr_satirlar)[-500:]
                 sonuc.hata_mesaji = f"FFmpeg hatası (kod {proc.returncode}): {hata}"
                 logger.error(sonuc.hata_mesaji[:200])
 
@@ -367,6 +407,9 @@ class VideoExporter:
             cmd.extend(["-c:a", "copy"])
         else:
             cmd.extend(["-c:a", "aac", "-b:a", "320k"])
+
+        # İlerleme bilgisi için stats_period ekle
+        cmd.extend(["-stats_period", "0.5"])
 
         # Çıkış
         cmd.append(cikis_yolu)

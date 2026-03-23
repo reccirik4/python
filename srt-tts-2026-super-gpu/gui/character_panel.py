@@ -5,9 +5,14 @@ DubSync Pro — Karakter Paneli (character_panel.py)
 Otomatik algılanan konuşmacıları listeler, her birine isim,
 TTS motoru, ses, cinsiyet, hız ve perde atanmasını sağlar.
 Ses önizleme ve klonlama için ses örneği yükleme destekler.
+Ses kütüphanesi (dubsync_voices/) entegrasyonu içerir.
 """
 
+import asyncio
 import logging
+import os
+import tempfile
+import threading
 from typing import Optional
 
 from PyQt6.QtCore import Qt, pyqtSignal
@@ -23,6 +28,7 @@ from PyQt6.QtWidgets import (
     QFrame,
     QFileDialog,
     QSlider,
+    QMessageBox,
 )
 
 from core.config_manager import ConfigManager
@@ -40,11 +46,15 @@ class KarakterKarti(QFrame):
 
     İçerir: Speaker ID, isim alanı, motor seçimi, ses seçimi,
     cinsiyet, hız/perde slider'ları, önizleme butonu.
+    Ses kütüphanesi entegrasyonu ile klonlama akışı yönetilir.
     """
 
     degisti = pyqtSignal(str)
     onizleme_istendi = pyqtSignal(str)
     filmden_klonla_istendi = pyqtSignal(str)  # karakter_id
+    ses_kutuphanesi_guncellendi = pyqtSignal()  # yeni ses kaydedildi
+    # Thread → ana thread iletişimi için klonlama sonuç sinyali
+    _klonlama_bitti = pyqtSignal(bool, str, str, str, str)  # (basarili, gecici_wav, referans_yolu, kaynak, hata)
 
     def __init__(
         self,
@@ -56,6 +66,8 @@ class KarakterKarti(QFrame):
         self._karakter_id = karakter_id
         self._satir_sayisi = satir_sayisi
         self._hedef_dil: str = "tr"
+        self._library = None   # VoiceLibrary — dışarıdan set edilir
+        self._motor_obj = None  # Klonlama için motor nesnesi
 
         self.setFrameShape(QFrame.Shape.StyledPanel)
         self.setStyleSheet(
@@ -64,6 +76,8 @@ class KarakterKarti(QFrame):
         )
 
         self._olustur()
+        # Thread-safe klonlama sonucu — sinyal ana thread'de işlenir
+        self._klonlama_bitti.connect(self._klonlama_sonuc_slot)
 
     def _olustur(self):
         """Kart içeriğini oluşturur."""
@@ -187,8 +201,10 @@ class KarakterKarti(QFrame):
         self._btn_onizleme = QPushButton("▶ Dinle")
         self._btn_onizleme.setMaximumHeight(26)
         self._btn_onizleme.setStyleSheet(
-            "font-size: 11px; padding: 2px 8px; "
-            "background-color: #e3f2fd; border: 1px solid #90caf9; border-radius: 3px;"
+            "QPushButton { font-size: 11px; padding: 2px 8px; "
+            "background-color: #e3f2fd; border: 1px solid #90caf9; border-radius: 3px; }"
+            "QPushButton:hover { background-color: #bbdefb; }"
+            "QPushButton:disabled { background-color: #eee; color: #aaa; }"
         )
         self._btn_onizleme.clicked.connect(
             lambda: self.onizleme_istendi.emit(self._karakter_id)
@@ -197,8 +213,10 @@ class KarakterKarti(QFrame):
         self._btn_klonla = QPushButton("🎤 Klonla")
         self._btn_klonla.setMaximumHeight(26)
         self._btn_klonla.setStyleSheet(
-            "font-size: 11px; padding: 2px 8px; "
-            "background-color: #fce4ec; border: 1px solid #f48fb1; border-radius: 3px;"
+            "QPushButton { font-size: 11px; padding: 2px 8px; "
+            "background-color: #fce4ec; border: 1px solid #f48fb1; border-radius: 3px; }"
+            "QPushButton:hover { background-color: #f8bbd0; }"
+            "QPushButton:disabled { background-color: #eee; color: #aaa; }"
         )
         self._btn_klonla.clicked.connect(self._klonlama_ses_sec)
         self._btn_klonla.setToolTip("Ses klonlama için referans ses dosyası seç")
@@ -206,8 +224,10 @@ class KarakterKarti(QFrame):
         self._btn_filmden = QPushButton("🎬 Filmden")
         self._btn_filmden.setMaximumHeight(26)
         self._btn_filmden.setStyleSheet(
-            "font-size: 11px; padding: 2px 8px; "
-            "background-color: #e8f5e9; border: 1px solid #81c784; border-radius: 3px;"
+            "QPushButton { font-size: 11px; padding: 2px 8px; "
+            "background-color: #e8f5e9; border: 1px solid #81c784; border-radius: 3px; }"
+            "QPushButton:hover { background-color: #c8e6c9; }"
+            "QPushButton:disabled { background-color: #eee; color: #aaa; }"
         )
         self._btn_filmden.clicked.connect(
             lambda: self.filmden_klonla_istendi.emit(self._karakter_id)
@@ -220,12 +240,15 @@ class KarakterKarti(QFrame):
         btn_layout.addStretch()
         layout.addLayout(btn_layout)
 
-        # Klonlama yolu etiketi
-        self._lbl_klon_yolu = QLabel("")
-        self._lbl_klon_yolu.setStyleSheet("font-size: 9px; color: #999;")
-        self._lbl_klon_yolu.setWordWrap(True)
-        self._lbl_klon_yolu.hide()
-        layout.addWidget(self._lbl_klon_yolu)
+        # Klonlama durumu etiketi
+        self._lbl_klon_durum = QLabel("")
+        self._lbl_klon_durum.setStyleSheet("font-size: 9px; color: #999;")
+        self._lbl_klon_durum.setWordWrap(True)
+        self._lbl_klon_durum.hide()
+        layout.addWidget(self._lbl_klon_durum)
+
+        # Klonlama yolu (gizli, veri taşımak için)
+        self._klon_yolu: str = ""
 
     # --------------------------------------------------------
     # Sinyal İşleyiciler
@@ -249,9 +272,7 @@ class KarakterKarti(QFrame):
     def _ses_listesini_guncelle(self, hedef_dil: str = ""):
         """
         Seçili motora göre ses dropdown'ını doldurur.
-
-        Args:
-            hedef_dil: Dil kodu (ör: "tr"). Boşsa mevcut dili kullanır.
+        XTTS motoru için kütüphanedeki klonlanmış sesleri de ekler.
         """
         motor = self._cmb_motor.currentData() or self._cmb_motor.currentText()
         onceki_ses = self._cmb_ses.currentData() or self._cmb_ses.currentText()
@@ -263,15 +284,8 @@ class KarakterKarti(QFrame):
             self._edge_sesleri_yukle(hedef_dil)
 
         elif motor == "xtts_v2":
-            self._cmb_ses.addItem("Klonlama (referans gerekli)", "xtts_clone")
-            # Klon yolu varsa göster
-            klon_yol = self._lbl_klon_yolu.text().replace("Referans: ", "")
-            if klon_yol:
-                import os
-                self._cmb_ses.addItem(
-                    f"Klon: {os.path.basename(klon_yol)}", klon_yol
-                )
-                self._cmb_ses.setCurrentIndex(1)
+            # Kütüphanedeki klonlanmış sesleri ekle
+            self._kutuphaneden_xtts_sesleri_yukle()
 
         elif motor == "openai":
             self._openai_sesleri_yukle()
@@ -287,6 +301,36 @@ class KarakterKarti(QFrame):
                     break
 
         self._cmb_ses.blockSignals(False)
+
+    def _kutuphaneden_xtts_sesleri_yukle(self):
+        """
+        XTTS motoru için:
+        1. Ses kütüphanesindeki kayıtlı klonları ekle
+        2. Eğer klon_yolu varsa ve kütüphanede yoksa da ekle
+        """
+        # Kütüphanedeki sesler
+        if self._library:
+            sesler = self._library.sesleri_listele()
+            for bilgi in sesler:
+                isim = bilgi["isim"]
+                tam_yol = bilgi.get("tam_yol", "")
+                if tam_yol and os.path.isfile(tam_yol):
+                    self._cmb_ses.addItem(f"🎙 {isim}", tam_yol)
+
+        # Mevcut klon_yolu varsa ve listede yoksa ekle
+        if self._klon_yolu and os.path.isfile(self._klon_yolu):
+            zaten_var = False
+            for i in range(self._cmb_ses.count()):
+                if self._cmb_ses.itemData(i) == self._klon_yolu:
+                    zaten_var = True
+                    break
+            if not zaten_var:
+                dosya_adi = os.path.splitext(os.path.basename(self._klon_yolu))[0]
+                self._cmb_ses.addItem(f"🎙 {dosya_adi}", self._klon_yolu)
+
+        # Hiç ses yoksa placeholder
+        if self._cmb_ses.count() == 0:
+            self._cmb_ses.addItem("(Önce klonlama yapın)", "")
 
     def _edge_sesleri_yukle(self, hedef_dil: str = ""):
         """Edge TTS seslerini dile göre yükler."""
@@ -306,7 +350,6 @@ class KarakterKarti(QFrame):
                 self._cmb_ses.addItem(f"♂ {erkek}", erkek)
                 self._cmb_ses.addItem(f"♀ {kadin}", kadin)
         else:
-            # Fallback Türkçe
             self._cmb_ses.addItem("♂ tr-TR-AhmetNeural", "tr-TR-AhmetNeural")
             self._cmb_ses.addItem("♀ tr-TR-EmelNeural", "tr-TR-EmelNeural")
 
@@ -340,14 +383,254 @@ class KarakterKarti(QFrame):
         self._lbl_perde_deger.setText(f"{isaret}{deger}Hz")
         self._degisiklik_bildir()
 
+    # --------------------------------------------------------
+    # Klonlama Akışı
+    # --------------------------------------------------------
+
     def _klonlama_ses_sec(self):
-        """Referans ses dosyası seçer ve motoru klonlama motoruna çeker."""
+        """
+        Referans ses dosyası seçer.
+        Seçim yapılır yapılmaz klonlama başlar:
+        - Dinle butonu inaktif
+        - Klonlama tamamlanınca SesCalistirVeKaydetDialog açılır
+        """
         yol, _ = QFileDialog.getOpenFileName(
             self, "Referans Ses Dosyası Seç", "",
             "Ses Dosyaları (*.wav *.mp3 *.ogg *.flac);;Tüm Dosyalar (*)",
         )
-        if yol:
-            self._referans_ata_ve_motoru_ayarla(yol)
+        if yol and os.path.isfile(yol):
+            self._klonlama_baslat(yol, kaynak="dosyadan")
+
+    def _klonlama_baslat(self, referans_yolu: str, kaynak: str = "dosyadan"):
+        """
+        Referans ses ile klonlama üretimini başlatır.
+
+        Args:
+            referans_yolu: Klonlanacak ses dosyası yolu.
+            kaynak: "dosyadan" veya "filmden".
+        """
+        if not referans_yolu or not os.path.isfile(referans_yolu):
+            return
+
+        # Motoru kontrol et — sadece XTTS için klonlama
+        motor_adi = self._cmb_motor.currentData() or self._cmb_motor.currentText()
+        if motor_adi != "xtts_v2":
+            # XTTS değilse sadece referans yolunu ata
+            self._referans_ata_ve_motoru_ayarla(referans_yolu)
+            return
+
+        # Dinle butonunu inaktif yap
+        self._btn_onizleme.setEnabled(False)
+        self._btn_klonla.setEnabled(False)
+        self._btn_filmden.setEnabled(False)
+        self._lbl_klon_durum.setText("⏳ Klonlanıyor, lütfen bekleyin...")
+        self._lbl_klon_durum.setStyleSheet("font-size: 9px; color: #FF9800;")
+        self._lbl_klon_durum.show()
+
+        # Arka planda üretim
+        t = threading.Thread(
+            target=self._klonlama_thread,
+            args=(referans_yolu, kaynak),
+            daemon=True,
+        )
+        t.start()
+
+    def _klonlama_thread(self, referans_yolu: str, kaynak: str):
+        """Arka planda XTTS ile test sesi üretir."""
+        try:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+
+            motor = self._motor_nesnesini_al()
+            if motor is None:
+                self._klonlama_sonuc(
+                    basarili=False,
+                    gecici_wav="",
+                    referans_yolu=referans_yolu,
+                    kaynak=kaynak,
+                    hata="Motor başlatılamadı.",
+                )
+                loop.close()
+                return
+
+            if not motor.hazir:
+                try:
+                    loop.run_until_complete(motor.baslat())
+                except Exception as e:
+                    self._klonlama_sonuc(
+                        basarili=False,
+                        gecici_wav="",
+                        referans_yolu=referans_yolu,
+                        kaynak=kaynak,
+                        hata=str(e),
+                    )
+                    loop.close()
+                    return
+
+            from gui.voice_library_dialog import SesCalistirVeKaydetDialog
+            test_cumlesi = SesCalistirVeKaydetDialog._test_cumlesi_sec(
+                self._hedef_dil or "tr"
+            )
+
+            gecici = os.path.join(
+                tempfile.gettempdir(),
+                f"dubsync_klon_{self._karakter_id}_{os.getpid()}.wav"
+            )
+
+            sonuc = loop.run_until_complete(
+                motor.ses_uret(
+                    metin=test_cumlesi,
+                    ses_id=referans_yolu,
+                    cikis_yolu=gecici,
+                )
+            )
+            loop.close()
+
+            self._motor_obj = motor  # Dialog için sakla
+
+            if sonuc.basarili and os.path.isfile(gecici):
+                self._klonlama_sonuc(
+                    basarili=True,
+                    gecici_wav=gecici,
+                    referans_yolu=referans_yolu,
+                    kaynak=kaynak,
+                )
+            else:
+                self._klonlama_sonuc(
+                    basarili=False,
+                    gecici_wav="",
+                    referans_yolu=referans_yolu,
+                    kaynak=kaynak,
+                    hata=sonuc.hata_mesaji,
+                )
+
+        except Exception as e:
+            logger.error("Klonlama thread hatası: %s", e)
+            self._klonlama_sonuc(
+                basarili=False,
+                gecici_wav="",
+                referans_yolu=referans_yolu,
+                kaynak=kaynak,
+                hata=str(e),
+            )
+
+    def _klonlama_sonuc(
+        self,
+        basarili: bool,
+        gecici_wav: str,
+        referans_yolu: str,
+        kaynak: str,
+        hata: str = "",
+    ):
+        """
+        Klonlama tamamlandığında thread'den çağrılır.
+        pyqtSignal ile ana thread'e iletilir (thread-safe).
+        """
+        self._klonlama_bitti.emit(basarili, gecici_wav, referans_yolu, kaynak, hata)
+
+    def _klonlama_sonuc_slot(
+        self,
+        basarili: bool,
+        gecici_wav: str,
+        referans_yolu: str,
+        kaynak: str,
+        hata: str,
+    ):
+        """Ana thread'de klonlama sonucunu işler (sinyal slot'u)."""
+
+        # Butonları geri aç
+        self._btn_klonla.setEnabled(True)
+        self._btn_filmden.setEnabled(True)
+
+        if not basarili:
+            self._btn_onizleme.setEnabled(True)
+            self._lbl_klon_durum.setText(f"❌ Klonlama başarısız: {hata[:60]}")
+            self._lbl_klon_durum.setStyleSheet("font-size: 9px; color: #F44336;")
+            return
+
+        # Klonlama başarılı — SesCalistirVeKaydetDialog aç
+        if not self._library:
+            # Kütüphane yoksa sadece referans ata
+            self._btn_onizleme.setEnabled(True)
+            self._referans_ata_ve_motoru_ayarla(referans_yolu)
+            self._lbl_klon_durum.setText("✅ Referans atandı.")
+            self._lbl_klon_durum.setStyleSheet("font-size: 9px; color: #4CAF50;")
+            return
+
+        from gui.voice_library_dialog import SesCalistirVeKaydetDialog
+        dialog = SesCalistirVeKaydetDialog(
+            gecici_wav=gecici_wav,
+            library=self._library,
+            motor=self._motor_obj,
+            referans_yolu=referans_yolu,
+            dil=self._hedef_dil or "tr",
+            parent=self,
+        )
+
+        # Dialog kapanınca Dinle butonu aktif
+        self._btn_onizleme.setEnabled(True)
+
+        if dialog.exec():
+            # Kaydedildi
+            kaydedilen_yol = dialog.kaydedilen_yol
+            kaydedilen_isim = dialog.kaydedilen_isim
+            if kaydedilen_yol:
+                self._klon_yolu = kaydedilen_yol
+                # Ses listesini güncelle
+                self._ses_listesini_guncelle()
+                # Yeni sesi seç
+                for i in range(self._cmb_ses.count()):
+                    if self._cmb_ses.itemData(i) == kaydedilen_yol:
+                        self._cmb_ses.setCurrentIndex(i)
+                        break
+                self._lbl_klon_durum.setText(
+                    f"✅ Kaydedildi: {kaydedilen_isim}"
+                )
+                self._lbl_klon_durum.setStyleSheet("font-size: 9px; color: #4CAF50;")
+                self._lbl_klon_durum.show()
+                self._degisiklik_bildir()
+                # Diğer kartlara bildir
+                self.ses_kutuphanesi_guncellendi.emit()
+        else:
+            # İptal — geçici wav'ı referans olarak ata
+            self._klon_yolu = gecici_wav
+            self._ses_listesini_guncelle()
+            self._lbl_klon_durum.setText(
+                "⚠️ Kaydedilmedi (geçici). Kaydetmek için tekrar Klonla'ya basın."
+            )
+            self._lbl_klon_durum.setStyleSheet("font-size: 9px; color: #FF9800;")
+            self._lbl_klon_durum.show()
+
+    def _motor_nesnesini_al(self):
+        """XTTS motor nesnesini oluşturur veya mevcut olanı döndürür."""
+        try:
+            from engines.xtts_engine import XTTSEngine
+            # Mevcut motor nesnesi varsa kullan
+            if self._motor_obj and hasattr(self._motor_obj, "hazir"):
+                return self._motor_obj
+            # Yeni oluştur
+            ayarlar = {}
+            # Config'e erişim için parent chain'e bak
+            parent = self.parent()
+            while parent is not None:
+                if hasattr(parent, "_config"):
+                    cfg = parent._config
+                    ayarlar = {
+                        "gpu_kullan": cfg.al("tts_motorlari.xtts_v2.gpu_kullan", True),
+                        "dil": cfg.al("tts_motorlari.xtts_v2.dil", "tr"),
+                    }
+                    # Aktif tts_manager'dan al
+                    if hasattr(parent, "_tts_manager") and parent._tts_manager:
+                        motor = parent._tts_manager._motorlar.get("xtts_v2")
+                        if motor:
+                            return motor
+                    break
+                parent = parent.parent() if hasattr(parent, "parent") else None
+
+            return XTTSEngine(ayarlar)
+        except Exception as e:
+            logger.error("XTTS motor oluşturma hatası: %s", e)
+            return None
 
     # --------------------------------------------------------
     # Veri Okuma / Yazma
@@ -365,14 +648,16 @@ class KarakterKarti(QFrame):
         isaret_h = "+" if hiz >= 0 else ""
         isaret_p = "+" if perde >= 0 else ""
 
+        ses_id = self._cmb_ses.currentData() or self._cmb_ses.currentText()
+
         return {
             "isim": self._txt_isim.text().strip(),
             "motor": self._cmb_motor.currentData() or self._cmb_motor.currentText(),
-            "ses": self._cmb_ses.currentData() or self._cmb_ses.currentText(),
+            "ses": ses_id,
             "cinsiyet": cinsiyet,
             "hiz": f"{isaret_h}{hiz}%",
             "perde": f"{isaret_p}{perde}Hz",
-            "klon_yolu": self._lbl_klon_yolu.text().replace("Referans: ", ""),
+            "klon_yolu": self._klon_yolu,
         }
 
     def veri_yukle(self, veri: dict):
@@ -396,34 +681,42 @@ class KarakterKarti(QFrame):
         except ValueError:
             self._slider_perde.setValue(0)
 
-        # Klonlama referans yolu
+        # Klonlama yolu
         klon_yolu = veri.get("klon_yolu", "")
         if klon_yolu:
-            self._lbl_klon_yolu.setText(f"Referans: {klon_yolu}")
-            self._lbl_klon_yolu.show()
+            self._klon_yolu = klon_yolu
+            if os.path.isfile(klon_yolu):
+                self._lbl_klon_durum.setText(
+                    f"✅ Klon: {os.path.basename(klon_yolu)}"
+                )
+                self._lbl_klon_durum.setStyleSheet("font-size: 9px; color: #4CAF50;")
+                self._lbl_klon_durum.show()
 
     def referans_ses_ayarla(self, yol: str):
-        """Klonlama referans ses yolunu ayarlar (CloneDialog'dan çağrılır)."""
-        if yol:
-            self._referans_ata_ve_motoru_ayarla(yol)
+        """
+        Klonlama referans ses yolunu ayarlar (CloneDialog'dan çağrılır).
+        Filmden klonlama sonrası çağrılır — klonlama başlatır.
+        """
+        if yol and os.path.isfile(yol):
+            motor_adi = self._cmb_motor.currentData() or self._cmb_motor.currentText()
+            if motor_adi == "xtts_v2":
+                self._klonlama_baslat(yol, kaynak="filmden")
+            else:
+                self._referans_ata_ve_motoru_ayarla(yol)
 
     def _referans_ata_ve_motoru_ayarla(self, yol: str):
         """
         Referans ses atanır ve motor otomatik olarak klonlama motoruna çekilir.
-
-        Öncelik: XTTS-v2 > ElevenLabs > uyarı
+        (XTTS dışı motorlar için veya kütüphane yoksa fallback.)
         """
-        import os
+        self._klon_yolu = yol
+        self._lbl_klon_durum.setText(f"Referans: {os.path.basename(yol)}")
+        self._lbl_klon_durum.setStyleSheet("font-size: 9px; color: #999;")
+        self._lbl_klon_durum.show()
 
-        self._lbl_klon_yolu.setText(f"Referans: {yol}")
-        self._lbl_klon_yolu.show()
-
-        # Motoru klonlama destekleyen bir motora çek
         mevcut_motor = self._cmb_motor.currentData() or self._cmb_motor.currentText()
 
-        # Zaten klonlama destekleyen bir motordaysa dokunma
         if mevcut_motor in ("xtts_v2", "elevenlabs"):
-            # Ses listesini güncelle (klon yolu eklenir)
             self._ses_listesini_guncelle()
             self._degisiklik_bildir()
             return
@@ -437,16 +730,13 @@ class KarakterKarti(QFrame):
                 break
 
         if not xtts_bulundu:
-            # ElevenLabs dene
             for i in range(self._cmb_motor.count()):
                 if self._cmb_motor.itemData(i) == "elevenlabs":
                     self._cmb_motor.setCurrentIndex(i)
                     break
 
-        # Ses listesini güncelle (klon yolu artık görünür)
         self._ses_listesini_guncelle()
 
-        # Klon ses dosyasını dropdown'da seç
         for i in range(self._cmb_ses.count()):
             if self._cmb_ses.itemData(i) == yol:
                 self._cmb_ses.setCurrentIndex(i)
@@ -484,6 +774,22 @@ class KarakterKarti(QFrame):
                 self._cmb_ses.setCurrentIndex(i)
                 return
 
+    def library_ayarla(self, library):
+        """VoiceLibrary nesnesini atar ve ses listesini günceller."""
+        self._library = library
+        motor_adi = self._cmb_motor.currentData() or self._cmb_motor.currentText()
+        if motor_adi == "xtts_v2":
+            self._ses_listesini_guncelle()
+
+    def kutuphaneden_sesleri_yenile(self):
+        """Ses kütüphanesi güncellenince dropdown'ı yeniler."""
+        motor_adi = self._cmb_motor.currentData() or self._cmb_motor.currentText()
+        if motor_adi == "xtts_v2":
+            onceki = self._cmb_ses.currentData()
+            self._ses_listesini_guncelle()
+            if onceki:
+                self.ses_sec(onceki)
+
 
 # ============================================================
 # Karakter Paneli (Ana Widget)
@@ -504,6 +810,7 @@ class CharacterPanel(QWidget):
     def __init__(self, parent: Optional[QWidget] = None):
         super().__init__(parent)
         self._kartlar: dict[str, KarakterKarti] = {}
+        self._library = None  # VoiceLibrary
 
         self.setMinimumWidth(240)
         self.setMaximumWidth(350)
@@ -550,6 +857,17 @@ class CharacterPanel(QWidget):
         ("elevenlabs", "ElevenLabs"),
     ]
 
+    def library_ayarla(self, library):
+        """
+        VoiceLibrary nesnesini panele ve tüm kartlara atar.
+
+        Args:
+            library: VoiceLibrary nesnesi.
+        """
+        self._library = library
+        for kart in self._kartlar.values():
+            kart.library_ayarla(library)
+
     def konusmacilari_yukle(
         self,
         konusmacilar: dict[str, dict],
@@ -574,6 +892,10 @@ class CharacterPanel(QWidget):
             kart = KarakterKarti(karakter_id, satir_sayisi, parent=self._konteyner)
             kart._hedef_dil = hedef_dil
 
+            # Library ata
+            if self._library:
+                kart._library = self._library
+
             kart.motorlari_ayarla(motor_listesi)
 
             if config:
@@ -582,18 +904,20 @@ class CharacterPanel(QWidget):
                     kart.veri_yukle(mevcut)
                     kart.motor_sec(mevcut.get("motor", ""))
                 else:
-                    # Yeni karakter — varsayılan motoru seç
                     kart.motor_sec(varsayilan_motor)
 
             kart.degisti.connect(self._kart_degisti)
             kart.onizleme_istendi.connect(self.onizleme_istendi.emit)
             kart.filmden_klonla_istendi.connect(self.filmden_klonla_istendi.emit)
+            # Kütüphane güncellenince tüm kartları yenile
+            kart.ses_kutuphanesi_guncellendi.connect(self._tum_kartlari_yenile)
 
             self._kart_layout.insertWidget(self._kart_layout.count() - 1, kart)
             self._kartlar[karakter_id] = kart
 
-            # Ses listesini başlat (motor seçimine göre)
+            # Ses listesini başlat
             kart._ses_listesini_guncelle(hedef_dil)
+
             # Config'deki sesi geri seç
             if config:
                 mevcut = config.karakter_al(karakter_id)
@@ -604,6 +928,11 @@ class CharacterPanel(QWidget):
         self._lbl_toplam.setText(f"{len(konusmacilar)} karakter, {toplam_satir} satır")
 
         logger.info("Karakter paneli yüklendi: %d karakter", len(konusmacilar))
+
+    def _tum_kartlari_yenile(self):
+        """Ses kütüphanesi güncellenince tüm XTTS kartlarının dropdown'ını yeniler."""
+        for kart in self._kartlar.values():
+            kart.kutuphaneden_sesleri_yenile()
 
     def sesleri_guncelle(self, motor_adi: str, ses_listesi: list[tuple[str, str]]):
         """Belirtilen motoru kullanan kartların ses listesini günceller."""

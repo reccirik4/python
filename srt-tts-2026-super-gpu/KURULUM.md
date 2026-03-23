@@ -66,6 +66,8 @@ python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 
 ### 5. Çalıştır
 
+venv\Scripts\activate
+
 ```
 python main.py
 ```
