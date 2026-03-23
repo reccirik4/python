@@ -1,13 +1,16 @@
 # -*- mode: python ; coding: utf-8 -*-
 """
-DubSync Pro — PyInstaller Spec Dosyası
+DubSync Pro v1.0 — PyInstaller Spec Dosyası (GPU)
 
+RTX 5050 Blackwell / PyTorch nightly cu128 destekli.
 Tek EXE üretir (--onefile).
-Torch + XTTS dahil (~1-2GB).
-Settings dosyasını EXE yanına kopyalayın.
+Torch + XTTS + CUDA dahil (~2-3GB).
 
 Kullanım:
-    pyinstaller dubsync_pro.spec
+    pyinstaller dubsync_pro.spec --noconfirm --clean
+
+Ön koşul:
+    python patch_torchaudio_torchcodec.py
 """
 
 import sys
@@ -28,7 +31,7 @@ a = Analysis(
         # İlk çalıştırmada otomatik oluşturulur (ConfigManager varsayılanları).
     ],
     hiddenimports=[
-        # Core modüller
+        # ── Core modüller ──
         'core',
         'core.config_manager',
         'core.srt_parser',
@@ -38,8 +41,9 @@ a = Analysis(
         'core.audio_assembler',
         'core.audio_ducker',
         'core.video_exporter',
+        'core.debug_logger',
 
-        # Engine modüller
+        # ── Engine modüller ──
         'engines',
         'engines.base_engine',
         'engines.edge_engine',
@@ -47,7 +51,7 @@ a = Analysis(
         'engines.elevenlabs_engine',
         'engines.xtts_engine',
 
-        # GUI modüller
+        # ── GUI modüller ──
         'gui',
         'gui.main_window',
         'gui.character_panel',
@@ -55,8 +59,9 @@ a = Analysis(
         'gui.settings_panel',
         'gui.ducking_panel',
         'gui.preview_player',
+        'gui.clone_dialog',
 
-        # Üçüncü parti — PyInstaller bazen kaçırır
+        # ── Üçüncü parti — PyInstaller bazen kaçırır ──
         'edge_tts',
         'edge_tts.communicate',
         'pysrt',
@@ -70,21 +75,42 @@ a = Analysis(
         'numpy',
         'numpy.core',
 
-        # Torch + XTTS
+        # ── Torch + CUDA (GPU) ──
         'torch',
+        'torch.cuda',
+        'torch.backends',
+        'torch.backends.cuda',
+        'torch.backends.cudnn',
         'torchaudio',
+        'torchaudio._torchcodec',
+        'torchaudio.functional',
+        'torchcodec',
+        'torchcodec.decoders',
+
+        # ── XTTS / Coqui TTS ──
         'TTS',
         'TTS.api',
         'TTS.tts',
         'TTS.tts.configs.xtts_config',
         'TTS.tts.models.xtts',
+        'TTS.utils',
+        'TTS.utils.audio',
+        'TTS.utils.synthesizer',
+        'TTS.utils.manage',
 
-        # OpenAI / ElevenLabs (opsiyonel, yüklüyse)
+        # ── Transformers (XTTS bağımlılığı) ──
+        'transformers',
+        'transformers.models',
+        'safetensors',
+        'huggingface_hub',
+        'tokenizers',
+
+        # ── OpenAI / ElevenLabs (opsiyonel, yüklüyse) ──
         'openai',
         'elevenlabs',
         'elevenlabs.client',
 
-        # PyQt6
+        # ── PyQt6 ──
         'PyQt6',
         'PyQt6.QtCore',
         'PyQt6.QtGui',
@@ -105,6 +131,7 @@ a = Analysis(
         'sphinx',
         'setuptools',
         'pip',
+        'tensorboard',
     ],
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
